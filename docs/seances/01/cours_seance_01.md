@@ -10,7 +10,7 @@ footer: "[←](../../index.html) · Tech Info 1 - Séance 1"
 Introduction à Python
 
 [← Retour à l'accueil](../../index.html)
-[→ Exercices](exercices_seance_01.md)
+[→ Exercices](exercices_seance_01.html)
 [→ Quiz interactif](quiz_seance_01.html)
 
 ---
