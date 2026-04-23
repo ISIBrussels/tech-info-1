@@ -45,31 +45,34 @@ jobs:
 
       - name: Create pages index
         run: |
-          cat > dist/index.html <<'EOF'
-          <!doctype html>
-          <html lang="fr">
-            <head>
-              <meta charset="utf-8" />
-              <meta name="viewport" content="width=device-width, initial-scale=1" />
-              <title>Tech Info 1 — Slides</title>
-            </head>
-            <body>
-              <h1>Tech Info 1 — Slides</h1>
-              <p>
-                Ouvrez la page d'accueil complète :
-                <a href="./index.md">docs/index.md</a>
-              </p>
-              <ul>
-                <li><a href="./seances/01/cours_seance_01.html">Séance 1 — Cours</a></li>
-                <li><a href="./seances/02/cours_seance_02.html">Séance 2 — Cours</a></li>
-                <li><a href="./seances/03/cours_seance_03.html">Séance 3 — Cours</a></li>
-                <li><a href="./seances/04/cours_seance_04.html">Séance 4 — Cours</a></li>
-                <li><a href="./seances/05/cours_seance_05.html">Séance 5 — Cours</a></li>
-                <li><a href="./seances/06/cours_seance_06.html">Séance 6 — Cours</a></li>
-              </ul>
-            </body>
-          </html>
-          EOF
+          {
+            echo '<!doctype html>'
+            echo '<html lang="fr">'
+            echo '  <head>'
+            echo '    <meta charset="utf-8" />'
+            echo '    <meta name="viewport" content="width=device-width, initial-scale=1" />'
+            echo '    <title>Tech Info 1 — Slides</title>'
+            echo '  </head>'
+            echo '  <body>'
+            echo '    <h1>Tech Info 1 — Slides</h1>'
+            echo '    <p>Accès direct aux slides Marp et aux exercices.</p>'
+            echo '    <ul>'
+
+            for slide in dist/seances/*/cours_seance_*.html; do
+              [ -f "$slide" ] || continue
+              folder="$(basename "$(dirname "$slide")")"
+              n="${folder#0}"
+              exo="seances/$folder/exercices_seance_$folder.md"
+              echo "      <li>Séance $n — <a href=\"./seances/$folder/cours_seance_$folder.html\">Cours (slides)</a> · <a href=\"./$exo\">Exercices</a></li>"
+            done
+
+            echo '    </ul>'
+            echo '  </body>'
+            echo '</html>'
+          } > dist/index.html
+
+      - name: Disable Jekyll processing
+        run: touch dist/.nojekyll
 
       - name: Upload pages artifact
         uses: actions/upload-pages-artifact@v3
