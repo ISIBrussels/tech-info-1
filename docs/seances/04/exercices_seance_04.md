@@ -1,6 +1,6 @@
 # Séance 4 — Exercices
 
-[← Retour à l’accueil](../../index.md) · [Slides du cours](cours_seance_04.md)
+[← Retour à l’accueil](../../index.html) · [Slides du cours](cours_seance_04.html)
 
 ## Objectif
 Manipuler des listes : parcours, calculs, recherche de valeurs.

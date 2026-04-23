@@ -1,6 +1,6 @@
 # Séance 3 — Exercices
 
-[← Retour à l’accueil](../../index.md) · [Slides du cours](cours_seance_03.md)
+[← Retour à l’accueil](../../index.html) · [Slides du cours](cours_seance_03.html)
 
 ## Objectif
 S’entraîner à écrire des fonctions qui répètent des actions.
