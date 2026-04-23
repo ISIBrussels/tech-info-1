@@ -1,0 +1,88 @@
+name: Build and Deploy Marp Slides
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install Marp CLI
+        run: npm install -g @marp-team/marp-cli
+
+      - name: Build Marp slides
+        run: |
+          mkdir -p dist
+          cp -r docs/* dist/
+
+          for file in docs/seances/*/cours_seance_*.md; do
+            if [ -f "$file" ]; then
+              out="dist/${file#docs/}"
+              out="${out%.md}.html"
+              mkdir -p "$(dirname "$out")"
+              marp "$file" --html -o "$out"
+            fi
+          done
+
+      - name: Create pages index
+        run: |
+          cat > dist/index.html <<'EOF'
+          <!doctype html>
+          <html lang="fr">
+            <head>
+              <meta charset="utf-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1" />
+              <title>Tech Info 1 — Slides</title>
+            </head>
+            <body>
+              <h1>Tech Info 1 — Slides</h1>
+              <p>
+                Ouvrez la page d'accueil complète :
+                <a href="./index.md">docs/index.md</a>
+              </p>
+              <ul>
+                <li><a href="./seances/01/cours_seance_01.html">Séance 1 — Cours</a></li>
+                <li><a href="./seances/02/cours_seance_02.html">Séance 2 — Cours</a></li>
+                <li><a href="./seances/03/cours_seance_03.html">Séance 3 — Cours</a></li>
+                <li><a href="./seances/04/cours_seance_04.html">Séance 4 — Cours</a></li>
+                <li><a href="./seances/05/cours_seance_05.html">Séance 5 — Cours</a></li>
+                <li><a href="./seances/06/cours_seance_06.html">Séance 6 — Cours</a></li>
+              </ul>
+            </body>
+          </html>
+          EOF
+
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
