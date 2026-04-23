@@ -11,6 +11,7 @@ Introduction à Python
 
 [← Retour à l'accueil](../../index.md)
 [→ Exercices](exercices_seance_01.md)
+[→ Quiz interactif](quiz_seance_01.html)
 
 ---
 
@@ -315,64 +316,6 @@ Quand une instruction est incorrecte, Python affiche une erreur.
 
 ---
 
-## Quiz rapide (QCM) - Q1
-
-**Q1.** Quel opérateur sert à affecter une valeur à une variable ?
-
-- A. `==`
-- B. `=`
-- C. `:=`
-- D. `!=`
-
----
-
-## Quiz rapide (QCM) - Q2
-
-**Q2.** Quel est le résultat de `7 // 2` ?
-
-- A. `3.5`
-- B. `3`
-- C. `4`
-- D. `2`
-
----
-
-## Quiz rapide (QCM) - Q3
-
-**Q3.** Le type de `5 > 3` est :
-
-- A. `int`
-- B. `str`
-- C. `bool`
-- D. `float`
-
----
-
-## Questions à trous
-
-Compléter :
-
-1. Python est un langage __________.
-2. Les chaînes de caractères sont de type __________.
-3. L'opérateur logique ET s'écrit __________.
-4. L'opérateur de comparaison "différent de" s'écrit __________.
-
----
-
-## Mini lecture d'erreur
-
-Que signifie l'erreur ci-dessous ?
-
-```python
-print(message)
-```
-
-```text
-NameError: name 'message' is not defined
-```
-
----
-
 ## Conclusion de la séance
 
 - Python : langage interprété, open-source, portable
@@ -380,3 +323,5 @@ NameError: name 'message' is not defined
 - Opérateurs de comparaison et logique pour produire des conditions
 - Commentaires pour documenter le code
 - f-strings pour afficher des messages dynamiques
+
+[→ Quiz interactif](quiz_seance_01.html)

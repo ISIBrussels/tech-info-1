@@ -10,6 +10,7 @@ Dépôt du cours "Techniques Informatiques 1" et du "Laboratoire de Techniques I
 ## Séances
 
 - **Séance 1 — Introduction à Python** : [Cours](docs/seances/01/cours_seance_01.md) · [Exercices](docs/seances/01/exercices_seance_01.md)
+- **Quiz séance 1** : [Quiz interactif](docs/seances/01/quiz_seance_01.html)
 - **Séance 2 — Logique conditionnelle** : [Cours](docs/seances/02/cours_seance_02.md) · [Exercices](docs/seances/02/exercices_seance_02.md)
 - **Séance 3 — Boucles (`while` & `for`)** : [Cours](docs/seances/03/cours_seance_03.md) · [Exercices](docs/seances/03/exercices_seance_03.md)
 - **Séance 4 — Listes (collections)** : [Cours](docs/seances/04/cours_seance_04.md) · [Exercices](docs/seances/04/exercices_seance_04.md)
