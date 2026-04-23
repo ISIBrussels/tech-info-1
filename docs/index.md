@@ -2,10 +2,10 @@
 
 Bienvenue. Cette page sert de **landing page** pour consulter :
 
-- les **slides** (format Marp, puis export HTML/PDF si besoin)
-- les **énoncés d’exercices** (Markdown)
+- les **slides de cours** et des **quiz**
+- les **énoncés d’exercices de laboratoire**
 
-## Séances
+## Liens vers le contenu
 
 | Séance | Thème | Cours | Exercices | Quiz |
 | --- | --- | --- | --- | --- |

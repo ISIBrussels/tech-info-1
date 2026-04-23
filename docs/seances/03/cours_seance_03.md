@@ -8,7 +8,7 @@ footer: "[←](../../index.html) · Tech Info 1 — Séance 3"
 # Séance 3
 ## Boucles (`while` & `for`)
 
-[← Retour à l’accueil](../../index.md)
+[← Retour à l’accueil](../../index.html)
 [→ Exercices](exercices_seance_03.md)
 
 <!-- Placeholder Marp -->

@@ -8,7 +8,7 @@ footer: "[←](../../index.html) · Tech Info 1 — Séance 5"
 # Séance 5
 ## Chaînes & tuples
 
-[← Retour à l’accueil](../../index.md)
+[← Retour à l’accueil](../../index.html)
 [→ Exercices](exercices_seance_05.md)
 
 <!-- Placeholder Marp -->

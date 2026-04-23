@@ -8,7 +8,7 @@ footer: "[←](../../index.html) · Tech Info 1 — Séance 2"
 # Séance 2
 ## Logique conditionnelle
 
-[← Retour à l’accueil](../../index.md)
+[← Retour à l’accueil](../../index.html)
 [→ Exercices](exercices_seance_02.md)
 
 <!-- Placeholder Marp -->

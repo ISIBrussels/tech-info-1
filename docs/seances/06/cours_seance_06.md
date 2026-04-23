@@ -8,7 +8,7 @@ footer: "[←](../../index.html) · Tech Info 1 — Séance 6"
 # Séance 6
 ## Dictionnaires (clé → valeur)
 
-[← Retour à l’accueil](../../index.md)
+[← Retour à l’accueil](../../index.html)
 [→ Exercices](exercices_seance_06.md)
 
 <!-- Placeholder Marp -->
