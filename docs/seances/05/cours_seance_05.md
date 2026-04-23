@@ -9,7 +9,7 @@ footer: "Tech Info 1 — Séance 5"
 ## Chaînes & tuples
 
 [← Retour à l’accueil](../../index.md)
-[→ Exercices](exercices.md)
+[→ Exercices](exercices_seance_05.md)
 
 <!-- Placeholder Marp -->
 

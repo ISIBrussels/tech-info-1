@@ -1,6 +1,6 @@
 # Séance 6 — Exercices
 
-[← Retour à l’accueil](../../index.md) · [Slides du cours](cours.md)
+[← Retour à l’accueil](../../index.md) · [Slides du cours](cours_seance_06.md)
 
 ## Objectif
 Construire et utiliser des dictionnaires : comptage, traduction simple, histogrammes.

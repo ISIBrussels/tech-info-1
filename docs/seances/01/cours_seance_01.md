@@ -9,7 +9,7 @@ footer: "Tech Info 1 — Séance 1"
 ## Variables, Types & Fonctions
 
 [← Retour à l’accueil](../../index.md)
-[→ Exercices](exercices.md)
+[→ Exercices](exercices_seance_01.md)
 
 <!--
 Placeholder Marp : on remplacera cette slide par un titre + infos (date, groupe, etc.)

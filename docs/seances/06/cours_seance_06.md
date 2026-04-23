@@ -9,7 +9,7 @@ footer: "Tech Info 1 — Séance 6"
 ## Dictionnaires (clé → valeur)
 
 [← Retour à l’accueil](../../index.md)
-[→ Exercices](exercices.md)
+[→ Exercices](exercices_seance_06.md)
 
 <!-- Placeholder Marp -->
 

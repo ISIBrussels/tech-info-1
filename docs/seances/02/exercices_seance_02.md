@@ -1,6 +1,6 @@
 # Séance 2 — Exercices
 
-[← Retour à l’accueil](../../index.md) · [Slides du cours](cours.md)
+[← Retour à l’accueil](../../index.md) · [Slides du cours](cours_seance_02.md)
 
 ## Objectif
 Écrire des fonctions avec `if/elif/else` et des retours cohérents.

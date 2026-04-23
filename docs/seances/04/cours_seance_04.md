@@ -9,7 +9,7 @@ footer: "Tech Info 1 — Séance 4"
 ## Listes (collections)
 
 [← Retour à l’accueil](../../index.md)
-[→ Exercices](exercices.md)
+[→ Exercices](exercices_seance_04.md)
 
 <!-- Placeholder Marp -->
 
