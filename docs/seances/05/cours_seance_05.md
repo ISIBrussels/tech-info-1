@@ -2,7 +2,7 @@
 marp: true
 title: "Séance 5 — Chaînes & tuples"
 paginate: true
-footer: "Tech Info 1 — Séance 5"
+footer: "[←](../../index.html) · Tech Info 1 — Séance 5"
 ---
 
 # Séance 5

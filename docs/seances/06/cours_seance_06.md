@@ -2,7 +2,7 @@
 marp: true
 title: "Séance 6 — Dictionnaires"
 paginate: true
-footer: "Tech Info 1 — Séance 6"
+footer: "[←](../../index.html) · Tech Info 1 — Séance 6"
 ---
 
 # Séance 6

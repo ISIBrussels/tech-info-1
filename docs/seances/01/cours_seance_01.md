@@ -2,7 +2,7 @@
 marp: true
 title: "Séance 1 - Introduction à Python"
 paginate: true
-footer: "Tech Info 1 - Séance 1"
+footer: "[←](../../index.html) · Tech Info 1 - Séance 1"
 ---
 
 ## Séance 1

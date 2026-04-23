@@ -2,7 +2,7 @@
 marp: true
 title: "Séance 3 — Boucles (while & for)"
 paginate: true
-footer: "Tech Info 1 — Séance 3"
+footer: "[←](../../index.html) · Tech Info 1 — Séance 3"
 ---
 
 # Séance 3

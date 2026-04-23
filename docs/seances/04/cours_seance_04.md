@@ -2,7 +2,7 @@
 marp: true
 title: "Séance 4 — Listes (collections)"
 paginate: true
-footer: "Tech Info 1 — Séance 4"
+footer: "[←](../../index.html) · Tech Info 1 — Séance 4"
 ---
 
 # Séance 4

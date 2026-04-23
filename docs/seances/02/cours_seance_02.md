@@ -2,7 +2,7 @@
 marp: true
 title: "Séance 2 — Logique conditionnelle"
 paginate: true
-footer: "Tech Info 1 — Séance 2"
+footer: "[←](../../index.html) · Tech Info 1 — Séance 2"
 ---
 
 # Séance 2
