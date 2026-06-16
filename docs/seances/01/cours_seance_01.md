@@ -165,7 +165,7 @@ temperature = 18.5
 
 ## Variables : analogie de l'étiquette
 
-Imagine une étiquette collée sur un objet :
+Analogie : une étiquette collée sur un objet :
 
 - Le nom de variable = l'étiquette (`item`)
 - L'objet = la valeur référencée (`"book"`, puis `"pen"`)
@@ -194,9 +194,25 @@ age = 20  # end-of-line comment
 
 ---
 
+## Types
+
+- Chaque valeur en Python possède un **type** (entier, décimal, texte, etc.)
+- Le type précise la nature de la donnée et les opérations possibles
+- Python déduit le type **à l'affectation** : aucune déclaration explicite n'est requise
+- La fonction `type()` permet d'inspecter le type d'une valeur
+
+```python
+age = 20
+print(type(age))       # <class 'int'>
+print(type(18.5))      # <class 'float'>
+print(type("Ada"))     # <class 'str'>
+```
+
+---
+
 ## Types numériques
 
-Les trois types de base vus en début de cours :
+Python propose trois types numériques de base :
 
 ```python
 integer = 42         # int
@@ -212,7 +228,7 @@ complex_number = 2 + 3j  # complex
 
 ## Opérateurs arithmétiques
 
-Dans le REPL, écrivez une opération arithmétique puis appuyez sur Entrée.
+Dans le REPL, il suffit d'écrire une opération arithmétique puis d'appuyer sur Entrée.
 
 ```python
 2 + 3   # addition
