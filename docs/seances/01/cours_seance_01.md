@@ -222,7 +222,7 @@ complex_number = 2 + 3j  # complex
 
 - `int` : nombres entiers
 - `float` : nombres à virgule flottante
-- `complex` : nombres complexes (moins fréquent en initiation)
+- `complex` : nombres complexes (moins fréquent)
 
 ---
 
@@ -288,7 +288,7 @@ is_adult = age >= 18 and age < 130
 
 ---
 
-## Chaînes de caractères (`str`)
+## Type chaîne de caractère (`str`)
 
 ```python
 first_name = "Lina"
@@ -335,9 +335,11 @@ Quand une instruction est incorrecte, Python affiche une erreur.
 ## Conclusion de la séance
 
 - Python : langage interprété, open-source, portable
+- Un programme : un script exécuté par l'interpréteur Python
+- Éditeur de code pour écrire le script ; un IDE regroupe en plus l'exécution et le débogage
 - Variables, types (`int`, `float`, `bool`, `str`) et opérateurs de base
 - Opérateurs de comparaison et logique pour produire des conditions
 - Commentaires pour documenter le code
-- f-strings pour afficher des messages dynamiques
+- f-strings pour insérer des variables dans un texte fixe au moment de l'exécution
 
 [→ Quiz interactif](quiz_seance_01.html)
