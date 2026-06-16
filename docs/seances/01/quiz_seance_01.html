@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Quiz interactif - Seance 1</title>
+    <title>Quiz interactif — Séance 1</title>
     <style>
       :root {
         color-scheme: light dark;
@@ -33,8 +33,15 @@
         background: transparent;
         cursor: pointer;
       }
+      .actions {
+        display: flex;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+      }
       .result {
         font-weight: 600;
+        margin-top: 1rem;
       }
       .ok {
         color: #1a7f37;
@@ -45,72 +52,261 @@
       .muted {
         opacity: 0.85;
       }
+      .question-feedback {
+        margin-top: 0.5rem;
+        font-size: 0.95rem;
+      }
     </style>
   </head>
   <body>
-    <p><a href="../../index.html">← Retour a l'accueil</a> · <a href="cours_seance_01.html">Retour aux slides</a></p>
-    <h1>Quiz interactif - Seance 1</h1>
-    <p class="muted">Repondez a la question puis verifiez la reponse.</p>
+    <p><a href="../../index.html">← Retour à l'accueil</a> · <a href="cours_seance_01.html">Retour aux slides</a></p>
+    <h1>Quiz interactif — Séance 1</h1>
+    <p class="muted">10 questions sur le contenu des slides. Répondre à toutes les questions, puis vérifier.</p>
 
-    <section class="card">
-      <h2>Question 1</h2>
-      <p><strong>Quel operateur sert a affecter une valeur a une variable en Python ?</strong></p>
-      <div class="answers">
-        <label><input type="radio" name="q1" value="A" /> A. <code>==</code></label>
-        <label><input type="radio" name="q1" value="B" /> B. <code>=</code></label>
-        <label><input type="radio" name="q1" value="C" /> C. <code>:=</code></label>
-        <label><input type="radio" name="q1" value="D" /> D. <code>!=</code></label>
-      </div>
-      <button id="check-btn" type="button">Verifier</button>
+    <div id="quiz"></div>
+
+    <div class="actions">
+      <button id="check-btn" type="button">Vérifier</button>
       <button id="reset-btn" type="button">Recommencer</button>
-      <p id="result" class="result" aria-live="polite"></p>
-    </section>
+    </div>
+    <p id="summary" class="result" aria-live="polite"></p>
 
     <script>
+      const storageKey = "quiz_seance_01_answers";
+
+      const questions = [
+        {
+          id: "q1",
+          text: "Quel opérateur sert à affecter une valeur à une variable en Python ?",
+          options: [
+            { value: "A", label: "<code>==</code>" },
+            { value: "B", label: "<code>=</code>" },
+            { value: "C", label: "<code>:=</code>" },
+            { value: "D", label: "<code>!=</code>" },
+          ],
+          correct: "B",
+          feedback: "L'opérateur d'affectation est <code>=</code>. <code>==</code> sert à comparer.",
+        },
+        {
+          id: "q2",
+          text: "Python est principalement considéré comme un langage…",
+          options: [
+            { value: "A", label: "compilé" },
+            { value: "B", label: "interprété" },
+            { value: "C", label: "assembleur" },
+            { value: "D", label: "machine" },
+          ],
+          correct: "B",
+          feedback: "Python est interprété : l'interpréteur lit et exécute les instructions à chaque lancement.",
+        },
+        {
+          id: "q3",
+          text: "En Python, une variable est surtout…",
+          options: [
+            { value: "A", label: "une boîte qui contient directement la valeur" },
+            { value: "B", label: "un nom qui référence un objet en mémoire" },
+            { value: "C", label: "un type déclaré explicitement avant usage" },
+            { value: "D", label: "une fonction prédéfinie du langage" },
+          ],
+          correct: "B",
+          feedback: "Une variable est une référence : un nom lié à un objet, pas une boîte contenant la valeur.",
+        },
+        {
+          id: "q4",
+          text: "Comment marque-t-on un commentaire sur une ligne en Python ?",
+          options: [
+            { value: "A", label: "avec <code>//</code>" },
+            { value: "B", label: "avec <code>/* ... */</code>" },
+            { value: "C", label: "avec <code>#</code>" },
+            { value: "D", label: "avec <code>--</code>" },
+          ],
+          correct: "C",
+          feedback: "Les commentaires Python commencent par <code>#</code> et sont ignorés à l'exécution.",
+        },
+        {
+          id: "q5",
+          text: "Quel est le type de la valeur <code>3.14</code> en Python ?",
+          options: [
+            { value: "A", label: "<code>int</code>" },
+            { value: "B", label: "<code>float</code>" },
+            { value: "C", label: "<code>bool</code>" },
+            { value: "D", label: "<code>str</code>" },
+          ],
+          correct: "B",
+          feedback: "<code>3.14</code> est un nombre à virgule flottante, donc de type <code>float</code>.",
+        },
+        {
+          id: "q6",
+          text: "Que renvoie l'expression <code>5 == 5</code> ?",
+          options: [
+            { value: "A", label: "le nombre <code>5</code>" },
+            { value: "B", label: "le nombre <code>0</code>" },
+            { value: "C", label: "<code>True</code>" },
+            { value: "D", label: "la chaîne <code>\"5\"</code>" },
+          ],
+          correct: "C",
+          feedback: "Une comparaison renvoie toujours un booléen. Ici, l'égalité est vraie : <code>True</code>.",
+        },
+        {
+          id: "q7",
+          text: "Quelle est la valeur de <code>True and False</code> ?",
+          options: [
+            { value: "A", label: "<code>True</code>" },
+            { value: "B", label: "<code>False</code>" },
+            { value: "C", label: "<code>None</code>" },
+            { value: "D", label: "une erreur d'exécution" },
+          ],
+          correct: "B",
+          feedback: "L'opérateur <code>and</code> n'est vrai que si les deux opérandes sont vrais.",
+        },
+        {
+          id: "q8",
+          text: "À quoi sert principalement le REPL Python ?",
+          options: [
+            { value: "A", label: "compiler le code en binaire avant exécution" },
+            { value: "B", label: "exécuter des instructions en direct pour tester du code" },
+            { value: "C", label: "créer automatiquement des fichiers <code>.py</code>" },
+            { value: "D", label: "installer des bibliothèques externes" },
+          ],
+          correct: "B",
+          feedback: "Le REPL permet de lancer <code>python</code> sans fichier et de tester des instructions immédiatement.",
+        },
+        {
+          id: "q9",
+          text: "Par rapport à un éditeur de code, un IDE ajoute surtout…",
+          options: [
+            { value: "A", label: "uniquement la coloration syntaxique" },
+            { value: "B", label: "l'exécution et le débogage au même endroit" },
+            { value: "C", label: "l'obligation de déclarer les types explicitement" },
+            { value: "D", label: "la conversion automatique du code en C++" },
+          ],
+          correct: "B",
+          feedback: "Un IDE regroupe édition, exécution et débogage ; l'éditeur de code sert surtout à écrire le script.",
+        },
+        {
+          id: "q10",
+          text: "Quelle syntaxe définit correctement une f-string en Python ?",
+          options: [
+            { value: "A", label: "<code>\"Bonjour {nom}\"</code>" },
+            { value: "B", label: "<code>f\"Bonjour {nom}\"</code>" },
+            { value: "C", label: "<code>str(\"Bonjour\", nom)</code>" },
+            { value: "D", label: "<code>format(\"Bonjour {nom}\")</code>" },
+          ],
+          correct: "B",
+          feedback: "Une f-string est préfixée par <code>f</code> ; les variables s'insèrent entre accolades.",
+        },
+      ];
+
+      const quizEl = document.getElementById("quiz");
       const checkBtn = document.getElementById("check-btn");
       const resetBtn = document.getElementById("reset-btn");
-      const result = document.getElementById("result");
-      const q1Key = "quiz_seance_01_q1";
+      const summaryEl = document.getElementById("summary");
 
-      function getSelectedValue() {
-        const selected = document.querySelector('input[name="q1"]:checked');
-        return selected ? selected.value : null;
+      function renderQuiz() {
+        quizEl.innerHTML = questions
+          .map(
+            (question, index) => `
+          <section class="card" data-question-id="${question.id}">
+            <h2>Question ${index + 1}</h2>
+            <p><strong>${question.text}</strong></p>
+            <div class="answers">
+              ${question.options
+                .map(
+                  (option) => `
+                <label>
+                  <input type="radio" name="${question.id}" value="${option.value}" />
+                  ${option.value}. ${option.label}
+                </label>
+              `
+                )
+                .join("")}
+            </div>
+            <p class="question-feedback" id="${question.id}-feedback" aria-live="polite"></p>
+          </section>
+        `
+          )
+          .join("");
       }
 
-      function renderSavedAnswer() {
-        const saved = localStorage.getItem(q1Key);
-        if (!saved) return;
-        const input = document.querySelector(`input[name="q1"][value="${saved}"]`);
-        if (input) input.checked = true;
+      function getAnswers() {
+        const answers = {};
+        for (const question of questions) {
+          const selected = document.querySelector(`input[name="${question.id}"]:checked`);
+          answers[question.id] = selected ? selected.value : null;
+        }
+        return answers;
+      }
+
+      function saveAnswers(answers) {
+        localStorage.setItem(storageKey, JSON.stringify(answers));
+      }
+
+      function loadAnswers() {
+        const raw = localStorage.getItem(storageKey);
+        if (!raw) return;
+
+        try {
+          const answers = JSON.parse(raw);
+          for (const question of questions) {
+            const value = answers[question.id];
+            if (!value) continue;
+            const input = document.querySelector(`input[name="${question.id}"][value="${value}"]`);
+            if (input) input.checked = true;
+          }
+        } catch {
+          localStorage.removeItem(storageKey);
+        }
+      }
+
+      function clearAnswers() {
+        for (const question of questions) {
+          const selected = document.querySelector(`input[name="${question.id}"]:checked`);
+          if (selected) selected.checked = false;
+          const feedback = document.getElementById(`${question.id}-feedback`);
+          if (feedback) {
+            feedback.textContent = "";
+            feedback.className = "question-feedback";
+          }
+        }
+        localStorage.removeItem(storageKey);
+        summaryEl.textContent = "";
+        summaryEl.className = "result";
       }
 
       checkBtn.addEventListener("click", () => {
-        const answer = getSelectedValue();
-        if (!answer) {
-          result.textContent = "Selectionnez une reponse avant de verifier.";
-          result.className = "result ko";
+        const answers = getAnswers();
+        const unanswered = questions.filter((question) => !answers[question.id]);
+
+        if (unanswered.length > 0) {
+          summaryEl.textContent = `Il reste ${unanswered.length} question(s) sans réponse.`;
+          summaryEl.className = "result ko";
           return;
         }
 
-        localStorage.setItem(q1Key, answer);
-        if (answer === "B") {
-          result.textContent = "Correct. L'operateur d'affectation est '='.";
-          result.className = "result ok";
-        } else {
-          result.textContent = "Incorrect. La bonne reponse est B ('=').";
-          result.className = "result ko";
+        saveAnswers(answers);
+
+        let score = 0;
+        for (const question of questions) {
+          const feedback = document.getElementById(`${question.id}-feedback`);
+          const isCorrect = answers[question.id] === question.correct;
+          if (isCorrect) {
+            score += 1;
+            feedback.textContent = `Correct. ${question.feedback}`;
+            feedback.className = "question-feedback ok";
+          } else {
+            feedback.textContent = `Incorrect. ${question.feedback}`;
+            feedback.className = "question-feedback ko";
+          }
         }
+
+        summaryEl.textContent = `Score : ${score} / ${questions.length}`;
+        summaryEl.className = score === questions.length ? "result ok" : "result ko";
       });
 
-      resetBtn.addEventListener("click", () => {
-        const selected = document.querySelector('input[name="q1"]:checked');
-        if (selected) selected.checked = false;
-        localStorage.removeItem(q1Key);
-        result.textContent = "";
-        result.className = "result";
-      });
+      resetBtn.addEventListener("click", clearAnswers);
 
-      renderSavedAnswer();
+      renderQuiz();
+      loadAnswers();
     </script>
   </body>
 </html>
