@@ -65,9 +65,27 @@
         margin-top: 0.75rem;
         font-size: 0.95rem;
       }
-      .score-list {
-        margin: 0.5rem 0 0;
-        padding-left: 1.2rem;
+      .results-detail {
+        display: grid;
+        gap: 0.75rem;
+        margin-top: 1rem;
+        font-weight: normal;
+      }
+      .result-item {
+        border: 1px solid #d0d7de;
+        border-radius: 10px;
+        padding: 0.75rem 1rem;
+      }
+      .result-item h3 {
+        margin: 0 0 0.35rem;
+        font-size: 1rem;
+      }
+      .result-item p {
+        margin: 0.25rem 0;
+      }
+      .result-item .verdict {
+        font-weight: 600;
+        margin-top: 0.5rem;
       }
     </style>
   </head>
@@ -259,6 +277,11 @@
         return questions[currentIndex];
       }
 
+      function getOptionLabel(question, value) {
+        const option = question.options.find((item) => item.value === value);
+        return option ? `${option.value}. ${option.label}` : "—";
+      }
+
       function renderQuestion() {
         const question = getCurrentQuestion();
         const selected = answers[question.id] || null;
@@ -277,6 +300,7 @@
                   name="${question.id}"
                   value="${option.value}"
                   ${selected === option.value ? "checked" : ""}
+                  ${checked ? "disabled" : ""}
                 />
                 ${option.value}. ${option.label}
               </label>
@@ -286,31 +310,28 @@
           </div>
         `;
 
-        quizEl.querySelectorAll(`input[name="${question.id}"]`).forEach((input) => {
-          input.addEventListener("change", () => {
-            answers[question.id] = input.value;
-            checked = false;
-            feedbackEl.textContent = "";
-            feedbackEl.className = "question-feedback";
-            summaryEl.innerHTML = "";
-            summaryEl.className = "result";
-            saveState();
+        if (!checked) {
+          quizEl.querySelectorAll(`input[name="${question.id}"]`).forEach((input) => {
+            input.addEventListener("change", () => {
+              answers[question.id] = input.value;
+              feedbackEl.textContent = "";
+              feedbackEl.className = "question-feedback";
+              summaryEl.innerHTML = "";
+              summaryEl.className = "result";
+              saveState();
+            });
           });
-        });
+        }
 
         prevBtn.disabled = currentIndex === 0;
         nextBtn.hidden = currentIndex === questions.length - 1;
-        checkBtn.hidden = currentIndex !== questions.length - 1;
+        checkBtn.hidden = currentIndex !== questions.length - 1 || checked;
 
-        if (checked && selected) {
-          const isCorrect = selected === question.correct;
-          feedbackEl.textContent = isCorrect
-            ? `Correct. ${question.feedback}`
-            : `Incorrect. ${question.feedback}`;
-          feedbackEl.className = isCorrect ? "question-feedback ok" : "question-feedback ko";
-        } else {
-          feedbackEl.textContent = "";
-          feedbackEl.className = "question-feedback";
+        feedbackEl.textContent = "";
+        feedbackEl.className = "question-feedback";
+
+        if (checked) {
+          renderSummary();
         }
       }
 
@@ -320,13 +341,26 @@
           const answer = answers[question.id];
           const isCorrect = answer === question.correct;
           if (isCorrect) score += 1;
-          const status = !answer ? "non répondue" : isCorrect ? "correcte" : "incorrecte";
-          return `<li>Question ${index + 1} : ${status}</li>`;
+
+          const verdictClass = !answer ? "ko" : isCorrect ? "ok" : "ko";
+          const verdictText = !answer
+            ? "Non répondue."
+            : isCorrect
+              ? `Correct. ${question.feedback}`
+              : `Incorrect. Réponse choisie : ${getOptionLabel(question, answer)}. ${question.feedback}`;
+
+          return `
+            <section class="result-item">
+              <h3>Question ${index + 1}</h3>
+              <p><strong>${question.text}</strong></p>
+              <p class="verdict ${verdictClass}">${verdictText}</p>
+            </section>
+          `;
         });
 
         summaryEl.innerHTML = `
           <p class="${score === questions.length ? "ok" : "ko"}">Score : ${score} / ${questions.length}</p>
-          <ul class="score-list">${items.join("")}</ul>
+          <div class="results-detail">${items.join("")}</div>
         `;
         summaryEl.className = "result";
       }
@@ -342,7 +376,6 @@
         checked = true;
         saveState();
         renderQuestion();
-        renderSummary();
       }
 
       function resetQuiz() {
