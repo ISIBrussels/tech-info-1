@@ -33,11 +33,20 @@
         background: transparent;
         cursor: pointer;
       }
+      button:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
       .actions {
         display: flex;
         gap: 0.75rem;
         flex-wrap: wrap;
         margin-top: 1rem;
+      }
+      .progress {
+        margin-top: 0.5rem;
+        font-size: 0.95rem;
+        opacity: 0.85;
       }
       .result {
         font-weight: 600;
@@ -53,26 +62,37 @@
         opacity: 0.85;
       }
       .question-feedback {
-        margin-top: 0.5rem;
+        margin-top: 0.75rem;
         font-size: 0.95rem;
+      }
+      .score-list {
+        margin: 0.5rem 0 0;
+        padding-left: 1.2rem;
       }
     </style>
   </head>
   <body>
     <p><a href="../../index.html">← Retour à l'accueil</a> · <a href="cours_seance_01.html">Retour aux slides</a></p>
     <h1>Quiz interactif — Séance 1</h1>
-    <p class="muted">10 questions sur le contenu des slides. Répondre à toutes les questions, puis vérifier.</p>
+    <p class="muted">10 questions sur le contenu des slides.</p>
 
-    <div id="quiz"></div>
+    <section class="card">
+      <p class="progress" id="progress"></p>
+      <div id="quiz"></div>
+      <p class="question-feedback" id="feedback" aria-live="polite"></p>
+    </section>
 
     <div class="actions">
-      <button id="check-btn" type="button">Vérifier</button>
+      <button id="prev-btn" type="button">Précédent</button>
+      <button id="next-btn" type="button">Suivant</button>
+      <button id="check-btn" type="button" hidden>Vérifier tout</button>
       <button id="reset-btn" type="button">Recommencer</button>
     </div>
-    <p id="summary" class="result" aria-live="polite"></p>
+    <div id="summary" class="result" aria-live="polite"></div>
 
     <script>
-      const storageKey = "quiz_seance_01_answers";
+      const storageKey = "quiz_seance_01_answers_v2";
+      const indexKey = "quiz_seance_01_index_v2";
 
       const questions = [
         {
@@ -198,115 +218,169 @@
       ];
 
       const quizEl = document.getElementById("quiz");
+      const progressEl = document.getElementById("progress");
+      const feedbackEl = document.getElementById("feedback");
+      const summaryEl = document.getElementById("summary");
+      const prevBtn = document.getElementById("prev-btn");
+      const nextBtn = document.getElementById("next-btn");
       const checkBtn = document.getElementById("check-btn");
       const resetBtn = document.getElementById("reset-btn");
-      const summaryEl = document.getElementById("summary");
 
-      function renderQuiz() {
-        quizEl.innerHTML = questions
-          .map(
-            (question, index) => `
-          <section class="card" data-question-id="${question.id}">
-            <h2>Question ${index + 1}</h2>
-            <p><strong>${question.text}</strong></p>
-            <div class="answers">
-              ${question.options
-                .map(
-                  (option) => `
-                <label>
-                  <input type="radio" name="${question.id}" value="${option.value}" />
-                  ${option.value}. ${option.label}
-                </label>
-              `
-                )
-                .join("")}
-            </div>
-            <p class="question-feedback" id="${question.id}-feedback" aria-live="polite"></p>
-          </section>
-        `
-          )
-          .join("");
-      }
+      let currentIndex = 0;
+      let checked = false;
+      const answers = {};
 
-      function getAnswers() {
-        const answers = {};
-        for (const question of questions) {
-          const selected = document.querySelector(`input[name="${question.id}"]:checked`);
-          answers[question.id] = selected ? selected.value : null;
+      function loadState() {
+        const rawAnswers = localStorage.getItem(storageKey);
+        const rawIndex = localStorage.getItem(indexKey);
+
+        if (rawAnswers) {
+          try {
+            Object.assign(answers, JSON.parse(rawAnswers));
+          } catch {
+            localStorage.removeItem(storageKey);
+          }
         }
-        return answers;
+
+        if (rawIndex !== null) {
+          const index = Number(rawIndex);
+          if (Number.isInteger(index) && index >= 0 && index < questions.length) {
+            currentIndex = index;
+          }
+        }
       }
 
-      function saveAnswers(answers) {
+      function saveState() {
         localStorage.setItem(storageKey, JSON.stringify(answers));
+        localStorage.setItem(indexKey, String(currentIndex));
       }
 
-      function loadAnswers() {
-        const raw = localStorage.getItem(storageKey);
-        if (!raw) return;
+      function getCurrentQuestion() {
+        return questions[currentIndex];
+      }
 
-        try {
-          const answers = JSON.parse(raw);
-          for (const question of questions) {
-            const value = answers[question.id];
-            if (!value) continue;
-            const input = document.querySelector(`input[name="${question.id}"][value="${value}"]`);
-            if (input) input.checked = true;
-          }
-        } catch {
-          localStorage.removeItem(storageKey);
+      function renderQuestion() {
+        const question = getCurrentQuestion();
+        const selected = answers[question.id] || null;
+
+        progressEl.textContent = `Question ${currentIndex + 1} / ${questions.length}`;
+        quizEl.innerHTML = `
+          <h2>Question ${currentIndex + 1}</h2>
+          <p><strong>${question.text}</strong></p>
+          <div class="answers">
+            ${question.options
+              .map(
+                (option) => `
+              <label>
+                <input
+                  type="radio"
+                  name="${question.id}"
+                  value="${option.value}"
+                  ${selected === option.value ? "checked" : ""}
+                />
+                ${option.value}. ${option.label}
+              </label>
+            `
+              )
+              .join("")}
+          </div>
+        `;
+
+        quizEl.querySelectorAll(`input[name="${question.id}"]`).forEach((input) => {
+          input.addEventListener("change", () => {
+            answers[question.id] = input.value;
+            checked = false;
+            feedbackEl.textContent = "";
+            feedbackEl.className = "question-feedback";
+            summaryEl.innerHTML = "";
+            summaryEl.className = "result";
+            saveState();
+          });
+        });
+
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.hidden = currentIndex === questions.length - 1;
+        checkBtn.hidden = currentIndex !== questions.length - 1;
+
+        if (checked && selected) {
+          const isCorrect = selected === question.correct;
+          feedbackEl.textContent = isCorrect
+            ? `Correct. ${question.feedback}`
+            : `Incorrect. ${question.feedback}`;
+          feedbackEl.className = isCorrect ? "question-feedback ok" : "question-feedback ko";
+        } else {
+          feedbackEl.textContent = "";
+          feedbackEl.className = "question-feedback";
         }
       }
 
-      function clearAnswers() {
-        for (const question of questions) {
-          const selected = document.querySelector(`input[name="${question.id}"]:checked`);
-          if (selected) selected.checked = false;
-          const feedback = document.getElementById(`${question.id}-feedback`);
-          if (feedback) {
-            feedback.textContent = "";
-            feedback.className = "question-feedback";
-          }
-        }
-        localStorage.removeItem(storageKey);
-        summaryEl.textContent = "";
+      function renderSummary() {
+        let score = 0;
+        const items = questions.map((question, index) => {
+          const answer = answers[question.id];
+          const isCorrect = answer === question.correct;
+          if (isCorrect) score += 1;
+          const status = !answer ? "non répondue" : isCorrect ? "correcte" : "incorrecte";
+          return `<li>Question ${index + 1} : ${status}</li>`;
+        });
+
+        summaryEl.innerHTML = `
+          <p class="${score === questions.length ? "ok" : "ko"}">Score : ${score} / ${questions.length}</p>
+          <ul class="score-list">${items.join("")}</ul>
+        `;
         summaryEl.className = "result";
       }
 
-      checkBtn.addEventListener("click", () => {
-        const answers = getAnswers();
+      function checkAll() {
         const unanswered = questions.filter((question) => !answers[question.id]);
-
         if (unanswered.length > 0) {
-          summaryEl.textContent = `Il reste ${unanswered.length} question(s) sans réponse.`;
-          summaryEl.className = "result ko";
+          feedbackEl.textContent = `Il reste ${unanswered.length} question(s) sans réponse.`;
+          feedbackEl.className = "question-feedback ko";
           return;
         }
 
-        saveAnswers(answers);
+        checked = true;
+        saveState();
+        renderQuestion();
+        renderSummary();
+      }
 
-        let score = 0;
-        for (const question of questions) {
-          const feedback = document.getElementById(`${question.id}-feedback`);
-          const isCorrect = answers[question.id] === question.correct;
-          if (isCorrect) {
-            score += 1;
-            feedback.textContent = `Correct. ${question.feedback}`;
-            feedback.className = "question-feedback ok";
-          } else {
-            feedback.textContent = `Incorrect. ${question.feedback}`;
-            feedback.className = "question-feedback ko";
-          }
+      function resetQuiz() {
+        for (const key of Object.keys(answers)) {
+          delete answers[key];
         }
+        currentIndex = 0;
+        checked = false;
+        localStorage.removeItem(storageKey);
+        localStorage.removeItem(indexKey);
+        feedbackEl.textContent = "";
+        feedbackEl.className = "question-feedback";
+        summaryEl.innerHTML = "";
+        summaryEl.className = "result";
+        renderQuestion();
+      }
 
-        summaryEl.textContent = `Score : ${score} / ${questions.length}`;
-        summaryEl.className = score === questions.length ? "result ok" : "result ko";
+      prevBtn.addEventListener("click", () => {
+        if (currentIndex > 0) {
+          currentIndex -= 1;
+          saveState();
+          renderQuestion();
+        }
       });
 
-      resetBtn.addEventListener("click", clearAnswers);
+      nextBtn.addEventListener("click", () => {
+        if (currentIndex < questions.length - 1) {
+          currentIndex += 1;
+          saveState();
+          renderQuestion();
+        }
+      });
 
-      renderQuiz();
-      loadAnswers();
+      checkBtn.addEventListener("click", checkAll);
+      resetBtn.addEventListener("click", resetQuiz);
+
+      loadState();
+      renderQuestion();
     </script>
   </body>
 </html>
