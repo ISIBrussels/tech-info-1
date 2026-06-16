@@ -87,12 +87,39 @@
         font-weight: 600;
         margin-top: 0.5rem;
       }
+      .recap-options {
+        list-style: none;
+        margin: 0.75rem 0 0;
+        padding: 0;
+        display: grid;
+        gap: 0.45rem;
+      }
+      .recap-option {
+        border: 1px solid #d0d7de;
+        border-radius: 8px;
+        padding: 0.45rem 0.65rem;
+      }
+      .recap-option.correct {
+        border-color: #1a7f37;
+        background: rgba(26, 127, 55, 0.08);
+      }
+      .recap-option.wrong {
+        border-color: #cf222e;
+        background: rgba(207, 34, 46, 0.08);
+      }
+      .recap-tag {
+        display: inline-block;
+        margin-left: 0.35rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        opacity: 0.9;
+      }
     </style>
   </head>
   <body>
     <p><a href="../../index.html">← Retour à l'accueil</a> · <a href="cours_seance_01.html">Retour aux slides</a></p>
     <h1>Quiz interactif — Séance 1</h1>
-    <p class="muted">10 questions sur le contenu des slides.</p>
+    <p class="muted">10 questions sur le cours de la séance 1.</p>
 
     <section class="card">
       <p class="progress" id="progress"></p>
@@ -277,9 +304,26 @@
         return questions[currentIndex];
       }
 
-      function getOptionLabel(question, value) {
-        const option = question.options.find((item) => item.value === value);
-        return option ? `${option.value}. ${option.label}` : "—";
+      function renderOptionsRecap(question, answer) {
+        return `
+          <ul class="recap-options">
+            ${question.options
+              .map((option) => {
+                const isCorrect = option.value === question.correct;
+                const isChosen = option.value === answer;
+                const classes = ["recap-option"];
+                if (isCorrect) classes.push("correct");
+                if (isChosen && !isCorrect) classes.push("wrong");
+
+                let tag = "";
+                if (isCorrect) tag = '<span class="recap-tag">bonne réponse</span>';
+                else if (isChosen) tag = '<span class="recap-tag">réponse sélectionnée</span>';
+
+                return `<li class="${classes.join(" ")}">${option.value}. ${option.label}${tag}</li>`;
+              })
+              .join("")}
+          </ul>
+        `;
       }
 
       function renderQuestion() {
@@ -347,12 +391,13 @@
             ? "Non répondue."
             : isCorrect
               ? `Correct. ${question.feedback}`
-              : `Incorrect. Réponse choisie : ${getOptionLabel(question, answer)}. ${question.feedback}`;
+              : `Incorrect. ${question.feedback}`;
 
           return `
             <section class="result-item">
               <h3>Question ${index + 1}</h3>
               <p><strong>${question.text}</strong></p>
+              ${renderOptionsRecap(question, answer)}
               <p class="verdict ${verdictClass}">${verdictText}</p>
             </section>
           `;
