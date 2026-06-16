@@ -100,7 +100,7 @@ jobs:
             <head>
               <meta charset="utf-8" />
               <meta name="viewport" content="width=device-width, initial-scale=1" />
-              <title>Tech Info 1 — Landing page</title>
+              <title>Tech Info 1 - ISIB</title>
               <style>
                 body {
                   max-width: 860px;
