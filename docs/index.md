@@ -10,8 +10,8 @@ Bienvenue. Cette page sert de **landing page** pour consulter :
 | Séance | Thème | Cours | Exercices | Quiz |
 | --- | --- | --- | --- | --- |
 | 1 | Introduction à Python | [Ouvrir](seances/01/cours_seance_01.md) | [Ouvrir](seances/01/exercices_seance_01.md) | [Ouvrir](seances/01/quiz_seance_01.html) |
-| 2 | Logique conditionnelle | [Ouvrir](seances/02/cours_seance_02.md) | [Ouvrir](seances/02/exercices_seance_02.md) | - |
-| 3 | Boucles (`while` & `for`) | [Ouvrir](seances/03/cours_seance_03.md) | [Ouvrir](seances/03/exercices_seance_03.md) | - |
-| 4 | Listes (collections) | [Ouvrir](seances/04/cours_seance_04.md) | [Ouvrir](seances/04/exercices_seance_04.md) | - |
-| 5 | Chaînes & tuples | [Ouvrir](seances/05/cours_seance_05.md) | [Ouvrir](seances/05/exercices_seance_05.md) | - |
-| 6 | Dictionnaires | [Ouvrir](seances/06/cours_seance_06.md) | [Ouvrir](seances/06/exercices_seance_06.md) | - |
+| 2 | *Casting*, fonctions, conditions | [Ouvrir](seances/02/cours_seance_02.md) | [Ouvrir](seances/02/exercices_seance_02.md) | - |
+| 3 | `while`, listes, tuples, `range` | [Ouvrir](seances/03/cours_seance_03.md) | [Ouvrir](seances/03/exercices_seance_03.md) | - |
+| 4 | Boucle `for` et fonctions *built-in* | [Ouvrir](seances/04/cours_seance_04.md) | [Ouvrir](seances/04/exercices_seance_04.md) | - |
+| 5 | Méthodes de `str`, `list` et `tuple` | [Ouvrir](seances/05/cours_seance_05.md) | [Ouvrir](seances/05/exercices_seance_05.md) | - |
+| 6 | `set`, `dict`, *type hinting*, `main()` | [Ouvrir](seances/06/cours_seance_06.md) | [Ouvrir](seances/06/exercices_seance_06.md) | - |

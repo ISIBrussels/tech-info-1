@@ -18,328 +18,354 @@ Introduction à Python
 ## Objectifs de la séance
 
 - Comprendre ce qu'est Python (langage + logiciel)
-- Installer l'environnement minimal pour exécuter du code
-- Écrire et lancer un premier script Python
-- Découvrir le REPL et l'IDE Thonny
+- Écrire et lancer un premier script ; découvrir le REPL et Thonny
+- Opérateurs arithmétiques, variables, commentaires
+- Types `int`, `float` et `bool`
+- Opérateurs de comparaison et logiques
+- Type `str` et *f-string*
 
 ---
 
 ## Python : langage et logiciel
 
-- **Langage de programmation** créé en 1989/1990
-- Pensé au départ pour le **scripting** (automatiser des tâches répétitives)
-- **Open-source** : gratuit, code source consultable et réutilisable
-- **Logiciel** : il faut un interpréteur Python installé sur la machine
+Le terme Python désigne autant un **langage** qu'un **logiciel**.
+
+- Inventé en 1989/90, au départ pour le *scripting*
+- Licence *open-source* : gratuit, y compris à des fins commerciales
+- Code source consultable et réutilisable
+- Pour exécuter du code : installer un **interpréteur** ([python.org/downloads](https://www.python.org/downloads/))
 
 ---
 
-## Interprété vs compilé
+## Un langage interprété
 
-- Python est un **langage interprété**
-- À chaque exécution, l'interpréteur lit et exécute les instructions
-- À l'inverse, un langage compilé (C/C++) produit d'abord un binaire
+À chaque exécution, l'interpréteur traduit les instructions **une par une**.
+
+À l'inverse, un langage compilé (C/C++) analyse d'abord tout le code source.
 
 **Analogie :**
 
-- Interprété : traduction en direct, phrase par phrase
-- Compilé : tout est traduit d'un coup avant la lecture
+- Interprété : un·e interprète traduit en direct, phrase par phrase
+- Compilé : tout est passé dans Translate d'un coup, puis on lit le résultat
 
 ---
 
 ## Conséquences pratiques
 
-- **Avantage** : portabilité (fonctionne sur toute machine avec Python)
-- **Inconvénient** : performances souvent inférieures au code compilé
-- En pratique : excellent pour apprendre, prototyper, automatiser
+- **Avantage** : la portabilité — le programme tourne sur toute machine où Python est installé
+- **Inconvénient** : la performance — une même tâche est en général plus rapide en compilé (typiquement C++)
 
----
-
-## Python et la Programmation Orientée Objet
-
-- Python est **orienté objet**
-- Un objet représente une entité avec données + comportements
-- En Python, « tout est objet » (nombres, chaînes, listes, etc.)
+Python est aussi **orienté objet** : un objet est une entité avec des caractéristiques et des fonctionnalités. En Python, **tout est objet**.
 
 ---
 
 ## Installer Python
 
-- Site officiel : [python.org/downloads](https://www.python.org/downloads/)
-- **Windows** : installer l'exécutable
-- **macOS** : Python peut déjà être installé, mais souvent en version ancienne
-- **Linux** : Python est généralement déjà installé
+- **Windows** : télécharger l'exécutable et l'installer
+- **macOS** : Python est parfois déjà là, souvent trop ancien → installer la version récente
+- **Linux** : Python est forcément installé (version selon la distribution)
 
 ---
 
 ## Éditeur de texte vs éditeur de code
 
-- Un script Python peut être écrit dans n'importe quel éditeur texte
-- Mais un **éditeur de code** apporte :
-  - détection du langage
-  - coloration syntaxique
-  - aide à la saisie
-- Exemple d'outils : Notepad++, Kate, Gedit, Geany, VS Code
+Un script peut s'écrire dans n'importe quel éditeur texte (même le bloc-notes). Un **éditeur de code** apporte :
+
+- détection du langage
+- coloration syntaxique
+- aide à la frappe
+
+Exemples : Notepad++ (Windows), Xcode (macOS), Kate / Gedit / Geany (Linux).
+
+Plus léger et plus polyvalent qu'un IDE complet — utile pour lire ou modifier un fichier rapidement.
 
 ---
 
-## Pourquoi pas toujours un IDE ?
+## Premier script
 
-- Un éditeur de code est souvent :
-  - plus léger
-  - plus rapide à lancer
-  - plus polyvalent pour ouvrir différents types de fichiers
-- Un IDE devient utile quand on veut tout faire au même endroit
-
----
-
-## Premier script Python
-
-Créer un fichier `hello_world.py` avec :
+Dans l'éditeur, écrire :
 
 ```python
 print("hello world")
 ```
 
-- `print()` affiche un message en sortie
-- Une instruction Python correspond souvent à une ligne de code
+- Une **instruction** est une étape du programme (souvent une ligne)
+- `print()` est une **fonction** : elle affiche un message en sortie
+
+Enregistrer sous `hello_world.py` (sur Windows, choisir le type `.py`).
 
 ---
 
 ## Exécuter le script
 
-1. Ouvrir un terminal
-1. Aller dans le dossier du script :
+Ouvrir un terminal (`cmd` / PowerShell, Terminal, Konsole…).
 
 ```bash
-cd /chemin/vers/hello_world
-```
-
-1. Exécuter :
-
-```bash
+cd /chemin/vers/le/dossier
 python hello_world.py
 ```
+
+- `cd` : *Change Directory*, changer de dossier courant
+- `python hello_world.py` : lancer le script
 
 ---
 
 ## Le REPL (shell interactif)
 
-- Lancer `python` sans fichier dans un terminal
-- Le REPL exécute les instructions en direct
-- Très utile pour tester rapidement des morceaux de code
-- Idéal pour vérifier une idée avant de la mettre dans un fichier
+Taper `python` sans fichier : Python lance la console interactive (*REPL*).
+
+- Interprète les instructions **en direct**
+- Utile pour tester un petit bout de code sans l'écrire « en dur » dans un fichier
 
 ---
 
-## Thonny : IDE Python débutant
+## Thonny : un IDE
 
-- Thonny est un environnement de développement intégré (IDE)
-- Permet d'éditer, exécuter et déboguer sans quitter l'outil
-- Exercice suggéré : ouvrir `hello_world.py` puis afficher :
+*Thonny* est un *IDE* (*Integrated Development Environment*).
+
+Contrairement à un simple éditeur, on y **édite** et **exécute** le code au même endroit.
+
+Ouvrir `hello_world.py` dans Thonny et le modifier pour afficher `"Goodbye, World."`.
+
+---
+
+## Les opérateurs arithmétiques
+
+Dans le REPL :
 
 ```python
-print("Goodbye, World.")
+4 + 5
+```
+
+| symbole | fonctionnalité   |
+|---------|------------------|
+| `+`     | addition         |
+| `-`     | soustraction     |
+| `*`     | multiplication   |
+| `**`    | puissance        |
+| `/`     | division         |
+| `//`    | division entière |
+| `%`     | modulo           |
+
+L'intérêt réel : **stocker** ces résultats pour les réutiliser.
+
+---
+
+## Les variables
+
+Une variable **contient** une valeur — plus précisément, en Python, elle **référence** un objet.
+
+Rappel : **tout est objet**.
+
+Analogie bibliothèque :
+
+- la **côte** du livre = la variable (elle n'est pas le livre)
+- le **livre** = l'objet référencé
+- les **étagères** = la RAM
+
+Quand un objet est créé, il est stocké en mémoire. La variable permet de le retrouver.
+
+---
+
+## Affectation
+
+```python
+x = 5
+```
+
+- `=` n'est **pas** l'égalité mathématique
+- il **affecte** l'objet à droite à la variable à gauche
+- à gauche du `=` : toujours une variable
+
+**Convention** : *snake_case* (`nb_values`), anglais, pas d'accents.
+
+Dans le REPL, taper `x` affiche ce vers quoi `x` référence.
+
+---
+
+## Réutiliser des variables
+
+```python
+y = 10
+z = x + y
+z
+```
+
+`z` « vaut » `15` — plus exactement : `z` référence un objet de type `int` égal à 15.
+
+---
+
+## Les commentaires
+
+Un commentaire commence par `#`. Il est « invisible » pour l'interpréteur.
+
+Pour commenter plusieurs lignes :
+
+```python
+"""
+print(4 + 5)
+print(5 + 10)
+print(10 + 50)
+"""
 ```
 
 ---
 
-## Variables
+## Les types natifs
 
-Une variable est un **nom** qui référence un objet en mémoire.
+Chaque objet a un **type** : ce qu'il *est*. Python fournit des types *built-in*.
 
-- Idée clé : une variable est une **référence**
-- Ce n'est pas une "boîte" qui contient directement la valeur
-- Une affectation peut changer ce que le nom référence
+| Python | Français |
+|--------|----------|
+| `int` | entier |
+| `float` | nombre à virgule flottante |
+| `complex` | complexe |
+| `bool` | booléen |
+| `str` | chaîne de caractères |
+| `list`, `tuple`, `set`, `dict`… | collections (plus tard) |
 
-```python
-age = 20
-name = "Ada"
-temperature = 18.5
-```
-
-- Le `=` de l'affectation lie un nom à une valeur
-- Choisir des noms explicites améliore la lisibilité
-- Une variable peut être réaffectée
+À partir d'ici : on travaille dans un **script**, plus dans le REPL.
 
 ---
 
-## Variables : analogie de l'étiquette
+## Types numériques et booléen
 
-Analogie : une étiquette collée sur un objet :
+- `int` : entier, positif ou négatif
+- `float` : virgule = **point** (`a = 4.52`)
+- `bool` : uniquement `True` ou `False`
 
-- Le nom de variable = l'étiquette (`item`)
-- L'objet = la valeur référencée (`"book"`, puis `"pen"`)
-- Réaffecter = décoller l'étiquette et la recoller ailleurs
+Python est un langage **dynamique** :
 
 ```python
-item = "book"
-item = "pen"
+a = 5
+a = 8.55
+a = True
 ```
 
-Après la 2e ligne, `item` référence `"pen"` (plus `"book"`).
+Une même variable peut successivement référencer un `int`, un `float`, puis un `bool`. Dans d'autres langages, le type est fixé à la déclaration.
 
 ---
 
-## Commentaires
-
-Les commentaires servent à documenter le code.
+## Logique booléenne
 
 ```python
-# This is a single-line comment
-age = 20  # end-of-line comment
+a, b = True, False
 ```
 
-- Python ignore les commentaires à l'exécution
-- Un commentaire explique le **pourquoi**, pas l'évidence
+**Affectation parallèle** : `a` devient `True`, `b` devient `False`.
 
----
-
-## Types
-
-- Chaque valeur en Python possède un **type** (entier, décimal, texte, etc.)
-- Le type précise la nature de la donnée et les opérations possibles
-- Python déduit le type **à l'affectation** : aucune déclaration explicite n'est requise
-- La fonction `type()` permet d'inspecter le type d'une valeur
-
-```python
-age = 20
-print(type(age))       # <class 'int'>
-print(type(18.5))      # <class 'float'>
-print(type("Ada"))     # <class 'str'>
-```
-
----
-
-## Types numériques
-
-Python propose trois types numériques de base :
-
-```python
-integer = 42         # int
-decimal_number = 3.14  # float
-complex_number = 2 + 3j  # complex
-```
-
-- `int` : nombres entiers
-- `float` : nombres à virgule flottante
-- `complex` : nombres complexes (moins fréquent)
-
----
-
-## Opérateurs arithmétiques
-
-Dans le REPL, il suffit d'écrire une opération arithmétique puis d'appuyer sur Entrée.
-
-```python
-2 + 3   # addition
-10 - 4  # subtraction
-6 * 7   # multiplication
-8 / 2   # division
-7 // 2  # floor division
-7 % 2   # modulo (remainder)
-2 ** 3  # power
-```
-
----
-
-## Type booléen
-
-Le type `bool` ne contient que deux valeurs :
-
-```python
-True
-False
-```
-
-- Très utilisé dans les conditions (`if`, `while`)
-- Résultat typique d'une comparaison
+L'intérêt principal des booléens : le résultat d'une **comparaison**.
 
 ---
 
 ## Opérateurs de comparaison
 
-```python
-5 == 5   # equal
-5 != 3   # not equal
-8 > 2    # strictly greater than
-8 >= 8   # greater than or equal
-3 < 9    # strictly less than
-3 <= 3   # less than or equal
-```
+| symbole | signification |
+|---------|---------------|
+| `<` `>` | strictement inférieur / supérieur |
+| `<=` `>=` | inférieur / supérieur ou égal |
+| `==` | égal |
+| `!=` | différent |
+| `x is y` | même objet |
+| `x is not y` | objets distincts |
 
-Ces expressions renvoient toujours un booléen (`True` ou `False`).
+```python
+a = 5 < 6
+print(a)   # True
+```
 
 ---
 
 ## Opérateurs logiques
 
-```python
-True and False  # logical AND
-True or False   # logical OR
-not True        # logical NOT
-```
-
-Exemple :
+| symbole | signification |
+|---------|---------------|
+| `x or y` | OU |
+| `x and y` | ET |
+| `not x` | NON |
 
 ```python
-age = 20
-is_adult = age >= 18 and age < 130
+a = 5 < 6 and 10 < 6
+print(a)   # False
 ```
+
+`and` : les **deux** conditions doivent être vraies. Avec `or`, une seule suffit → `True`.
 
 ---
 
-## Type chaîne de caractère (`str`)
+## Chaînes de caractères (`str`)
 
 ```python
-first_name = "Lina"
-message = "Hello"
+a_message = "hello world"
+another_message = 'hello "friends"'
+a_sentence = """I hope you are doing "well"\n me, yes"""
+print(another_message + a_sentence)
 ```
 
-- Une `str` est une suite de caractères
-- On peut concaténer avec `+`
-- On peut obtenir la longueur avec `len(text)`
+- guillemets, apostrophes ou triples guillemets
+- `\n` : saut de ligne ; `\t` : tabulation
+- `+` : **concaténation**
 
 ---
 
-## f-strings
+## Une `str` est une séquence
 
-Les f-strings facilitent l'insertion de variables dans du texte :
+On accède à un caractère par son **indice** (entre crochets).
 
 ```python
-first_name = "Lina"
-age = 20
-sentence = f"{first_name} is {age} years old."
-print(sentence)
+first_character = a_message[0]     # h
+third_character = a_message[2]     # l
+last_character = a_message[-1]     # d
 ```
 
-- Préfixe `f` devant la chaîne
-- Variables/expressions entre accolades `{...}`
-- Plus lisible que la concaténation manuelle
+**On commence à compter à partir de 0.**
+
+Un indice négatif part de la fin (`-2` = avant-dernier).
 
 ---
 
-## Erreurs et messages d'erreur
+## Les f-strings
 
-Quand une instruction est incorrecte, Python affiche une erreur.
+Concaténer un nombre et du texte :
 
 ```python
-2 +
+print("You got " + str(english_mark)
+      + " in english and " + str(math_mark) + " in maths.")
 ```
 
-- Il faut **lire le message d'erreur** avant de corriger
-- Le type d'erreur (`SyntaxError`, `NameError`, etc.) donne une piste
-- La ligne indiquée aide à localiser le problème
+Même résultat, plus lisible (depuis Python 3.6) :
+
+```python
+print(f"You got {english_mark} in english and {math_mark} in maths.")
+```
+
+Le `f` devant les guillemets active les accolades `{…}` comme emplacements. Sans le `f`, `{` et `}` sont des caractères ordinaires.
+
+---
+
+## Les erreurs
+
+```python
+print(4           # Will generate an error
+```
+
+```text
+SyntaxError: '(' was never closed
+```
+
+**Lire le message d'erreur** : type (`SyntaxError`, `NameError`…), fichier, ligne — souvent suffisant pour trouver le problème.
 
 ---
 
 ## Conclusion de la séance
 
-- Python : langage interprété, open-source, portable
-- Un programme : un script exécuté par l'interpréteur Python
-- Éditeur de code pour écrire le script ; un IDE regroupe en plus l'exécution et le débogage
-- Variables, types (`int`, `float`, `bool`, `str`) et opérateurs de base
-- Opérateurs de comparaison et logique pour produire des conditions
-- Commentaires pour documenter le code
-- f-strings pour insérer des variables dans un texte fixe au moment de l'exécution
+- Python : langage interprété, open-source, portable ; tout est objet
+- Script `.py`, REPL, éditeur de code ou IDE (Thonny)
+- Variables = références ; `=` est une affectation
+- Types `int`, `float`, `bool`, `str` ; langage dynamique
+- Comparaisons et opérateurs logiques → booléens
+- `str` : séquence, indices, concaténation, *f-strings*
+- Lire les messages d'erreur
 
+[→ Exercices](exercices_seance_01.html)
 [→ Quiz interactif](quiz_seance_01.html)
