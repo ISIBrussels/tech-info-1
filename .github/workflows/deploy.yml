@@ -209,13 +209,15 @@ jobs:
                   padding: 0.3rem 0.7rem;
                   font-size: 0.85rem;
                   font-weight: 600;
-                  color: #fff;
+                  color: var(--color-primary);
                   text-decoration: none;
-                  background: var(--color-primary);
+                  background: transparent;
+                  border: 1px solid var(--color-primary);
                 }
 
                 table a:hover {
-                  background: var(--color-secondary);
+                  background: var(--color-primary);
+                  color: #fff;
                 }
 
                 code {
