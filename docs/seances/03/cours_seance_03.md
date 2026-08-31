@@ -1,5 +1,6 @@
 ---
 marp: true
+theme: tech-info
 title: "Séance 3 — while, listes, tuples, range"
 paginate: true
 footer: "[←](../../index.html) · Tech Info 1 — Séance 3"

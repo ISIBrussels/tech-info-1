@@ -1,5 +1,6 @@
 ---
 marp: true
+theme: tech-info
 title: "Séance 5 — Méthodes de str, list et tuple"
 paginate: true
 footer: "[←](../../index.html) · Tech Info 1 — Séance 5"

@@ -1,5 +1,6 @@
 ---
 marp: true
+theme: tech-info
 title: "Séance 2 — Casting, fonctions, conditions"
 paginate: true
 footer: "[←](../../index.html) · Tech Info 1 — Séance 2"

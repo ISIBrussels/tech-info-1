@@ -1,5 +1,6 @@
 ---
 marp: true
+theme: tech-info
 title: "Séance 4 — Boucle for et fonctions built-in"
 paginate: true
 footer: "[←](../../index.html) · Tech Info 1 — Séance 4"

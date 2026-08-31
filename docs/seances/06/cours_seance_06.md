@@ -1,5 +1,6 @@
 ---
 marp: true
+theme: tech-info
 title: "Séance 6 — set, dict, type hinting, main"
 paginate: true
 footer: "[←](../../index.html) · Tech Info 1 — Séance 6"
