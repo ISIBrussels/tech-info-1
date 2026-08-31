@@ -11,8 +11,7 @@ footer: "[Retour à l'accueil](../../index.html)"
 
 Méthodes d'instance de `str`, `list` et `tuple`
 
-[← Retour à l'accueil](../../index.html)
-[→ Quiz interactif](quiz_seance_05.html)
+[→ Quiz](quiz_seance_05.html)
 [→ Exercices](exercices_seance_05.html)
 
 ---
@@ -133,5 +132,5 @@ Un tuple n'a pas `append`, `sort`, `reverse`… : il est immuable.
 - `list` mutable : `append`, `extend`, `pop`, `sort`, `reverse`
 - `tuple` : essentiellement `count` et `index`
 
+[→ Quiz](quiz_seance_05.html)
 [→ Exercices](exercices_seance_05.html)
-[→ Quiz interactif](quiz_seance_05.html)

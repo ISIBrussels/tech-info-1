@@ -11,8 +11,7 @@ footer: "[Retour à l'accueil](../../index.html)"
 
 Introduction à Python
 
-[← Retour à l'accueil](../../index.html)
-[→ Quiz interactif](quiz_seance_01.html)
+[→ Quiz](quiz_seance_01.html)
 [→ Exercices](exercices_seance_01.html)
 
 ---
@@ -369,5 +368,5 @@ SyntaxError: '(' was never closed
 - `str` : séquence, indices, concaténation, *f-strings*
 - Lire les messages d'erreur
 
+[→ Quiz](quiz_seance_01.html)
 [→ Exercices](exercices_seance_01.html)
-[→ Quiz interactif](quiz_seance_01.html)

@@ -11,8 +11,7 @@ footer: "[Retour à l'accueil](../../index.html)"
 
 Boucle `for` et fonctions *built-in*
 
-[← Retour à l'accueil](../../index.html)
-[→ Quiz interactif](quiz_seance_04.html)
+[→ Quiz](quiz_seance_04.html)
 [→ Exercices](exercices_seance_04.html)
 
 ---
@@ -180,5 +179,5 @@ selected_numbers = numbers[slice(2, 8, 2)]
 - *Built-in* : nombres (`abs`, `round`…), itérables (`len`, `sum`, `zip`…), bases, Unicode
 - Constructeurs = *casting* ; `slice` ≡ `seq[start:stop:step]`
 
+[→ Quiz](quiz_seance_04.html)
 [→ Exercices](exercices_seance_04.html)
-[→ Quiz interactif](quiz_seance_04.html)

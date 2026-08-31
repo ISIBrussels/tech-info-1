@@ -11,8 +11,7 @@ footer: "[Retour à l'accueil](../../index.html)"
 
 *Casting*, fonctions, constantes et structures conditionnelles
 
-[← Retour à l'accueil](../../index.html)
-[→ Quiz interactif](quiz_seance_02.html)
+[→ Quiz](quiz_seance_02.html)
 [→ Exercices](exercices_seance_02.html)
 
 ---
@@ -245,5 +244,5 @@ On lit les niveaux grâce à l'indentation.
 - Variables locales ; `pass` ; constantes = convention MAJUSCULES
 - `if` / `elif` / `else` : un seul chemin ; l'ordre des conditions est décisif
 
+[→ Quiz](quiz_seance_02.html)
 [→ Exercices](exercices_seance_02.html)
-[→ Quiz interactif](quiz_seance_02.html)
