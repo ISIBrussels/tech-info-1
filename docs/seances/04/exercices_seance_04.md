@@ -139,3 +139,5 @@ Exemple : noms `["Ada", "Alan"]` et notes `[18.34, 12.0]` donnent des chaînes d
   <a href="../../index.html">← Retour à l'accueil</a>
   <a href="cours_seance_04.html">Slides du cours</a>
 </nav>
+
+<footer class="site-footer"><a href="mailto:shuraux@he2b.be">Sylvain Huraux - HE2B - ISIB</a></footer>

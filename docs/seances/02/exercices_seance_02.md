@@ -121,3 +121,5 @@ Rappel : une année est bissextile si elle est divisible par 4, sauf si elle est
   <a href="../../index.html">← Retour à l'accueil</a>
   <a href="cours_seance_02.html">Slides du cours</a>
 </nav>
+
+<footer class="site-footer"><a href="mailto:shuraux@he2b.be">Sylvain Huraux - HE2B - ISIB</a></footer>

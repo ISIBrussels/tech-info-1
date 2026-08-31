@@ -3,7 +3,7 @@ marp: true
 theme: tech-info
 title: "Séance 3 — while, listes, tuples, range"
 paginate: true
-footer: "[←](../../index.html) · Tech Info 1 — Séance 3"
+footer: "[←](../../index.html) · Tech Info 1 — Séance 3 · [Sylvain Huraux - HE2B - ISIB](mailto:shuraux@he2b.be)"
 ---
 
 # Séance 3
@@ -11,8 +11,8 @@ footer: "[←](../../index.html) · Tech Info 1 — Séance 3"
 Boucle `while` et séquences (`list`, `tuple`, `range`)
 
 [← Retour à l'accueil](../../index.html)
-[→ Exercices](exercices_seance_03.html)
 [→ Quiz interactif](quiz_seance_03.html)
+[→ Exercices](exercices_seance_03.html)
 
 ---
 

@@ -3,7 +3,7 @@ marp: true
 theme: tech-info
 title: "Séance 6 — set, dict, type hinting, main"
 paginate: true
-footer: "[←](../../index.html) · Tech Info 1 — Séance 6"
+footer: "[←](../../index.html) · Tech Info 1 — Séance 6 · [Sylvain Huraux - HE2B - ISIB](mailto:shuraux@he2b.be)"
 ---
 
 # Séance 6
@@ -11,8 +11,8 @@ footer: "[←](../../index.html) · Tech Info 1 — Séance 6"
 Types `set` et `dict`, *type hinting*, fonction `main()`
 
 [← Retour à l'accueil](../../index.html)
-[→ Exercices](exercices_seance_06.html)
 [→ Quiz interactif](quiz_seance_06.html)
+[→ Exercices](exercices_seance_06.html)
 
 ---
 

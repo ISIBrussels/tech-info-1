@@ -208,6 +208,25 @@
         color: var(--color-secondary);
         padding: 0.1em 0.35em;
       }
+
+      .site-footer {
+        margin-top: 2.5rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--color-border);
+        text-align: center;
+        font-size: 0.9rem;
+        color: var(--color-secondary);
+      }
+
+      .site-footer a {
+        color: var(--color-secondary);
+        text-decoration: underline;
+        font-weight: 400;
+      }
+
+      .site-footer a:hover {
+        color: var(--color-primary);
+      }
     </style>
   </head>
   <body>
@@ -446,5 +465,7 @@
       loadState();
       renderQuestion();
     </script>
+
+    <footer class="site-footer"><a href="mailto:shuraux@he2b.be">Sylvain Huraux - HE2B - ISIB</a></footer>
   </body>
 </html>

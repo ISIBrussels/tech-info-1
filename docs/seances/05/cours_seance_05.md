@@ -3,7 +3,7 @@ marp: true
 theme: tech-info
 title: "Séance 5 — Méthodes de str, list et tuple"
 paginate: true
-footer: "[←](../../index.html) · Tech Info 1 — Séance 5"
+footer: "[←](../../index.html) · Tech Info 1 — Séance 5 · [Sylvain Huraux - HE2B - ISIB](mailto:shuraux@he2b.be)"
 ---
 
 # Séance 5
@@ -11,8 +11,8 @@ footer: "[←](../../index.html) · Tech Info 1 — Séance 5"
 Méthodes d'instance de `str`, `list` et `tuple`
 
 [← Retour à l'accueil](../../index.html)
-[→ Exercices](exercices_seance_05.html)
 [→ Quiz interactif](quiz_seance_05.html)
+[→ Exercices](exercices_seance_05.html)
 
 ---
 

@@ -96,3 +96,5 @@ Déclarez une variable `sentence` et affectez-lui une chaine de caractère conte
   <a href="../../index.html">← Retour à l'accueil</a>
   <a href="cours_seance_01.html">Slides du cours</a>
 </nav>
+
+<footer class="site-footer"><a href="mailto:shuraux@he2b.be">Sylvain Huraux - HE2B - ISIB</a></footer>

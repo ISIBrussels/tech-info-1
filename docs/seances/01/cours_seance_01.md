@@ -3,7 +3,7 @@ marp: true
 theme: tech-info
 title: "Séance 1 - Introduction à Python"
 paginate: true
-footer: "[←](../../index.html) · Tech Info 1 - Séance 1"
+footer: "[←](../../index.html) · Tech Info 1 — Séance 1 · [Sylvain Huraux - HE2B - ISIB](mailto:shuraux@he2b.be)"
 ---
 
 ## Séance 1
@@ -11,8 +11,8 @@ footer: "[←](../../index.html) · Tech Info 1 - Séance 1"
 Introduction à Python
 
 [← Retour à l'accueil](../../index.html)
-[→ Exercices](exercices_seance_01.html)
 [→ Quiz interactif](quiz_seance_01.html)
+[→ Exercices](exercices_seance_01.html)
 
 ---
 

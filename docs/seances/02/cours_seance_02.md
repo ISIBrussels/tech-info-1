@@ -3,7 +3,7 @@ marp: true
 theme: tech-info
 title: "Séance 2 — Casting, fonctions, conditions"
 paginate: true
-footer: "[←](../../index.html) · Tech Info 1 — Séance 2"
+footer: "[←](../../index.html) · Tech Info 1 — Séance 2 · [Sylvain Huraux - HE2B - ISIB](mailto:shuraux@he2b.be)"
 ---
 
 # Séance 2
@@ -11,8 +11,8 @@ footer: "[←](../../index.html) · Tech Info 1 — Séance 2"
 *Casting*, fonctions, constantes et structures conditionnelles
 
 [← Retour à l'accueil](../../index.html)
-[→ Exercices](exercices_seance_02.html)
 [→ Quiz interactif](quiz_seance_02.html)
+[→ Exercices](exercices_seance_02.html)
 
 ---
 

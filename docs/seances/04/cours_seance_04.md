@@ -3,7 +3,7 @@ marp: true
 theme: tech-info
 title: "Séance 4 — Boucle for et fonctions built-in"
 paginate: true
-footer: "[←](../../index.html) · Tech Info 1 — Séance 4"
+footer: "[←](../../index.html) · Tech Info 1 — Séance 4 · [Sylvain Huraux - HE2B - ISIB](mailto:shuraux@he2b.be)"
 ---
 
 # Séance 4
@@ -11,8 +11,8 @@ footer: "[←](../../index.html) · Tech Info 1 — Séance 4"
 Boucle `for` et fonctions *built-in*
 
 [← Retour à l'accueil](../../index.html)
-[→ Exercices](exercices_seance_04.html)
 [→ Quiz interactif](quiz_seance_04.html)
+[→ Exercices](exercices_seance_04.html)
 
 ---
 
