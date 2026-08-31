@@ -11,6 +11,7 @@ Boucle `while` et séquences (`list`, `tuple`, `range`)
 
 [← Retour à l'accueil](../../index.html)
 [→ Exercices](exercices_seance_03.html)
+[→ Quiz interactif](quiz_seance_03.html)
 
 ---
 
@@ -211,3 +212,4 @@ integer_value = int(4.0)
 - `tuple` : immuable ; `range` : suite d'entiers
 
 [→ Exercices](exercices_seance_03.html)
+[→ Quiz interactif](quiz_seance_03.html)

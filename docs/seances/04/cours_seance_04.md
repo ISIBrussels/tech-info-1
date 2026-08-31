@@ -11,6 +11,7 @@ Boucle `for` et fonctions *built-in*
 
 [← Retour à l'accueil](../../index.html)
 [→ Exercices](exercices_seance_04.html)
+[→ Quiz interactif](quiz_seance_04.html)
 
 ---
 
@@ -178,3 +179,4 @@ selected_numbers = numbers[slice(2, 8, 2)]
 - Constructeurs = *casting* ; `slice` ≡ `seq[start:stop:step]`
 
 [→ Exercices](exercices_seance_04.html)
+[→ Quiz interactif](quiz_seance_04.html)

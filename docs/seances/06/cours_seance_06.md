@@ -11,6 +11,7 @@ Types `set` et `dict`, *type hinting*, fonction `main()`
 
 [← Retour à l'accueil](../../index.html)
 [→ Exercices](exercices_seance_06.html)
+[→ Quiz interactif](quiz_seance_06.html)
 
 ---
 
@@ -201,3 +202,4 @@ Le rôle exact de cette condition sera vu plus tard. **À l'examen** : toujours 
 - Script structuré : définitions, puis `main()`, puis `if __name__ == "__main__": main()`
 
 [→ Exercices](exercices_seance_06.html)
+[→ Quiz interactif](quiz_seance_06.html)

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Quiz interactif — Séance 1</title>
+    <title>Quiz interactif — Séance 3</title>
     <style>
       :root {
         --color-primary: #0075c9;
@@ -211,9 +211,9 @@
     </style>
   </head>
   <body>
-    <p><a href="../../index.html">← Retour à l'accueil</a> · <a href="cours_seance_01.html">Retour aux slides</a></p>
-    <h1>Quiz interactif — Séance 1</h1>
-    <p class="muted">10 questions sur le cours de la séance 1.</p>
+    <p><a href="../../index.html">← Retour à l'accueil</a> · <a href="cours_seance_03.html">Retour aux slides</a></p>
+    <h1>Quiz interactif — Séance 3</h1>
+    <p class="muted">Placeholder : une question dummy, à remplacer plus tard.</p>
 
     <section class="card">
       <p class="progress" id="progress"></p>
@@ -230,129 +230,21 @@
     <div id="summary" class="result" aria-live="polite"></div>
 
     <script>
-      const storageKey = "quiz_seance_01_answers_v2";
-      const indexKey = "quiz_seance_01_index_v2";
+      const storageKey = "quiz_seance_03_answers_v1";
+      const indexKey = "quiz_seance_03_index_v1";
 
       const questions = [
         {
           id: "q1",
-          text: "Quel opérateur sert à affecter une valeur à une variable en Python ?",
+          text: "Ceci est une question placeholder. Quelle est la bonne réponse ?",
           options: [
-            { value: "A", label: "<code>==</code>" },
-            { value: "B", label: "<code>=</code>" },
-            { value: "C", label: "<code>:=</code>" },
-            { value: "D", label: "<code>!=</code>" },
-          ],
-          correct: "B",
-          feedback: "L'opérateur d'affectation est <code>=</code>. <code>==</code> sert à comparer.",
-        },
-        {
-          id: "q2",
-          text: "Python est principalement considéré comme un langage…",
-          options: [
-            { value: "A", label: "compilé" },
-            { value: "B", label: "interprété" },
-            { value: "C", label: "assembleur" },
-            { value: "D", label: "machine" },
-          ],
-          correct: "B",
-          feedback: "Python est interprété : l'interpréteur lit et exécute les instructions à chaque lancement.",
-        },
-        {
-          id: "q3",
-          text: "En Python, une variable est surtout…",
-          options: [
-            { value: "A", label: "une boîte qui contient directement la valeur" },
-            { value: "B", label: "un nom qui référence un objet en mémoire" },
-            { value: "C", label: "un type déclaré explicitement avant usage" },
-            { value: "D", label: "une fonction prédéfinie du langage" },
-          ],
-          correct: "B",
-          feedback: "Une variable est une référence : un nom lié à un objet, pas une boîte contenant la valeur.",
-        },
-        {
-          id: "q4",
-          text: "Comment marque-t-on un commentaire sur une ligne en Python ?",
-          options: [
-            { value: "A", label: "avec <code>//</code>" },
-            { value: "B", label: "avec <code>/* ... */</code>" },
-            { value: "C", label: "avec <code>#</code>" },
-            { value: "D", label: "avec <code>--</code>" },
+            { value: "A", label: "Réponse A" },
+            { value: "B", label: "Réponse B" },
+            { value: "C", label: "La bonne réponse" },
+            { value: "D", label: "Réponse D" },
           ],
           correct: "C",
-          feedback: "Les commentaires Python commencent par <code>#</code> et sont ignorés à l'exécution.",
-        },
-        {
-          id: "q5",
-          text: "Quel est le type de la valeur <code>3.14</code> en Python ?",
-          options: [
-            { value: "A", label: "<code>int</code>" },
-            { value: "B", label: "<code>float</code>" },
-            { value: "C", label: "<code>bool</code>" },
-            { value: "D", label: "<code>str</code>" },
-          ],
-          correct: "B",
-          feedback: "<code>3.14</code> est un nombre à virgule flottante, donc de type <code>float</code>.",
-        },
-        {
-          id: "q6",
-          text: "Que renvoie l'expression <code>5 == 5</code> ?",
-          options: [
-            { value: "A", label: "le nombre <code>5</code>" },
-            { value: "B", label: "le nombre <code>0</code>" },
-            { value: "C", label: "<code>True</code>" },
-            { value: "D", label: "la chaîne <code>\"5\"</code>" },
-          ],
-          correct: "C",
-          feedback: "Une comparaison renvoie toujours un booléen. Ici, l'égalité est vraie : <code>True</code>.",
-        },
-        {
-          id: "q7",
-          text: "Quelle est la valeur de <code>True and False</code> ?",
-          options: [
-            { value: "A", label: "<code>True</code>" },
-            { value: "B", label: "<code>False</code>" },
-            { value: "C", label: "<code>None</code>" },
-            { value: "D", label: "une erreur d'exécution" },
-          ],
-          correct: "B",
-          feedback: "L'opérateur <code>and</code> n'est vrai que si les deux opérandes sont vrais.",
-        },
-        {
-          id: "q8",
-          text: "À quoi sert principalement le REPL Python ?",
-          options: [
-            { value: "A", label: "compiler le code en binaire avant exécution" },
-            { value: "B", label: "exécuter des instructions en direct pour tester du code" },
-            { value: "C", label: "créer automatiquement des fichiers <code>.py</code>" },
-            { value: "D", label: "installer des bibliothèques externes" },
-          ],
-          correct: "B",
-          feedback: "Le REPL permet de lancer <code>python</code> sans fichier et de tester des instructions immédiatement.",
-        },
-        {
-          id: "q9",
-          text: "Par rapport à un éditeur de code, un IDE ajoute surtout…",
-          options: [
-            { value: "A", label: "uniquement la coloration syntaxique" },
-            { value: "B", label: "l'exécution et le débogage au même endroit" },
-            { value: "C", label: "l'obligation de déclarer les types explicitement" },
-            { value: "D", label: "la conversion automatique du code en C++" },
-          ],
-          correct: "B",
-          feedback: "Un IDE regroupe édition, exécution et débogage ; l'éditeur de code sert surtout à écrire le script.",
-        },
-        {
-          id: "q10",
-          text: "Quelle syntaxe définit correctement une f-string en Python ?",
-          options: [
-            { value: "A", label: "<code>\"Bonjour {nom}\"</code>" },
-            { value: "B", label: "<code>f\"Bonjour {nom}\"</code>" },
-            { value: "C", label: "<code>str(\"Bonjour\", nom)</code>" },
-            { value: "D", label: "<code>format(\"Bonjour {nom}\")</code>" },
-          ],
-          correct: "B",
-          feedback: "Une f-string est préfixée par <code>f</code> ; les variables s'insèrent entre accolades.",
+          feedback: "Placeholder : la bonne réponse est C. Remplacez cette question par le quiz de la séance 3.",
         },
       ];
 

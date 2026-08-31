@@ -11,6 +11,7 @@ footer: "[←](../../index.html) · Tech Info 1 — Séance 2"
 
 [← Retour à l'accueil](../../index.html)
 [→ Exercices](exercices_seance_02.html)
+[→ Quiz interactif](quiz_seance_02.html)
 
 ---
 
@@ -243,3 +244,4 @@ On lit les niveaux grâce à l'indentation.
 - `if` / `elif` / `else` : un seul chemin ; l'ordre des conditions est décisif
 
 [→ Exercices](exercices_seance_02.html)
+[→ Quiz interactif](quiz_seance_02.html)

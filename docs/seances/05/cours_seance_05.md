@@ -11,6 +11,7 @@ Méthodes d'instance de `str`, `list` et `tuple`
 
 [← Retour à l'accueil](../../index.html)
 [→ Exercices](exercices_seance_05.html)
+[→ Quiz interactif](quiz_seance_05.html)
 
 ---
 
@@ -131,3 +132,4 @@ Un tuple n'a pas `append`, `sort`, `reverse`… : il est immuable.
 - `tuple` : essentiellement `count` et `index`
 
 [→ Exercices](exercices_seance_05.html)
+[→ Quiz interactif](quiz_seance_05.html)
