@@ -1,6 +1,9 @@
 # Séance 5 — Exercices
 
-[← Retour à l’accueil](../../index.html) · [Slides du cours](cours_seance_05.html)
+<nav class="page-nav">
+  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="cours_seance_05.html">Slides du cours</a>
+</nav>
 
 ## A. Chaînes de caractères
 
@@ -188,3 +191,8 @@
 ### 45. Inventaire avec remise à zéro
 
 Écrivez une fonction qui prend une liste d’inventaire du type `["tomato - 10", "carrot - 2"]`, une action parmi `"add"`, `"remove"`, `"count"` et `"clear"`, et éventuellement un nom de produit selon l’action. Pour `"clear"`, la liste d’inventaire devient vide (méthode du type `clear`). Pour les autres actions, même logique que précédemment (vous fixez le format des lignes).
+
+<nav class="page-nav">
+  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="cours_seance_05.html">Slides du cours</a>
+</nav>

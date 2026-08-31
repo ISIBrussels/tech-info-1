@@ -1,6 +1,9 @@
 # Séance 6 — Exercices
 
-[← Retour à l’accueil](../../index.html) · [Slides du cours](cours_seance_06.html)
+<nav class="page-nav">
+  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="cours_seance_06.html">Slides du cours</a>
+</nav>
 
 ## A. Ensembles (`set`)
 
@@ -129,3 +132,8 @@
 ### 30. Classement par score
 
 Écrivez une fonction `rank_by_score(scores: dict)` qui prend un dictionnaire (participant → score numérique) et renvoie une **liste de noms** triée par score **décroissant**. En cas d’égalité de score, ordonnez les noms par ordre **alphabétique** croissant.
+
+<nav class="page-nav">
+  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="cours_seance_06.html">Slides du cours</a>
+</nav>

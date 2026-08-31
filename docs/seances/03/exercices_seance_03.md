@@ -1,6 +1,9 @@
 # Séance 3 — Exercices
 
-[← Retour à l’accueil](../../index.html) · [Slides du cours](cours_seance_03.html)
+<nav class="page-nav">
+  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="cours_seance_03.html">Slides du cours</a>
+</nav>
 
 ## A. Boucles `while`
 
@@ -87,3 +90,8 @@ S'il y a égalité sur le nombre d'occurrences, renvoyez l'élément qui atteint
 ### 20. Sous-séquence centrale
 
 Écrivez une fonction qui prend une liste `values` de longueur impaire au moins 3 et renvoie la liste des 3 éléments centrés autour du milieu.
+
+<nav class="page-nav">
+  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="cours_seance_03.html">Slides du cours</a>
+</nav>

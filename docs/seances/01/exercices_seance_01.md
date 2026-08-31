@@ -1,6 +1,9 @@
 # Séance 1 — Exercices
 
-[← Retour à l’accueil](../../index.html) · [Slides du cours](cours_seance_01.html)
+<nav class="page-nav">
+  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="cours_seance_01.html">Slides du cours</a>
+</nav>
 
 ## A. Calculs numériques
 
@@ -88,3 +91,8 @@ Déclarez deux variables `first_name` et `last_name`. Affichez les initiales sou
 ### 20. Extraction d'une sous-chaîne
 
 Déclarez une variable `sentence` et affectez-lui une chaine de caractère contenant une phrase d'exactement 10 caractères. Affichez les cinq premiers caractères, puis les cinq derniers, ainsi qu’une partie centrale de trois caractères.
+
+<nav class="page-nav">
+  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="cours_seance_01.html">Slides du cours</a>
+</nav>

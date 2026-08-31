@@ -1,6 +1,9 @@
 # Séance 2 — Exercices
 
-[← Retour à l’accueil](../../index.html) · [Slides du cours](cours_seance_02.html)
+<nav class="page-nav">
+  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="cours_seance_02.html">Slides du cours</a>
+</nav>
 
 ## A. Conversion de types
 
@@ -113,3 +116,8 @@ Rappel : une année est bissextile si elle est divisible par 4, sauf si elle est
 - `Pass` si `score` est entre 10 et 13 inclus
 - `Good` si `score` est entre 14 et 16 inclus
 - `Very good` si `score` est entre 17 et 20 inclus
+
+<nav class="page-nav">
+  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="cours_seance_02.html">Slides du cours</a>
+</nav>

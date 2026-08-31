@@ -1,6 +1,9 @@
 # Séance 4 — Exercices
 
-[← Retour à l’accueil](../../index.html) · [Slides du cours](cours_seance_04.html)
+<nav class="page-nav">
+  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="cours_seance_04.html">Slides du cours</a>
+</nav>
 
 ## A. Boucles `for`
 
@@ -131,3 +134,8 @@ Exemple : `["Bonjour", "le monde"]` donne `["1. Bonjour", "2. le monde"]`.
 
 Écrivez une fonction qui prend deux listes de même longueur non nulle : des noms (`str`) et des notes (`int` ou `float`). Elle doit renvoyer une liste de chaînes décrivant chaque personne : numéro commençant à **1**, nom, note affichée avec **une** décimale.  
 Exemple : noms `["Ada", "Alan"]` et notes `[18.34, 12.0]` donnent des chaînes du type `"1. Ada : 18.3"` et `"2. Alan : 12.0"` (vous choisissez la mise en forme exacte des chaînes, mais la numérotation, le nom et la note arrondie à une décimale doivent apparaître clairement).
+
+<nav class="page-nav">
+  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="cours_seance_04.html">Slides du cours</a>
+</nav>
