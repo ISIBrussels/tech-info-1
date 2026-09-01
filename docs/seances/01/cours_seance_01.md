@@ -216,14 +216,14 @@ print(10 + 50)
 
 Chaque objet a un **type** : ce qu'il *est*. Python fournit des types *built-in*.
 
-| Python | Français |
-|--------|----------|
-| `int` | entier |
-| `float` | nombre à virgule flottante |
-| `complex` | complexe |
-| `bool` | booléen |
-| `str` | chaîne de caractères |
-| `list`, `tuple`, `set`, `dict`… | collections (plus tard) |
+| Python                          | Français                   |
+|---------------------------------|----------------------------|
+| `int`                           | entier                     |
+| `float`                         | nombre à virgule flottante |
+| `complex`                       | complexe                   |
+| `bool`                          | booléen                    |
+| `str`                           | chaîne de caractères       |
+| `list`, `tuple`, `set`, `dict`… | collections (plus tard)    |
 
 À partir d'ici : on travaille dans un **script**, plus dans le REPL.
 
@@ -261,14 +261,14 @@ L'intérêt principal des booléens : le résultat d'une **comparaison**.
 
 ## Opérateurs de comparaison
 
-| symbole | signification |
-|---------|---------------|
-| `<` `>` | strictement inférieur / supérieur |
-| `<=` `>=` | inférieur / supérieur ou égal |
-| `==` | égal |
-| `!=` | différent |
-| `x is y` | même objet |
-| `x is not y` | objets distincts |
+| symbole      | signification                     |
+|--------------|-----------------------------------|
+| `<` `>`      | strictement inférieur / supérieur |
+| `<=` `>=`    | inférieur / supérieur ou égal     |
+| `==`         | égal                              |
+| `!=`         | différent                         |
+| `x is y`     | même objet                        |
+| `x is not y` | objets distincts                  |
 
 ```python
 a = 5 < 6
@@ -279,11 +279,11 @@ print(a)   # True
 
 ## Opérateurs logiques
 
-| symbole | signification |
-|---------|---------------|
-| `x or y` | OU |
-| `x and y` | ET |
-| `not x` | NON |
+| symbole   | signification |
+|-----------|---------------|
+| `x or y`  | OU            |
+| `x and y` | ET            |
+| `not x`   | NON           |
 
 ```python
 a = 5 < 6 and 10 < 6
