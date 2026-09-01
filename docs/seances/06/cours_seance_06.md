@@ -4,7 +4,7 @@ theme: tech-info
 title: "Séance 6 — set, dict, type hinting, main"
 paginate: true
 header: "Tech Info 1 — Séance 6 [Sylvain Huraux - HE2B - ISIB](mailto:shuraux@he2b.be)"
-footer: "[Retour à l'accueil](../../index.html)"
+footer: "[← Retour à l'accueil](../../index.html)"
 ---
 
 # Séance 6
