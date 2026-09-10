@@ -138,15 +138,27 @@ Dans le REPL :
 4 + 5
 ```
 
+<div style="display: flex; gap: 1.5rem; justify-content: center;">
+<div>
+
 | symbole | fonctionnalité   |
 |---------|------------------|
 | `+`     | addition         |
 | `-`     | soustraction     |
 | `*`     | multiplication   |
 | `**`    | puissance        |
+
+</div>
+<div>
+
+| symbole | fonctionnalité   |
+|---------|------------------|
 | `/`     | division         |
 | `//`    | division entière |
 | `%`     | modulo           |
+
+</div>
+</div>
 
 L'intérêt réel : **stocker** ces résultats pour les réutiliser.
 
@@ -368,5 +380,4 @@ SyntaxError: '(' was never closed
 - `str` : séquence, indices, concaténation, *f-strings*
 - Lire les messages d'erreur
 
-[→ Quiz](quiz_seance_01.html)
-[→ Exercices](exercices_seance_01.html)
+[→ Quiz](quiz_seance_01.html) [→ Exercices](exercices_seance_01.html)

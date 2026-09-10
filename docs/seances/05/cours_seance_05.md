@@ -132,5 +132,4 @@ Un tuple n'a pas `append`, `sort`, `reverse`… : il est immuable.
 - `list` mutable : `append`, `extend`, `pop`, `sort`, `reverse`
 - `tuple` : essentiellement `count` et `index`
 
-[→ Quiz](quiz_seance_05.html)
-[→ Exercices](exercices_seance_05.html)
+[→ Quiz](quiz_seance_05.html) [→ Exercices](exercices_seance_05.html)

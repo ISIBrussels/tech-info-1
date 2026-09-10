@@ -179,5 +179,4 @@ selected_numbers = numbers[slice(2, 8, 2)]
 - *Built-in* : nombres (`abs`, `round`…), itérables (`len`, `sum`, `zip`…), bases, Unicode
 - Constructeurs = *casting* ; `slice` ≡ `seq[start:stop:step]`
 
-[→ Quiz](quiz_seance_04.html)
-[→ Exercices](exercices_seance_04.html)
+[→ Quiz](quiz_seance_04.html) [→ Exercices](exercices_seance_04.html)

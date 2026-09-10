@@ -212,5 +212,4 @@ integer_value = int(4.0)
 - Copie ≠ alias (`id()`)
 - `tuple` : immuable ; `range` : suite d'entiers
 
-[→ Quiz](quiz_seance_03.html)
-[→ Exercices](exercices_seance_03.html)
+[→ Quiz](quiz_seance_03.html) [→ Exercices](exercices_seance_03.html)

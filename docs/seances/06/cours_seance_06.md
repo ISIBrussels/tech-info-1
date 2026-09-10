@@ -202,5 +202,4 @@ Le rôle exact de cette condition sera vu plus tard. **À l'examen** : toujours 
 - Annotations `: type` et `-> type` : documentation, pas de contrainte runtime
 - Script structuré : définitions, puis `main()`, puis `if __name__ == "__main__": main()`
 
-[→ Quiz](quiz_seance_06.html)
-[→ Exercices](exercices_seance_06.html)
+[→ Quiz](quiz_seance_06.html) [→ Exercices](exercices_seance_06.html)
