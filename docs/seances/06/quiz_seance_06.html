@@ -54,7 +54,6 @@
         text-decoration: underline;
       }
 
-
       .page-nav {
         display: flex;
         gap: 0.75rem;
@@ -79,7 +78,13 @@
         text-decoration: none;
       }
 
-      .card {
+      .progress {
+        margin: 0 0 1rem;
+        font-size: 0.95rem;
+        color: var(--color-secondary);
+      }
+
+      .question {
         border: 1px solid var(--color-border);
         padding: 1rem;
         margin-top: 1rem;
@@ -89,7 +94,7 @@
       .answers {
         display: grid;
         gap: 0;
-        margin: 1rem 0;
+        margin: 1rem 0 0;
         border: 1px solid var(--color-border);
       }
 
@@ -106,6 +111,29 @@
 
       .answers label:nth-child(even) {
         background: var(--color-row-alt);
+      }
+
+      .answers label.correct {
+        background: var(--color-row-alt);
+        color: var(--color-primary);
+        font-weight: 600;
+      }
+
+      .answers label.wrong {
+        color: var(--color-secondary);
+        text-decoration: line-through;
+      }
+
+      .answers label.checked-mode {
+        cursor: default;
+      }
+
+      .option-tag {
+        display: inline-block;
+        margin-left: 0.35rem;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--color-secondary);
       }
 
       button {
@@ -131,17 +159,11 @@
         display: flex;
         gap: 0.75rem;
         flex-wrap: wrap;
-        margin-top: 1rem;
+        margin-top: 1.25rem;
       }
 
       #reset-btn {
         margin-left: auto;
-      }
-
-      .progress {
-        margin: 0 0 0.5rem;
-        font-size: 0.95rem;
-        color: var(--color-secondary);
       }
 
       .result {
@@ -164,70 +186,12 @@
       .question-feedback {
         margin-top: 0.75rem;
         font-size: 0.95rem;
-      }
-
-      .results-detail {
-        display: grid;
-        gap: 0.75rem;
-        margin-top: 1rem;
-        font-weight: normal;
-      }
-
-      .result-item {
-        border: 1px solid var(--color-border);
-        padding: 0.75rem 1rem;
-      }
-
-      .result-item h3 {
-        margin: 0 0 0.35rem;
-        font-size: 1rem;
-        color: var(--color-secondary);
-      }
-
-      .result-item p {
-        margin: 0.25rem 0;
-      }
-
-      .result-item .verdict {
-        font-weight: 600;
-        margin-top: 0.5rem;
-      }
-
-      .recap-options {
-        list-style: none;
-        margin: 0.75rem 0 0;
-        padding: 0;
-        display: grid;
-        gap: 0;
-        border: 1px solid var(--color-border);
-      }
-
-      .recap-option {
-        padding: 0.45rem 0.65rem;
-        border-bottom: 1px solid var(--color-border);
-      }
-
-      .recap-option:last-child {
-        border-bottom: none;
-      }
-
-      .recap-option.correct {
-        background: var(--color-row-alt);
-        color: var(--color-primary);
         font-weight: 600;
       }
 
-      .recap-option.wrong {
-        color: var(--color-secondary);
-        text-decoration: line-through;
-      }
-
-      .recap-tag {
-        display: inline-block;
-        margin-left: 0.35rem;
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: var(--color-secondary);
+      .status {
+        margin-top: 0.75rem;
+        font-size: 0.95rem;
       }
 
       code {
@@ -265,24 +229,19 @@
       <a href="cours_seance_06.html">Retour aux slides</a>
     </nav>
     <p class="muted">Placeholder : une question dummy, à remplacer plus tard.</p>
-
-    <section class="card">
-      <p class="progress" id="progress"></p>
-      <div id="quiz"></div>
-      <p class="question-feedback" id="feedback" aria-live="polite"></p>
-    </section>
+    <p class="progress" id="progress"></p>
+    <div id="quiz"></div>
 
     <div class="actions">
-      <button id="prev-btn" type="button">Précédent</button>
-      <button id="next-btn" type="button">Suivant</button>
-      <button id="check-btn" type="button" hidden>Vérifier tout</button>
+      <button id="check-btn" type="button">Valider les réponses</button>
       <button id="reset-btn" type="button">Recommencer</button>
     </div>
+    <p class="status" id="status" aria-live="polite"></p>
     <div id="summary" class="result" aria-live="polite"></div>
 
     <script>
-      const storageKey = "quiz_seance_06_answers_v1";
-      const indexKey = "quiz_seance_06_index_v1";
+      const storageKey = "quiz_seance_06_answers_v3";
+      const checkedKey = "quiz_seance_06_checked_v3";
 
       const questions = [
         {
@@ -301,20 +260,17 @@
 
       const quizEl = document.getElementById("quiz");
       const progressEl = document.getElementById("progress");
-      const feedbackEl = document.getElementById("feedback");
+      const statusEl = document.getElementById("status");
       const summaryEl = document.getElementById("summary");
-      const prevBtn = document.getElementById("prev-btn");
-      const nextBtn = document.getElementById("next-btn");
       const checkBtn = document.getElementById("check-btn");
       const resetBtn = document.getElementById("reset-btn");
 
-      let currentIndex = 0;
       let checked = false;
       const answers = {};
 
       function loadState() {
         const rawAnswers = localStorage.getItem(storageKey);
-        const rawIndex = localStorage.getItem(indexKey);
+        const rawChecked = localStorage.getItem(checkedKey);
 
         if (rawAnswers) {
           try {
@@ -324,178 +280,152 @@
           }
         }
 
-        if (rawIndex !== null) {
-          const index = Number(rawIndex);
-          if (Number.isInteger(index) && index >= 0 && index < questions.length) {
-            currentIndex = index;
-          }
-        }
+        checked = rawChecked === "1";
       }
 
       function saveState() {
         localStorage.setItem(storageKey, JSON.stringify(answers));
-        localStorage.setItem(indexKey, String(currentIndex));
+        localStorage.setItem(checkedKey, checked ? "1" : "0");
       }
 
-      function getCurrentQuestion() {
-        return questions[currentIndex];
+      function answeredCount() {
+        return questions.filter((question) => answers[question.id]).length;
       }
 
-      function renderOptionsRecap(question, answer) {
-        return `
-          <ul class="recap-options">
-            ${question.options
+      function updateProgress() {
+        progressEl.textContent = `${answeredCount()} / ${questions.length} réponse(s) cochée(s)`;
+      }
+
+      function renderQuiz() {
+        quizEl.innerHTML = questions
+          .map((question, index) => {
+            const selected = answers[question.id] || null;
+            let feedbackHtml = "";
+
+            if (checked) {
+              const isCorrect = selected === question.correct;
+              const verdictClass = !selected ? "ko" : isCorrect ? "ok" : "ko";
+              const verdictText = !selected
+                ? "Non répondue."
+                : isCorrect
+                  ? `Correct. ${question.feedback}`
+                  : `Incorrect. ${question.feedback}`;
+              feedbackHtml = `<p class="question-feedback ${verdictClass}">${verdictText}</p>`;
+            }
+
+            const optionsHtml = question.options
               .map((option) => {
                 const isCorrect = option.value === question.correct;
-                const isChosen = option.value === answer;
-                const classes = ["recap-option"];
-                if (isCorrect) classes.push("correct");
-                if (isChosen && !isCorrect) classes.push("wrong");
+                const isChosen = option.value === selected;
+                const classes = [];
+                if (checked) classes.push("checked-mode");
+                if (checked && isCorrect) classes.push("correct");
+                if (checked && isChosen && !isCorrect) classes.push("wrong");
 
                 let tag = "";
-                if (isCorrect) tag = '<span class="recap-tag">bonne réponse</span>';
-                else if (isChosen) tag = '<span class="recap-tag">réponse sélectionnée</span>';
+                if (checked && isCorrect) tag = '<span class="option-tag">bonne réponse</span>';
+                else if (checked && isChosen) tag = '<span class="option-tag">réponse sélectionnée</span>';
 
-                return `<li class="${classes.join(" ")}">${option.value}. ${option.label}${tag}</li>`;
+                return `
+                  <label class="${classes.join(" ")}">
+                    <input
+                      type="radio"
+                      name="${question.id}"
+                      value="${option.value}"
+                      ${selected === option.value ? "checked" : ""}
+                      ${checked ? "disabled" : ""}
+                    />
+                    ${option.value}. ${option.label}${tag}
+                  </label>
+                `;
               })
-              .join("")}
-          </ul>
-        `;
-      }
+              .join("");
 
-      function renderQuestion() {
-        const question = getCurrentQuestion();
-        const selected = answers[question.id] || null;
-
-        progressEl.textContent = `Question ${currentIndex + 1} / ${questions.length}`;
-        quizEl.innerHTML = `
-          <h2>Question ${currentIndex + 1}</h2>
-          <p><strong>${question.text}</strong></p>
-          <div class="answers">
-            ${question.options
-              .map(
-                (option) => `
-              <label>
-                <input
-                  type="radio"
-                  name="${question.id}"
-                  value="${option.value}"
-                  ${selected === option.value ? "checked" : ""}
-                  ${checked ? "disabled" : ""}
-                />
-                ${option.value}. ${option.label}
-              </label>
-            `
-              )
-              .join("")}
-          </div>
-        `;
+            return `
+              <section class="question" data-question-id="${question.id}">
+                <h2>Question ${index + 1}</h2>
+                <p><strong>${question.text}</strong></p>
+                <div class="answers">${optionsHtml}</div>
+                ${feedbackHtml}
+              </section>
+            `;
+          })
+          .join("");
 
         if (!checked) {
-          quizEl.querySelectorAll(`input[name="${question.id}"]`).forEach((input) => {
+          quizEl.querySelectorAll('input[type="radio"]').forEach((input) => {
             input.addEventListener("change", () => {
-              answers[question.id] = input.value;
-              feedbackEl.textContent = "";
-              feedbackEl.className = "question-feedback";
+              answers[input.name] = input.value;
+              statusEl.textContent = "";
+              statusEl.className = "status";
               summaryEl.innerHTML = "";
               summaryEl.className = "result";
               saveState();
+              updateProgress();
             });
           });
         }
 
-        prevBtn.disabled = currentIndex === 0;
-        nextBtn.hidden = currentIndex === questions.length - 1;
-        checkBtn.hidden = currentIndex !== questions.length - 1 || checked;
-
-        feedbackEl.textContent = "";
-        feedbackEl.className = "question-feedback";
+        checkBtn.hidden = checked;
+        updateProgress();
 
         if (checked) {
           renderSummary();
+        } else {
+          summaryEl.innerHTML = "";
+          summaryEl.className = "result";
         }
       }
 
       function renderSummary() {
         let score = 0;
-        const items = questions.map((question, index) => {
-          const answer = answers[question.id];
-          const isCorrect = answer === question.correct;
-          if (isCorrect) score += 1;
-
-          const verdictClass = !answer ? "ko" : isCorrect ? "ok" : "ko";
-          const verdictText = !answer
-            ? "Non répondue."
-            : isCorrect
-              ? `Correct. ${question.feedback}`
-              : `Incorrect. ${question.feedback}`;
-
-          return `
-            <section class="result-item">
-              <h3>Question ${index + 1}</h3>
-              <p><strong>${question.text}</strong></p>
-              ${renderOptionsRecap(question, answer)}
-              <p class="verdict ${verdictClass}">${verdictText}</p>
-            </section>
-          `;
+        questions.forEach((question) => {
+          if (answers[question.id] === question.correct) score += 1;
         });
 
-        summaryEl.innerHTML = `
-          <p class="${score === questions.length ? "ok" : "ko"}">Score : ${score} / ${questions.length}</p>
-          <div class="results-detail">${items.join("")}</div>
-        `;
+        summaryEl.innerHTML = `<p class="${score === questions.length ? "ok" : "ko"}">Score : ${score} / ${questions.length}</p>`;
         summaryEl.className = "result";
       }
 
       function checkAll() {
         const unanswered = questions.filter((question) => !answers[question.id]);
         if (unanswered.length > 0) {
-          feedbackEl.textContent = `Il reste ${unanswered.length} question(s) sans réponse.`;
-          feedbackEl.className = "question-feedback ko";
+          statusEl.textContent = `Il reste ${unanswered.length} question(s) sans réponse.`;
+          statusEl.className = "status ko";
+          const firstMissing = quizEl.querySelector(
+            `[data-question-id="${unanswered[0].id}"]`
+          );
+          if (firstMissing) firstMissing.scrollIntoView({ behavior: "smooth", block: "center" });
           return;
         }
 
         checked = true;
+        statusEl.textContent = "";
+        statusEl.className = "status";
         saveState();
-        renderQuestion();
+        renderQuiz();
+        summaryEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
       }
 
       function resetQuiz() {
         for (const key of Object.keys(answers)) {
           delete answers[key];
         }
-        currentIndex = 0;
         checked = false;
         localStorage.removeItem(storageKey);
-        localStorage.removeItem(indexKey);
-        feedbackEl.textContent = "";
-        feedbackEl.className = "question-feedback";
+        localStorage.removeItem(checkedKey);
+        statusEl.textContent = "";
+        statusEl.className = "status";
         summaryEl.innerHTML = "";
         summaryEl.className = "result";
-        renderQuestion();
+        renderQuiz();
       }
-
-      prevBtn.addEventListener("click", () => {
-        if (currentIndex > 0) {
-          currentIndex -= 1;
-          saveState();
-          renderQuestion();
-        }
-      });
-
-      nextBtn.addEventListener("click", () => {
-        if (currentIndex < questions.length - 1) {
-          currentIndex += 1;
-          saveState();
-          renderQuestion();
-        }
-      });
 
       checkBtn.addEventListener("click", checkAll);
       resetBtn.addEventListener("click", resetQuiz);
 
       loadState();
-      renderQuestion();
+      renderQuiz();
     </script>
 
     <footer class="site-footer"><a href="mailto:shuraux@he2b.be">Sylvain Huraux - HE2B - ISIB</a></footer>
