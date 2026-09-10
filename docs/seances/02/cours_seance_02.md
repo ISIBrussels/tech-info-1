@@ -172,7 +172,7 @@ Convention : nom **en majuscules** (`DAYS_OF_WEEK`, `ALPHABET_LOWERCASE`) pour i
 
 ---
 
-## `if`
+## Structures conditionnelles
 
 ```python
 a = 5
