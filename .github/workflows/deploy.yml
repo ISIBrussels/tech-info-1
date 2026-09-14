@@ -200,7 +200,7 @@ jobs:
             <head>
               <meta charset="utf-8" />
               <meta name="viewport" content="width=device-width, initial-scale=1" />
-              <title>Techniques Informatiques 1 — ISIB</title>
+              <title>Tech Info 1 - ISIB</title>
               <style>
                 :root {
                   --color-primary: #0075c9;
