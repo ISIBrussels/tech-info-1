@@ -228,7 +228,7 @@
       <a href="../../index.html">← Retour à l'accueil</a>
       <a href="cours_seance_03.html">Retour aux slides</a>
     </nav>
-    <p class="muted">Placeholder : une question dummy, à remplacer plus tard.</p>
+    <p class="muted">10 questions sur le cours de la séance 3.</p>
     <p class="progress" id="progress"></p>
     <div id="quiz"></div>
 
@@ -240,21 +240,129 @@
     <div id="summary" class="result" aria-live="polite"></div>
 
     <script>
-      const storageKey = "quiz_seance_03_answers_v3";
-      const checkedKey = "quiz_seance_03_checked_v3";
+      const storageKey = "quiz_seance_03_answers_v4";
+      const checkedKey = "quiz_seance_03_checked_v4";
 
       const questions = [
         {
           id: "q1",
-          text: "Ceci est une question placeholder. Quelle est la bonne réponse ?",
+          text: "Que se passe-t-il si, dans un <code>while n &lt; 10</code>, on oublie <code>n += 1</code> ?",
           options: [
-            { value: "A", label: "Réponse A" },
-            { value: "B", label: "Réponse B" },
-            { value: "C", label: "La bonne réponse" },
-            { value: "D", label: "Réponse D" },
+            { value: "A", label: "la boucle ne s'exécute jamais" },
+            { value: "B", label: "on obtient une boucle infinie" },
+            { value: "C", label: "Python incrémente <code>n</code> automatiquement" },
+            { value: "D", label: "le script s'arrête après 10 itérations par défaut" },
+          ],
+          correct: "B",
+          feedback: "Sans faire évoluer la condition, elle reste <code>True</code> : la boucle ne s'arrête pas.",
+        },
+        {
+          id: "q2",
+          text: "Dans une séquence Python, le premier élément a l'indice…",
+          options: [
+            { value: "A", label: "<code>1</code>" },
+            { value: "B", label: "<code>-1</code>" },
+            { value: "C", label: "<code>0</code>" },
+            { value: "D", label: "<code>None</code>" },
           ],
           correct: "C",
-          feedback: "Placeholder : la bonne réponse est C. Remplacez cette question par le quiz de la séance 3.",
+          feedback: "On commence à compter à partir de 0. C'est valable pour <code>str</code>, <code>list</code> et <code>tuple</code>.",
+        },
+        {
+          id: "q3",
+          text: "Pour une liste <code>mixed_values</code>, que désigne <code>mixed_values[2:7]</code> ?",
+          options: [
+            { value: "A", label: "les éléments d'indices 2 à 7 inclus" },
+            { value: "B", label: "les éléments d'indices 2 à 6 (borne de fin exclue)" },
+            { value: "C", label: "uniquement l'élément d'indice 2, répété 7 fois" },
+            { value: "D", label: "les 7 premiers éléments" },
+          ],
+          correct: "B",
+          feedback: "En slicing, la borne de fin est exclue : on va de l'indice 2 jusqu'à l'indice 6.",
+        },
+        {
+          id: "q4",
+          text: "Que désigne <code>mixed_values[-2]</code> ?",
+          options: [
+            { value: "A", label: "le deuxième élément" },
+            { value: "B", label: "l'avant-dernier élément" },
+            { value: "C", label: "une erreur, les indices négatifs sont interdits" },
+            { value: "D", label: "une copie des deux derniers éléments" },
+          ],
+          correct: "B",
+          feedback: "Un indice négatif compte depuis la fin : <code>-1</code> est le dernier, <code>-2</code> l'avant-dernier.",
+        },
+        {
+          id: "q5",
+          text: "Quelle méthode ajoute un objet à la fin d'une liste ?",
+          options: [
+            { value: "A", label: "<code>insert()</code>" },
+            { value: "B", label: "<code>extend()</code>" },
+            { value: "C", label: "<code>append()</code>" },
+            { value: "D", label: "<code>pop()</code>" },
+          ],
+          correct: "C",
+          feedback: "<code>append</code> ajoute à la fin, <code>insert</code> à un indice, <code>extend</code> concatène une autre liste.",
+        },
+        {
+          id: "q6",
+          text: "Pourquoi écrit-on <code>mixed_values.append(...)</code> plutôt que <code>append(mixed_values, ...)</code> ?",
+          options: [
+            { value: "A", label: "parce que <code>append</code> est une méthode d'instance : elle opère sur l'objet" },
+            { value: "B", label: "parce que <code>append</code> est une fonction built-in comme <code>print</code>" },
+            { value: "C", label: "parce que Python interdit les fonctions à plusieurs arguments" },
+            { value: "D", label: "parce que <code>append</code> ne fonctionne que dans un <code>while</code>" },
+          ],
+          correct: "A",
+          feedback: "Une méthode s'appelle sur l'objet (<code>variable.methode()</code>). <code>print()</code> et <code>input()</code> sont des fonctions.",
+        },
+        {
+          id: "q7",
+          text: "Quelle différence entre <code>copied = values.copy()</code> et <code>alias = values</code> ?",
+          options: [
+            { value: "A", label: "aucune : les deux créent une nouvelle liste" },
+            { value: "B", label: "<code>copy()</code> crée une nouvelle liste ; l'alias désigne le même objet" },
+            { value: "C", label: "l'alias crée une nouvelle liste ; <code>copy()</code> partage le même objet" },
+            { value: "D", label: "<code>copy()</code> transforme la liste en tuple" },
+          ],
+          correct: "B",
+          feedback: "<code>id(copied)</code> est différent de <code>id(values)</code> ; <code>id(alias)</code> est identique.",
+        },
+        {
+          id: "q8",
+          text: "Quelle affirmation est vraie pour un <code>tuple</code> ?",
+          options: [
+            { value: "A", label: "on peut y ajouter des éléments avec <code>append</code>" },
+            { value: "B", label: "on peut modifier un élément par indice" },
+            { value: "C", label: "on ne peut ni modifier, ni ajouter, ni retirer d'éléments" },
+            { value: "D", label: "il n'a pas d'indices, contrairement à une liste" },
+          ],
+          correct: "C",
+          feedback: "Un tuple est immuable. On peut lire un élément (<code>sample_tuple[3]</code>), pas le changer.",
+        },
+        {
+          id: "q9",
+          text: "Que produit <code>range(10)</code> ?",
+          options: [
+            { value: "A", label: "les entiers de 1 à 10 inclus" },
+            { value: "B", label: "les entiers de 0 à 10 inclus" },
+            { value: "C", label: "les entiers de 0 à 9 (10 exclu), pas de 1" },
+            { value: "D", label: "une liste vide de longueur 10" },
+          ],
+          correct: "C",
+          feedback: "<code>range(10)</code> va de 0 à 10 exclu, avec un pas de 1.",
+        },
+        {
+          id: "q10",
+          text: "Si <code>matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]</code>, que vaut <code>matrix[0][2]</code> ?",
+          options: [
+            { value: "A", label: "<code>1</code>" },
+            { value: "B", label: "<code>3</code>" },
+            { value: "C", label: "<code>7</code>" },
+            { value: "D", label: "<code>[1, 2, 3]</code>" },
+          ],
+          correct: "B",
+          feedback: "<code>matrix[0]</code> est la première ligne <code>[1, 2, 3]</code> ; l'indice 2 de cette ligne est <code>3</code>.",
         },
       ];
 

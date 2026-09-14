@@ -228,7 +228,7 @@
       <a href="../../index.html">← Retour à l'accueil</a>
       <a href="cours_seance_02.html">Retour aux slides</a>
     </nav>
-    <p class="muted">Placeholder : une question dummy, à remplacer plus tard.</p>
+    <p class="muted">10 questions sur le cours de la séance 2.</p>
     <p class="progress" id="progress"></p>
     <div id="quiz"></div>
 
@@ -240,21 +240,129 @@
     <div id="summary" class="result" aria-live="polite"></div>
 
     <script>
-      const storageKey = "quiz_seance_02_answers_v3";
-      const checkedKey = "quiz_seance_02_checked_v3";
+      const storageKey = "quiz_seance_02_answers_v4";
+      const checkedKey = "quiz_seance_02_checked_v4";
 
       const questions = [
         {
           id: "q1",
-          text: "Ceci est une question placeholder. Quelle est la bonne réponse ?",
+          text: "Que renvoient <code>str()</code>, <code>int()</code> et <code>float()</code> ?",
           options: [
-            { value: "A", label: "Réponse A" },
-            { value: "B", label: "Réponse B" },
-            { value: "C", label: "La bonne réponse" },
-            { value: "D", label: "Réponse D" },
+            { value: "A", label: "rien : elles modifient l'objet original" },
+            { value: "B", label: "un nouvel objet du type demandé" },
+            { value: "C", label: "toujours une chaîne de caractères" },
+            { value: "D", label: "le type de l'objet, comme <code>type()</code>" },
+          ],
+          correct: "B",
+          feedback: "Ces fonctions renvoient un nouvel objet. On les place à droite du <code>=</code>.",
+        },
+        {
+          id: "q2",
+          text: "Que vaut <code>bool(-2)</code> ?",
+          options: [
+            { value: "A", label: "<code>False</code>, car le nombre est négatif" },
+            { value: "B", label: "<code>None</code>" },
+            { value: "C", label: "<code>True</code>" },
+            { value: "D", label: "une erreur, car <code>bool()</code> n'accepte que 0 et 1" },
           ],
           correct: "C",
-          feedback: "Placeholder : la bonne réponse est C. Remplacez cette question par le quiz de la séance 2.",
+          feedback: "Tout nombre sauf 0 (y compris les négatifs) se convertit en <code>True</code>.",
+        },
+        {
+          id: "q3",
+          text: "Parmi ces conversions, laquelle vaut <code>False</code> ?",
+          options: [
+            { value: "A", label: "<code>bool(\"Hi\")</code>" },
+            { value: "B", label: "<code>bool(\" \")</code>" },
+            { value: "C", label: "<code>bool(0.5)</code>" },
+            { value: "D", label: "<code>bool(\"\")</code>" },
+          ],
+          correct: "D",
+          feedback: "Seule la chaîne vide vaut <code>False</code>. Un espace est un caractère, donc <code>True</code>.",
+        },
+        {
+          id: "q4",
+          text: "Une fonction Python sans instruction <code>return</code> renvoie…",
+          options: [
+            { value: "A", label: "<code>None</code>" },
+            { value: "B", label: "<code>False</code>" },
+            { value: "C", label: "une chaîne vide" },
+            { value: "D", label: "une erreur à l'appel" },
+          ],
+          correct: "A",
+          feedback: "Si une fonction « ne renvoie rien », elle renvoie en pratique <code>None</code>.",
+        },
+        {
+          id: "q5",
+          text: "Dans <code>def add_two_numbers(a, b)</code> appelé par <code>add_two_numbers(2, 4)</code>, que sont <code>a</code> et <code>b</code> ?",
+          options: [
+            { value: "A", label: "des arguments" },
+            { value: "B", label: "des paramètres" },
+            { value: "C", label: "des constantes" },
+            { value: "D", label: "des variables globales" },
+          ],
+          correct: "B",
+          feedback: "Les paramètres sont les noms à la définition (<code>a</code>, <code>b</code>). Les arguments sont les objets passés à l'appel (<code>2</code>, <code>4</code>).",
+        },
+        {
+          id: "q6",
+          text: "Avec <code>def power(x, y=2)</code>, que vaut <code>power(y=3, x=4)</code> ?",
+          options: [
+            { value: "A", label: "<code>9</code> (car <code>y</code> vient en premier)" },
+            { value: "B", label: "une erreur, l'ordre des arguments est obligatoire" },
+            { value: "C", label: "<code>64</code> (soit <code>4 ** 3</code>)" },
+            { value: "D", label: "<code>16</code> (le défaut <code>y=2</code> n'est jamais écrasé)" },
+          ],
+          correct: "C",
+          feedback: "Les arguments nommés libèrent l'ordre : <code>x=4</code> et <code>y=3</code>, donc <code>4 ** 3 = 64</code>.",
+        },
+        {
+          id: "q7",
+          text: "Une variable déclarée à l'intérieur d'une fonction…",
+          options: [
+            { value: "A", label: "reste accessible partout après l'appel" },
+            { value: "B", label: "n'existe que pendant l'appel, puis est supprimée" },
+            { value: "C", label: "est forcément une constante" },
+            { value: "D", label: "doit être déclarée avec <code>global</code>" },
+          ],
+          correct: "B",
+          feedback: "C'est une variable locale : elle n'existe que pendant l'appel.",
+        },
+        {
+          id: "q8",
+          text: "À quoi sert l'instruction <code>pass</code> ?",
+          options: [
+            { value: "A", label: "à quitter immédiatement une fonction" },
+            { value: "B", label: "à ignorer une exception" },
+            { value: "C", label: "à ne rien faire, pour qu'un bloc ne soit pas vide" },
+            { value: "D", label: "à passer des arguments par nom" },
+          ],
+          correct: "C",
+          feedback: "Un bloc Python ne peut pas être vide. <code>pass</code> ne fait rien et permet de réserver une fonction pour plus tard.",
+        },
+        {
+          id: "q9",
+          text: "En Python, une constante…",
+          options: [
+            { value: "A", label: "est déclarée avec le mot-clé <code>const</code>" },
+            { value: "B", label: "ne peut jamais être réaffectée, sous peine d'erreur" },
+            { value: "C", label: "n'existe pas vraiment : on utilise une convention en MAJUSCULES" },
+            { value: "D", label: "doit être définie uniquement dans une fonction" },
+          ],
+          correct: "C",
+          feedback: "Aucun mot-clé n'empêche la réaffectation. La convention est un nom en majuscules (<code>DAYS_OF_WEEK</code>).",
+        },
+        {
+          id: "q10",
+          text: "Avec <code>c = 20</code>, que se passe-t-il si on écrit <code>if c &gt; 10:</code> puis <code>elif c &gt; 5:</code> ?",
+          options: [
+            { value: "A", label: "les deux blocs s'exécutent" },
+            { value: "B", label: "seul le bloc du <code>if</code> s'exécute" },
+            { value: "C", label: "seul le bloc du <code>elif</code> s'exécute" },
+            { value: "D", label: "une erreur, car les deux conditions sont vraies" },
+          ],
+          correct: "B",
+          feedback: "Si la première condition est vraie, les suivantes ne sont pas évaluées. Deux <code>if</code> indépendants pourraient tous deux s'exécuter.",
         },
       ];
 

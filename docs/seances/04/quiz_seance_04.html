@@ -228,7 +228,7 @@
       <a href="../../index.html">← Retour à l'accueil</a>
       <a href="cours_seance_04.html">Retour aux slides</a>
     </nav>
-    <p class="muted">Placeholder : une question dummy, à remplacer plus tard.</p>
+    <p class="muted">10 questions sur le cours de la séance 4.</p>
     <p class="progress" id="progress"></p>
     <div id="quiz"></div>
 
@@ -240,21 +240,129 @@
     <div id="summary" class="result" aria-live="polite"></div>
 
     <script>
-      const storageKey = "quiz_seance_04_answers_v3";
-      const checkedKey = "quiz_seance_04_checked_v3";
+      const storageKey = "quiz_seance_04_answers_v4";
+      const checkedKey = "quiz_seance_04_checked_v4";
 
       const questions = [
         {
           id: "q1",
-          text: "Ceci est une question placeholder. Quelle est la bonne réponse ?",
+          text: "En Python, une boucle <code>for</code> sert surtout à…",
           options: [
-            { value: "A", label: "Réponse A" },
-            { value: "B", label: "Réponse B" },
-            { value: "C", label: "La bonne réponse" },
-            { value: "D", label: "Réponse D" },
+            { value: "A", label: "répéter tant qu'un compteur est inférieur à une borne, comme en C" },
+            { value: "B", label: "parcourir un itérable (liste, tuple, <code>range</code>…)" },
+            { value: "C", label: "définir une fonction" },
+            { value: "D", label: "convertir un type vers un autre" },
+          ],
+          correct: "B",
+          feedback: "Le <code>for</code> Python est un for each : la variable prend successivement les valeurs de l'itérable.",
+        },
+        {
+          id: "q2",
+          text: "Que fournit <code>enumerate(languages)</code> à chaque itération ?",
+          options: [
+            { value: "A", label: "uniquement l'élément" },
+            { value: "B", label: "uniquement l'indice" },
+            { value: "C", label: "un tuple <code>(indice, élément)</code>" },
+            { value: "D", label: "une copie triée de la liste" },
           ],
           correct: "C",
-          feedback: "Placeholder : la bonne réponse est C. Remplacez cette question par le quiz de la séance 4.",
+          feedback: "On écrit souvent <code>for i, language in enumerate(languages)</code>. L'indice commence à 0 par défaut.",
+        },
+        {
+          id: "q3",
+          text: "Quelle est la différence entre <code>break</code> et <code>continue</code> ?",
+          options: [
+            { value: "A", label: "<code>break</code> sort de la boucle ; <code>continue</code> passe à l'itération suivante" },
+            { value: "B", label: "<code>continue</code> sort de la boucle ; <code>break</code> saute une itération" },
+            { value: "C", label: "les deux quittent définitivement la fonction" },
+            { value: "D", label: "les deux sont équivalents à <code>pass</code>" },
+          ],
+          correct: "A",
+          feedback: "<code>break</code> interrompt la boucle. <code>continue</code> n'exécute pas le reste du corps et reprend à l'itération suivante.",
+        },
+        {
+          id: "q4",
+          text: "Que renvoie <code>divmod(x, y)</code> ?",
+          options: [
+            { value: "A", label: "uniquement le quotient" },
+            { value: "B", label: "uniquement le reste" },
+            { value: "C", label: "un tuple <code>(quotient, reste)</code>" },
+            { value: "D", label: "la puissance <code>x ** y</code>" },
+          ],
+          correct: "C",
+          feedback: "<code>divmod</code> combine <code>//</code> et <code>%</code>. <code>pow(x, y)</code> calcule la puissance.",
+        },
+        {
+          id: "q5",
+          text: "Quand <code>all(iterable)</code> vaut-il <code>True</code> ?",
+          options: [
+            { value: "A", label: "si au moins un élément est vrai" },
+            { value: "B", label: "si tous les éléments sont vrais" },
+            { value: "C", label: "si l'itérable est vide uniquement" },
+            { value: "D", label: "si aucun élément n'est vrai" },
+          ],
+          correct: "B",
+          feedback: "<code>all</code> exige que tous les éléments soient vrais. <code>any</code> se contente d'au moins un.",
+        },
+        {
+          id: "q6",
+          text: "Que renvoie toujours <code>sorted(...)</code> ?",
+          options: [
+            { value: "A", label: "le même type que l'entrée (tuple, set…)" },
+            { value: "B", label: "une <code>list</code>" },
+            { value: "C", label: "<code>None</code>, car le tri se fait en place" },
+            { value: "D", label: "un <code>tuple</code>" },
+          ],
+          correct: "B",
+          feedback: "<code>sorted</code> renvoie toujours une liste, même si l'entrée est un tuple ou un set.",
+        },
+        {
+          id: "q7",
+          text: "À quoi sert <code>zip(it1, it2)</code> ?",
+          options: [
+            { value: "A", label: "à compresser des fichiers" },
+            { value: "B", label: "à concaténer deux listes bout à bout" },
+            { value: "C", label: "à fournir, à chaque itération, un tuple des éléments de même indice" },
+            { value: "D", label: "à trier deux itérables en parallèle" },
+          ],
+          correct: "C",
+          feedback: "À chaque tour, <code>zip</code> associe les éléments de même position dans les itérables.",
+        },
+        {
+          id: "q8",
+          text: "Que vaut <code>bin(4)</code> ?",
+          options: [
+            { value: "A", label: "<code>100</code> (un entier)" },
+            { value: "B", label: "<code>\"0b100\"</code>" },
+            { value: "C", label: "<code>\"0x4\"</code>" },
+            { value: "D", label: "<code>\"0o4\"</code>" },
+          ],
+          correct: "B",
+          feedback: "<code>bin</code> renvoie une chaîne binaire préfixée par <code>0b</code>. <code>hex(12)</code> donne <code>\"0xC\"</code>.",
+        },
+        {
+          id: "q9",
+          text: "Quel est le rôle de <code>ord(char)</code> ?",
+          options: [
+            { value: "A", label: "renvoyer le caractère correspondant à un code Unicode" },
+            { value: "B", label: "renvoyer le code Unicode du caractère" },
+            { value: "C", label: "convertir un entier en binaire" },
+            { value: "D", label: "arrondir un nombre" },
+          ],
+          correct: "B",
+          feedback: "<code>ord</code> donne le code ; <code>chr</code> fait l'inverse (code → caractère).",
+        },
+        {
+          id: "q10",
+          text: "<code>numbers[slice(2, 8, 2)]</code> est équivalent à…",
+          options: [
+            { value: "A", label: "<code>numbers[2:8:2]</code>" },
+            { value: "B", label: "<code>range(2, 8, 2)</code>" },
+            { value: "C", label: "<code>numbers.append(2, 8, 2)</code>" },
+            { value: "D", label: "<code>enumerate(numbers, 2)</code>" },
+          ],
+          correct: "A",
+          feedback: "<code>slice(start, stop, step)</code> correspond à <code>sequence[start:stop:step]</code>. La borne <code>stop</code> est exclue.",
         },
       ];
 
