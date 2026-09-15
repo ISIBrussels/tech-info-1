@@ -12,6 +12,7 @@
         --color-text: #212121;
         --color-border: #e0e0e0;
         --color-row-alt: #f5f5f5;
+        --color-error: #f23646;
       }
 
       * {
@@ -74,7 +75,7 @@
 
       .page-nav a:hover {
         background: var(--color-primary);
-        color: #fff;
+        color: #ffffff;
         text-decoration: none;
       }
 
@@ -120,7 +121,7 @@
       }
 
       .answers label.wrong {
-        color: var(--color-secondary);
+        color: var(--color-error);
         text-decoration: line-through;
       }
 
@@ -147,7 +148,7 @@
 
       button:hover:not(:disabled) {
         background: var(--color-primary);
-        color: #fff;
+        color: #ffffff;
       }
 
       button:disabled {
@@ -176,7 +177,7 @@
       }
 
       .ko {
-        color: var(--color-secondary);
+        color: var(--color-error);
       }
 
       .muted {
@@ -248,9 +249,9 @@
           id: "q1",
           text: "Quelle propriété caractérise un <code>set</code> ?",
           options: [
-            { value: "A", label: "il conserve les doublons et s'indexe comme une liste" },
+            { value: "A", label: "il conserve les doublons et s'indexe" },
             { value: "B", label: "il est non ordonné, sans doublons, et n'est pas indexable" },
-            { value: "C", label: "il est immuable, comme un tuple" },
+            { value: "C", label: "il est immuable" },
             { value: "D", label: "ses éléments sont des paires clef → valeur" },
           ],
           correct: "B",
@@ -260,9 +261,9 @@
           id: "q2",
           text: "Quelle différence entre <code>remove(obj)</code> et <code>discard(obj)</code> sur un <code>set</code> ?",
           options: [
-            { value: "A", label: "<code>remove</code> lève une erreur si l'élément est absent ; <code>discard</code> non" },
-            { value: "B", label: "<code>discard</code> lève une erreur ; <code>remove</code> ne fait rien" },
-            { value: "C", label: "aucune : les deux lèvent toujours une erreur" },
+            { value: "A", label: "<code>remove</code> lève une erreur si absent, <code>discard</code> non" },
+            { value: "B", label: "<code>discard</code> lève une erreur si absent, <code>remove</code> non" },
+            { value: "C", label: "aucune" },
             { value: "D", label: "<code>remove</code> retire un élément au hasard" },
           ],
           correct: "A",
@@ -273,7 +274,7 @@
           text: "Un <code>frozenset</code> est à un <code>set</code> ce qu'un…",
           options: [
             { value: "A", label: "<code>dict</code> est à une <code>list</code>" },
-            { value: "B", label: "<code>tuple</code> est à une <code>list</code> : version immuable" },
+            { value: "B", label: "<code>tuple</code> est à une <code>list</code>" },
             { value: "C", label: "<code>range</code> est à un <code>int</code>" },
             { value: "D", label: "<code>str</code> est à un <code>bytes</code>" },
           ],
@@ -284,8 +285,8 @@
           id: "q4",
           text: "Quelle contrainte s'applique aux clefs d'un <code>dict</code> ?",
           options: [
-            { value: "A", label: "elles peuvent être de n'importe quel type, y compris une liste" },
-            { value: "B", label: "elles doivent être hashables, donc en pratique immuables" },
+            { value: "A", label: "elles peuvent être de n'importe quel type" },
+            { value: "B", label: "elles doivent être hashables" },
             { value: "C", label: "elles doivent toujours être des <code>int</code>" },
             { value: "D", label: "elles doivent être uniques seulement si les valeurs le sont aussi" },
           ],
@@ -298,8 +299,8 @@
           options: [
             { value: "A", label: "les deux lèvent une erreur" },
             { value: "B", label: "les deux renvoient <code>None</code>" },
-            { value: "C", label: "<code>d[key]</code> lève une erreur ; <code>get</code> n'en lève pas" },
-            { value: "D", label: "<code>get</code> lève une erreur ; <code>d[key]</code> crée la clef" },
+            { value: "C", label: "<code>d[key]</code> lève une erreur, <code>get</code> non" },
+            { value: "D", label: "<code>get</code> lève une erreur, <code>d[key]</code> crée la clef" },
           ],
           correct: "C",
           feedback: "<code>get</code> permet de lire sans planter. Pour créer une paire : <code>d[\"hello\"] = 55</code>.",
@@ -321,7 +322,7 @@
           text: "Que fait <code>setdefault(key, default)</code> ?",
           options: [
             { value: "A", label: "écrase toujours la valeur associée à <code>key</code>" },
-            { value: "B", label: "ajoute la paire seulement si la clef est absente, et renvoie la valeur liée à <code>key</code>" },
+            { value: "B", label: "ajoute la paire seulement si la clef est absente" },
             { value: "C", label: "supprime la clef si elle existe" },
             { value: "D", label: "renvoie toutes les clefs du dictionnaire" },
           ],
@@ -333,7 +334,7 @@
           text: "Que se passe-t-il à l'exécution si un type annoté est faux ?",
           options: [
             { value: "A", label: "Python lève automatiquement une erreur" },
-            { value: "B", label: "rien : le typage reste dynamique, l'annotation est documentaire" },
+            { value: "B", label: "rien" },
             { value: "C", label: "le programme se convertit tout seul vers le bon type" },
             { value: "D", label: "seule la fonction <code>main</code> est refusée" },
           ],
@@ -344,8 +345,8 @@
           id: "q9",
           text: "Comment appelle-t-on en général <code>fromkeys</code> ?",
           options: [
-            { value: "A", label: "sur une instance, car le résultat dépend du dict existant" },
-            { value: "B", label: "sur la classe <code>dict</code> : c'est un constructeur" },
+            { value: "A", label: "sur une instance" },
+            { value: "B", label: "sur la classe <code>dict</code>" },
             { value: "C", label: "uniquement dans un <code>set</code>" },
             { value: "D", label: "après <code>popitem</code> uniquement" },
           ],
@@ -359,7 +360,7 @@
             { value: "A", label: "n'importe où au niveau zéro du fichier" },
             { value: "B", label: "dans un <code>while True</code>" },
             { value: "C", label: "dans exactement <code>if __name__ == \"__main__\":</code>" },
-            { value: "D", label: "on ne l'appelle jamais : Python le détecte tout seul" },
+            { value: "D", label: "on ne l'appelle jamais" },
           ],
           correct: "C",
           feedback: "Les définitions d'abord, le programme dans <code>main()</code>, puis l'appel dans ce <code>if</code> exact.",

@@ -12,6 +12,7 @@
         --color-text: #212121;
         --color-border: #e0e0e0;
         --color-row-alt: #f5f5f5;
+        --color-error: #f23646;
       }
 
       * {
@@ -74,7 +75,7 @@
 
       .page-nav a:hover {
         background: var(--color-primary);
-        color: #fff;
+        color: #ffffff;
         text-decoration: none;
       }
 
@@ -120,7 +121,7 @@
       }
 
       .answers label.wrong {
-        color: var(--color-secondary);
+        color: var(--color-error);
         text-decoration: line-through;
       }
 
@@ -147,7 +148,7 @@
 
       button:hover:not(:disabled) {
         background: var(--color-primary);
-        color: #fff;
+        color: #ffffff;
       }
 
       button:disabled {
@@ -176,7 +177,7 @@
       }
 
       .ko {
-        color: var(--color-secondary);
+        color: var(--color-error);
       }
 
       .muted {
@@ -248,8 +249,8 @@
           id: "q1",
           text: "En Python, une boucle <code>for</code> sert surtout à…",
           options: [
-            { value: "A", label: "répéter tant qu'un compteur est inférieur à une borne, comme en C" },
-            { value: "B", label: "parcourir un itérable (liste, tuple, <code>range</code>…)" },
+            { value: "A", label: "répéter tant qu'un compteur est inférieur à une borne" },
+            { value: "B", label: "parcourir un itérable" },
             { value: "C", label: "définir une fonction" },
             { value: "D", label: "convertir un type vers un autre" },
           ],
@@ -272,10 +273,10 @@
           id: "q3",
           text: "Quelle est la différence entre <code>break</code> et <code>continue</code> ?",
           options: [
-            { value: "A", label: "<code>break</code> sort de la boucle ; <code>continue</code> passe à l'itération suivante" },
-            { value: "B", label: "<code>continue</code> sort de la boucle ; <code>break</code> saute une itération" },
-            { value: "C", label: "les deux quittent définitivement la fonction" },
-            { value: "D", label: "les deux sont équivalents à <code>pass</code>" },
+            { value: "A", label: "<code>break</code> sort de la boucle, <code>continue</code> passe à la suivante" },
+            { value: "B", label: "<code>continue</code> sort de la boucle, <code>break</code> passe à la suivante" },
+            { value: "C", label: "les deux quittent la fonction" },
+            { value: "D", label: "les deux équivalent à <code>pass</code>" },
           ],
           correct: "A",
           feedback: "<code>break</code> interrompt la boucle. <code>continue</code> n'exécute pas le reste du corps et reprend à l'itération suivante.",
@@ -308,9 +309,9 @@
           id: "q6",
           text: "Que renvoie toujours <code>sorted(...)</code> ?",
           options: [
-            { value: "A", label: "le même type que l'entrée (tuple, set…)" },
+            { value: "A", label: "le même type que l'entrée" },
             { value: "B", label: "une <code>list</code>" },
-            { value: "C", label: "<code>None</code>, car le tri se fait en place" },
+            { value: "C", label: "<code>None</code>" },
             { value: "D", label: "un <code>tuple</code>" },
           ],
           correct: "B",
@@ -322,7 +323,7 @@
           options: [
             { value: "A", label: "à compresser des fichiers" },
             { value: "B", label: "à concaténer deux listes bout à bout" },
-            { value: "C", label: "à fournir, à chaque itération, un tuple des éléments de même indice" },
+            { value: "C", label: "à associer les éléments de même indice" },
             { value: "D", label: "à trier deux itérables en parallèle" },
           ],
           correct: "C",
@@ -332,7 +333,7 @@
           id: "q8",
           text: "Que vaut <code>bin(4)</code> ?",
           options: [
-            { value: "A", label: "<code>100</code> (un entier)" },
+            { value: "A", label: "<code>100</code>" },
             { value: "B", label: "<code>\"0b100\"</code>" },
             { value: "C", label: "<code>\"0x4\"</code>" },
             { value: "D", label: "<code>\"0o4\"</code>" },

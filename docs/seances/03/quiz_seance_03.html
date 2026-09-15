@@ -12,6 +12,7 @@
         --color-text: #212121;
         --color-border: #e0e0e0;
         --color-row-alt: #f5f5f5;
+        --color-error: #f23646;
       }
 
       * {
@@ -74,7 +75,7 @@
 
       .page-nav a:hover {
         background: var(--color-primary);
-        color: #fff;
+        color: #ffffff;
         text-decoration: none;
       }
 
@@ -120,7 +121,7 @@
       }
 
       .answers label.wrong {
-        color: var(--color-secondary);
+        color: var(--color-error);
         text-decoration: line-through;
       }
 
@@ -147,7 +148,7 @@
 
       button:hover:not(:disabled) {
         background: var(--color-primary);
-        color: #fff;
+        color: #ffffff;
       }
 
       button:disabled {
@@ -176,7 +177,7 @@
       }
 
       .ko {
-        color: var(--color-secondary);
+        color: var(--color-error);
       }
 
       .muted {
@@ -273,8 +274,8 @@
           text: "Pour une liste <code>mixed_values</code>, que désigne <code>mixed_values[2:7]</code> ?",
           options: [
             { value: "A", label: "les éléments d'indices 2 à 7 inclus" },
-            { value: "B", label: "les éléments d'indices 2 à 6 (borne de fin exclue)" },
-            { value: "C", label: "uniquement l'élément d'indice 2, répété 7 fois" },
+            { value: "B", label: "les éléments d'indices 2 à 6" },
+            { value: "C", label: "uniquement l'élément d'indice 2" },
             { value: "D", label: "les 7 premiers éléments" },
           ],
           correct: "B",
@@ -286,7 +287,7 @@
           options: [
             { value: "A", label: "le deuxième élément" },
             { value: "B", label: "l'avant-dernier élément" },
-            { value: "C", label: "une erreur, les indices négatifs sont interdits" },
+            { value: "C", label: "une erreur" },
             { value: "D", label: "une copie des deux derniers éléments" },
           ],
           correct: "B",
@@ -308,10 +309,10 @@
           id: "q6",
           text: "Pourquoi écrit-on <code>mixed_values.append(...)</code> plutôt que <code>append(mixed_values, ...)</code> ?",
           options: [
-            { value: "A", label: "parce que <code>append</code> est une méthode d'instance : elle opère sur l'objet" },
-            { value: "B", label: "parce que <code>append</code> est une fonction built-in comme <code>print</code>" },
-            { value: "C", label: "parce que Python interdit les fonctions à plusieurs arguments" },
-            { value: "D", label: "parce que <code>append</code> ne fonctionne que dans un <code>while</code>" },
+            { value: "A", label: "<code>append</code> est une méthode d'instance" },
+            { value: "B", label: "<code>append</code> est une fonction built-in" },
+            { value: "C", label: "Python interdit les fonctions à plusieurs arguments" },
+            { value: "D", label: "<code>append</code> ne fonctionne que dans un <code>while</code>" },
           ],
           correct: "A",
           feedback: "Une méthode s'appelle sur l'objet (<code>variable.methode()</code>). <code>print()</code> et <code>input()</code> sont des fonctions.",
@@ -320,9 +321,9 @@
           id: "q7",
           text: "Quelle différence entre <code>copied = values.copy()</code> et <code>alias = values</code> ?",
           options: [
-            { value: "A", label: "aucune : les deux créent une nouvelle liste" },
-            { value: "B", label: "<code>copy()</code> crée une nouvelle liste ; l'alias désigne le même objet" },
-            { value: "C", label: "l'alias crée une nouvelle liste ; <code>copy()</code> partage le même objet" },
+            { value: "A", label: "aucune" },
+            { value: "B", label: "<code>copy()</code> crée une nouvelle liste" },
+            { value: "C", label: "l'alias crée une nouvelle liste" },
             { value: "D", label: "<code>copy()</code> transforme la liste en tuple" },
           ],
           correct: "B",
@@ -335,7 +336,7 @@
             { value: "A", label: "on peut y ajouter des éléments avec <code>append</code>" },
             { value: "B", label: "on peut modifier un élément par indice" },
             { value: "C", label: "on ne peut ni modifier, ni ajouter, ni retirer d'éléments" },
-            { value: "D", label: "il n'a pas d'indices, contrairement à une liste" },
+            { value: "D", label: "il n'a pas d'indices" },
           ],
           correct: "C",
           feedback: "Un tuple est immuable. On peut lire un élément (<code>sample_tuple[3]</code>), pas le changer.",
@@ -346,7 +347,7 @@
           options: [
             { value: "A", label: "les entiers de 1 à 10 inclus" },
             { value: "B", label: "les entiers de 0 à 10 inclus" },
-            { value: "C", label: "les entiers de 0 à 9 (10 exclu), pas de 1" },
+            { value: "C", label: "les entiers de 0 à 9" },
             { value: "D", label: "une liste vide de longueur 10" },
           ],
           correct: "C",

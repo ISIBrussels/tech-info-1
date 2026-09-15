@@ -61,7 +61,7 @@ section > p > a:not([href^="mailto:"]) {
 
 section > p > a:not([href^="mailto:"]):hover {
   background: var(--color-primary);
-  color: #fff;
+  color: #ffffff;
 }
 
 /* mailto : hyperlien classique, jamais en bouton */
@@ -140,7 +140,7 @@ section footer a:not([href^="mailto:"]) {
 
 section footer a:not([href^="mailto:"]):hover {
   background: var(--color-primary);
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
 }
 
@@ -161,7 +161,7 @@ table td {
 
 table th {
   background: var(--color-primary);
-  color: #fff;
+  color: #ffffff;
 }
 
 table td {

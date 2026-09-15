@@ -12,6 +12,7 @@
         --color-text: #212121;
         --color-border: #e0e0e0;
         --color-row-alt: #f5f5f5;
+        --color-error: #f23646;
       }
 
       * {
@@ -74,7 +75,7 @@
 
       .page-nav a:hover {
         background: var(--color-primary);
-        color: #fff;
+        color: #ffffff;
         text-decoration: none;
       }
 
@@ -120,7 +121,7 @@
       }
 
       .answers label.wrong {
-        color: var(--color-secondary);
+        color: var(--color-error);
         text-decoration: line-through;
       }
 
@@ -147,7 +148,7 @@
 
       button:hover:not(:disabled) {
         background: var(--color-primary);
-        color: #fff;
+        color: #ffffff;
       }
 
       button:disabled {
@@ -176,7 +177,7 @@
       }
 
       .ko {
-        color: var(--color-secondary);
+        color: var(--color-error);
       }
 
       .muted {
@@ -260,10 +261,10 @@
           id: "q2",
           text: "Pourquoi <code>sentence.upper()</code> ne change-t-il pas <code>sentence</code> tout seul ?",
           options: [
-            { value: "A", label: "parce qu'un <code>str</code> est immuable : la méthode renvoie une nouvelle chaîne" },
-            { value: "B", label: "parce que <code>upper</code> ne fonctionne que sur les listes" },
-            { value: "C", label: "parce qu'il faut d'abord appeler <code>strip</code>" },
-            { value: "D", label: "parce que Python refuse de changer la casse" },
+            { value: "A", label: "un <code>str</code> est immuable" },
+            { value: "B", label: "<code>upper</code> ne fonctionne que sur les listes" },
+            { value: "C", label: "il faut d'abord appeler <code>strip</code>" },
+            { value: "D", label: "Python refuse de changer la casse" },
           ],
           correct: "A",
           feedback: "Les méthodes de <code>str</code> renvoient une nouvelle chaîne. Il faut l'affecter si on veut garder le résultat.",
@@ -274,8 +275,8 @@
           options: [
             { value: "A", label: "découpe la chaîne en liste de mots" },
             { value: "B", label: "concatène les mots en les séparant par un espace" },
-            { value: "C", label: "ajoute un espace au début de chaque mot, sans les coller" },
-            { value: "D", label: "lève une erreur, <code>join</code> n'existe que sur les listes" },
+            { value: "C", label: "ajoute un espace au début de chaque mot" },
+            { value: "D", label: "lève une erreur" },
           ],
           correct: "B",
           feedback: "<code>join</code> s'appelle sur le séparateur, et assemble les éléments de l'itérable.",
@@ -284,10 +285,10 @@
           id: "q4",
           text: "Quelle différence entre <code>find</code> et <code>index</code> sur une chaîne ?",
           options: [
-            { value: "A", label: "<code>find</code> renvoie <code>-1</code> si absent ; <code>index</code> lève une exception" },
-            { value: "B", label: "<code>index</code> renvoie <code>-1</code> ; <code>find</code> lève une exception" },
-            { value: "C", label: "aucune : les deux lèvent toujours une exception" },
-            { value: "D", label: "<code>find</code> cherche depuis la fin, <code>index</code> depuis le début" },
+            { value: "A", label: "<code>find</code> renvoie <code>-1</code>, <code>index</code> lève une exception" },
+            { value: "B", label: "<code>index</code> renvoie <code>-1</code>, <code>find</code> lève une exception" },
+            { value: "C", label: "aucune" },
+            { value: "D", label: "<code>find</code> cherche depuis la fin" },
           ],
           correct: "A",
           feedback: "Les deux cherchent la première occurrence. <code>rfind</code> / <code>rindex</code> cherchent la dernière.",
@@ -298,8 +299,8 @@
           options: [
             { value: "A", label: "un <code>tuple</code> de 3 éléments" },
             { value: "B", label: "une <code>list</code> de morceaux" },
-            { value: "C", label: "un <code>int</code> (le nombre de séparateurs)" },
-            { value: "D", label: "<code>None</code>, la chaîne est modifiée en place" },
+            { value: "C", label: "un <code>int</code>" },
+            { value: "D", label: "<code>None</code>" },
           ],
           correct: "B",
           feedback: "<code>split</code> / <code>rsplit</code> découpent et renvoient une liste. <code>partition</code> renvoie un tuple de 3.",
@@ -308,9 +309,9 @@
           id: "q6",
           text: "Quelle différence entre <code>append(obj)</code> et <code>extend(iterable)</code> ?",
           options: [
-            { value: "A", label: "<code>append</code> ajoute un seul objet ; <code>extend</code> ajoute chaque élément de l'itérable" },
-            { value: "B", label: "<code>extend</code> ajoute un seul objet ; <code>append</code> concatène" },
-            { value: "C", label: "aucune, ce sont des alias" },
+            { value: "A", label: "<code>append</code> ajoute un objet, <code>extend</code> ajoute les éléments" },
+            { value: "B", label: "<code>extend</code> ajoute un objet, <code>append</code> concatène" },
+            { value: "C", label: "aucune" },
             { value: "D", label: "<code>append</code> n'existe que sur les tuples" },
           ],
           correct: "A",
@@ -332,9 +333,9 @@
           id: "q8",
           text: "Quelle différence entre <code>liste.sort()</code> et <code>sorted(liste)</code> ?",
           options: [
-            { value: "A", label: "aucune : les deux renvoient une nouvelle liste" },
-            { value: "B", label: "<code>sort</code> modifie la liste en place ; <code>sorted</code> renvoie une nouvelle liste" },
-            { value: "C", label: "<code>sorted</code> trie en place ; <code>sort</code> renvoie une copie" },
+            { value: "A", label: "aucune" },
+            { value: "B", label: "<code>sort</code> trie en place, <code>sorted</code> renvoie une liste" },
+            { value: "C", label: "<code>sorted</code> trie en place, <code>sort</code> renvoie une liste" },
             { value: "D", label: "<code>sort</code> n'existe que pour les tuples" },
           ],
           correct: "B",
@@ -357,7 +358,7 @@
           text: "Quelle affirmation est vraie à propos de <code>isdigit</code> ?",
           options: [
             { value: "A", label: "les caractères <code>-</code> et <code>.</code> comptent comme des digits" },
-            { value: "B", label: "<code>isdigit</code> accepte des chiffres au-delà de 0–9 (par exemple <code>²</code>)" },
+            { value: "B", label: "<code>isdigit</code> accepte des chiffres au-delà de 0–9" },
             { value: "C", label: "<code>isdigit</code> et <code>isnumeric</code> sont strictement identiques" },
             { value: "D", label: "<code>isdigit</code> ne fonctionne que sur les listes" },
           ],

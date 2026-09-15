@@ -12,6 +12,7 @@
         --color-text: #212121;
         --color-border: #e0e0e0;
         --color-row-alt: #f5f5f5;
+        --color-error: #f23646;
       }
 
       * {
@@ -74,7 +75,7 @@
 
       .page-nav a:hover {
         background: var(--color-primary);
-        color: #fff;
+        color: #ffffff;
         text-decoration: none;
       }
 
@@ -120,7 +121,7 @@
       }
 
       .answers label.wrong {
-        color: var(--color-secondary);
+        color: var(--color-error);
         text-decoration: line-through;
       }
 
@@ -147,7 +148,7 @@
 
       button:hover:not(:disabled) {
         background: var(--color-primary);
-        color: #fff;
+        color: #ffffff;
       }
 
       button:disabled {
@@ -176,7 +177,7 @@
       }
 
       .ko {
-        color: var(--color-secondary);
+        color: var(--color-error);
       }
 
       .muted {
@@ -248,10 +249,10 @@
           id: "q1",
           text: "Que renvoient <code>str()</code>, <code>int()</code> et <code>float()</code> ?",
           options: [
-            { value: "A", label: "rien : elles modifient l'objet original" },
+            { value: "A", label: "rien" },
             { value: "B", label: "un nouvel objet du type demandé" },
             { value: "C", label: "toujours une chaîne de caractères" },
-            { value: "D", label: "le type de l'objet, comme <code>type()</code>" },
+            { value: "D", label: "le type de l'objet" },
           ],
           correct: "B",
           feedback: "Ces fonctions renvoient un nouvel objet. On les place à droite du <code>=</code>.",
@@ -260,10 +261,10 @@
           id: "q2",
           text: "Que vaut <code>bool(-2)</code> ?",
           options: [
-            { value: "A", label: "<code>False</code>, car le nombre est négatif" },
+            { value: "A", label: "<code>False</code>" },
             { value: "B", label: "<code>None</code>" },
             { value: "C", label: "<code>True</code>" },
-            { value: "D", label: "une erreur, car <code>bool()</code> n'accepte que 0 et 1" },
+            { value: "D", label: "une erreur" },
           ],
           correct: "C",
           feedback: "Tout nombre sauf 0 (y compris les négatifs) se convertit en <code>True</code>.",
@@ -287,7 +288,7 @@
             { value: "A", label: "<code>None</code>" },
             { value: "B", label: "<code>False</code>" },
             { value: "C", label: "une chaîne vide" },
-            { value: "D", label: "une erreur à l'appel" },
+            { value: "D", label: "une erreur" },
           ],
           correct: "A",
           feedback: "Si une fonction « ne renvoie rien », elle renvoie en pratique <code>None</code>.",
@@ -308,10 +309,10 @@
           id: "q6",
           text: "Avec <code>def power(x, y=2)</code>, que vaut <code>power(y=3, x=4)</code> ?",
           options: [
-            { value: "A", label: "<code>9</code> (car <code>y</code> vient en premier)" },
-            { value: "B", label: "une erreur, l'ordre des arguments est obligatoire" },
-            { value: "C", label: "<code>64</code> (soit <code>4 ** 3</code>)" },
-            { value: "D", label: "<code>16</code> (le défaut <code>y=2</code> n'est jamais écrasé)" },
+            { value: "A", label: "<code>9</code>" },
+            { value: "B", label: "une erreur" },
+            { value: "C", label: "<code>64</code>" },
+            { value: "D", label: "<code>16</code>" },
           ],
           correct: "C",
           feedback: "Les arguments nommés libèrent l'ordre : <code>x=4</code> et <code>y=3</code>, donc <code>4 ** 3 = 64</code>.",
@@ -334,7 +335,7 @@
           options: [
             { value: "A", label: "à quitter immédiatement une fonction" },
             { value: "B", label: "à ignorer une exception" },
-            { value: "C", label: "à ne rien faire, pour qu'un bloc ne soit pas vide" },
+            { value: "C", label: "à ne rien faire" },
             { value: "D", label: "à passer des arguments par nom" },
           ],
           correct: "C",
@@ -345,8 +346,8 @@
           text: "En Python, une constante…",
           options: [
             { value: "A", label: "est déclarée avec le mot-clé <code>const</code>" },
-            { value: "B", label: "ne peut jamais être réaffectée, sous peine d'erreur" },
-            { value: "C", label: "n'existe pas vraiment : on utilise une convention en MAJUSCULES" },
+            { value: "B", label: "ne peut jamais être réaffectée" },
+            { value: "C", label: "n'existe pas vraiment" },
             { value: "D", label: "doit être définie uniquement dans une fonction" },
           ],
           correct: "C",
@@ -359,7 +360,7 @@
             { value: "A", label: "les deux blocs s'exécutent" },
             { value: "B", label: "seul le bloc du <code>if</code> s'exécute" },
             { value: "C", label: "seul le bloc du <code>elif</code> s'exécute" },
-            { value: "D", label: "une erreur, car les deux conditions sont vraies" },
+            { value: "D", label: "une erreur" },
           ],
           correct: "B",
           feedback: "Si la première condition est vraie, les suivantes ne sont pas évaluées. Deux <code>if</code> indépendants pourraient tous deux s'exécuter.",
