@@ -79,9 +79,10 @@ Une fonction peut recevoir quelque chose en **entrée** et renvoyer quelque chos
 - Si elle « ne renvoie rien », elle renvoie en pratique `None`
 
 ```python
-def print_hello():
-    print("hello")
+print_hello()
 ```
+
+Sans les parenthèses, on ne **l'appelle** pas.
 
 ---
 
@@ -94,10 +95,9 @@ def print_hello():
 Convention de nommage : *snake_case*, comme les variables.
 
 ```python
-print_hello()
+def print_hello():
+    print("hello")
 ```
-
-Sans les parenthèses, on ne **l'appelle** pas.
 
 ---
 
