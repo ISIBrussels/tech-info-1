@@ -105,7 +105,7 @@ else:
 
 ## Deux `if` indépendants
 
-Deux `if` sans `elif` : **les deux** blocs peuvent s'exécuter.
+Même conditions, même `c = 20` : avec `elif` il y a **dépendance** ; avec deux `if`, **non**.
 
 <style scoped>
 .columns {
@@ -122,6 +122,23 @@ Deux `if` sans `elif` : **les deux** blocs peuvent s'exécuter.
 <div class="columns">
 <div>
 
+`if` / `elif` : dès qu'une branche est vraie, les suivantes sont **ignorées**.
+
+```python
+c = 20
+if c > 10:
+    print("c > 10")
+elif c > 5:
+    print("c > 5")
+```
+
+→ seulement `c > 10`
+
+</div>
+<div>
+
+Deux `if` : **pas** de dépendance — chaque test est évalué.
+
 ```python
 c = 20
 if c > 10:
@@ -131,19 +148,6 @@ if c > 5:
 ```
 
 → les **deux** `print`
-
-</div>
-<div>
-
-```python
-c = 7
-if c > 10:
-    print("c > 10")
-if c > 5:
-    print("c > 5")
-```
-
-→ seulement `c > 5`
 
 </div>
 </div>
