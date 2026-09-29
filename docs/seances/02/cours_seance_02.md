@@ -301,6 +301,6 @@ Un seul chemin : **un `return` par branche**. On peut aussi `return` sans valeur
 - *Casting* : `str()`, `int()`, `float()`, `bool()`, `type()`
 - `if` / `elif` / `else` : un seul chemin ; l'ordre des conditions est décisif
 - **Fonctions** : `def`, indentation, paramètres ≠ arguments, `return`
-- **Fonctions** : variables locales, `pass` ; constantes = convention MAJUSCULES
+- Variables locales, `pass` ; constantes = convention MAJUSCULES
 
 [→ Quiz](quiz_seance_02.html) [→ Exercices](exercices_seance_02.html)
