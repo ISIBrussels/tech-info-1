@@ -149,16 +149,6 @@ Une variable déclarée au niveau du script est **globale** : accessible dans to
 
 ---
 
-## Plusieurs `return`
-
-Dès que l'interpréteur atteint un `return`, la fonction **s'arrête** (même s'il reste du code en dessous).
-
-On peut `return` sans valeur (renvoie `None`).
-
-Intérêt des fonctions : **éviter de répéter** le même bout de code. On compartimente.
-
----
-
 ## L'instruction `pass`
 
 `pass` ne fait **rien**. Un bloc Python **ne peut pas être vide**.
@@ -276,6 +266,26 @@ On lit les niveaux grâce à l'indentation.
 
 - `d > 10` → les deux `print`
 - `5 < d < 10` → seulement `d > 5`
+
+---
+
+## Plusieurs `return`
+
+Dès qu'un `return` est atteint, la fonction **s'arrête** (le reste du corps n'est pas exécuté).
+
+```python
+def ticket_price(age):
+    if age < 12:
+        return 5
+    elif age < 18:
+        return 8
+    else:
+        return 12
+
+price = ticket_price(15)   # 8
+```
+
+Un seul chemin : **un `return` par branche**. On peut aussi `return` sans valeur (renvoie `None`).
 
 ---
 
