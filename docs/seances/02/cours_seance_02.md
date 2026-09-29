@@ -111,27 +111,27 @@ Cet exemple n'a **ni entrée ni sortie** : aucun paramètre, pas de `return`.
 ## Paramètres, arguments, `return`
 
 ```python
-def add_two_numbers(a, b):
-    return a + b
+def discount_price(price, percent):
+    return price * (1 - percent / 100)
 
-sum1 = add_two_numbers(2, 4)   # 6
+paid = discount_price(80, 25)   # 60.0
 ```
 
-- **Paramètre** : nom à la définition (`a`, `b`)
-- **Argument** : objet passé à l'appel (`2`, `4`)
-- `return` : l'objet renvoyé est référencé par `sum1`
+- **Paramètre** : nom à la définition (`price`, `percent`)
+- **Argument** : objet passé à l'appel (`80`, `25`)
+- `return` : l'objet renvoyé est référencé par `paid`
 
 ---
 
 ## Arguments par défaut et nommés
 
 ```python
-def power(x, y=2):
-    return x ** y
+def repeat_text(text, times=2):
+    return text * times
 
-p1 = power(2)        # y = 2 par défaut
-p2 = power(4, 4)     # y est écrasé
-p3 = power(y=3, x=4) # arguments nommés (ordre libre)
+r1 = repeat_text("go")                 # times = 2 par défaut
+r2 = repeat_text("go", 4)              # times est écrasé
+r3 = repeat_text(times=3, text="ok")   # arguments nommés (ordre libre)
 ```
 
 ---
