@@ -104,6 +104,8 @@ def print_hello():
     print("hello")
 ```
 
+Cet exemple n'a **ni entrée ni sortie** : aucun paramètre, pas de `return`.
+
 ---
 
 ## Paramètres, arguments, `return`
