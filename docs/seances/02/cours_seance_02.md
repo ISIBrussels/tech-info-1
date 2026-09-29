@@ -112,7 +112,9 @@ Cet exemple n'a **ni entrée ni sortie** : aucun paramètre, pas de `return`.
 
 ```python
 def discount_price(price, percent):
-    return price * (1 - percent / 100)
+    factor = 1 - percent / 100
+    discounted = price * factor
+    return discounted
 
 paid = discount_price(80, 25)   # 60.0
 ```
@@ -127,7 +129,8 @@ paid = discount_price(80, 25)   # 60.0
 
 ```python
 def repeat_text(text, times=2):
-    return text * times
+    result = text * times
+    return result
 
 r1 = repeat_text("go")                 # times = 2 par défaut
 r2 = repeat_text("go", 4)              # times est écrasé
