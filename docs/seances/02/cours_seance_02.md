@@ -77,12 +77,12 @@ Une fonction peut recevoir quelque chose en **entrée** et renvoyer quelque chos
 **Appeler** une fonction = écrire son **nom** avec les **parenthèses**.
 
 ```python
-name = input("Your name? ")  # entrée + valeur renvoyée → on la stocke
-print(name)                  # affiche ; on ne stocke pas le retour
+age = int("21")              # prend une entrée, renvoie un objet → on le stocke
+name = input("Your name? ")  # argument = message ; renvoie la chaîne saisie
 ```
 
-- `input(...)` : argument = message ; **renvoie** la chaîne saisie → à droite d'un `=`
-- `print(...)` : prend quelque chose à afficher ; renvoie `None` → on **n'utilise** en général pas sa valeur
+- `int(...)` : convertit et **renvoie** un entier → à droite d'un `=`
+- `input(...)` : affiche le message, **renvoie** ce que l'utilisateur tape → aussi à droite d'un `=`
 - Sans les parenthèses, on ne **l'appelle** pas
 
 ---
