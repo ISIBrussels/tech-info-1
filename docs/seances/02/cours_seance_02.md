@@ -74,15 +74,16 @@ bool(" ")   # True
 
 Une fonction peut recevoir quelque chose en **entrée** et renvoyer quelque chose en **sortie**.
 
-- `input()` : argument = message à afficher ; renvoie la chaîne saisie
-- Une fonction peut n'avoir **aucun** paramètre
-- Si elle « ne renvoie rien », elle renvoie en pratique `None`
+**Appeler** une fonction = écrire son **nom** avec les **parenthèses**.
 
 ```python
-print_hello()
+name = input("Your name? ")  # entrée + valeur renvoyée → on la stocke
+print(name)                  # affiche ; on ne stocke pas le retour
 ```
 
-Sans les parenthèses, on ne **l'appelle** pas.
+- `input(...)` : argument = message ; **renvoie** la chaîne saisie → à droite d'un `=`
+- `print(...)` : prend quelque chose à afficher ; renvoie `None` → on **n'utilise** en général pas sa valeur
+- Sans les parenthèses, on ne **l'appelle** pas
 
 ---
 
