@@ -190,6 +190,7 @@ print(age) # avec parenthèses : on l'appelle
 
 ## `def`, bloc et indentation
 
+- **Définir** une fonction = lui donner un nom et écrire les instructions qu'elle exécutera à chaque appel
 - `def` : début de la **définition**
 - `:` : début d'un **bloc**
 - L'appartenance au bloc = l'**indentation** (touche Tab)
@@ -206,6 +207,8 @@ Cet exemple n'a **ni entrée ni sortie** : aucun paramètre, pas de `return`.
 ---
 
 ## Paramètres, arguments, `return`
+
+**Définir** une fonction et **l'appeler**, ce n'est **pas** la même chose : la définition décrit ce qu'elle fait ; l'appel l'exécute.
 
 ```python
 def discount_price(price, percent):
