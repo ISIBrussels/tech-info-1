@@ -73,9 +73,9 @@ bool(" ")   # True
 ## Structures conditionnelles
 
 ```python
-a = 5
-if a == 5:
-    print("a is equal to 5")
+value = 5
+if value == 5:
+    print("value is equal to 5")
 ```
 
 - `if` + condition + `:`
@@ -87,13 +87,13 @@ if a == 5:
 ## `elif` et `else`
 
 ```python
-b = 10
-if b == 10:
-    print("b is 10")
-elif b == 15:
-    print("b is 15")
+value = 10
+if value == 10:
+    print("value is 10")
+elif value == 15:
+    print("value is 15")
 else:
-    print("b is neither 10 nor 15")
+    print("value is neither 10 nor 15")
 ```
 
 - commence toujours par un `if`
@@ -105,7 +105,7 @@ else:
 
 ## Deux `if` indépendants
 
-Même conditions, même `c = 20` : avec `elif` il y a **dépendance** ; avec deux `if`, **non**.
+Même conditions, même `value = 20` : avec `elif` il y a **dépendance** ; avec deux `if`, **non**.
 
 <style scoped>
 .columns {
@@ -125,14 +125,14 @@ Même conditions, même `c = 20` : avec `elif` il y a **dépendance** ; avec deu
 `if` / `elif` : dès qu'une branche est vraie, les suivantes sont **ignorées**.
 
 ```python
-c = 20
-if c > 10:
-    print("c > 10")
-elif c > 5:
-    print("c > 5")
+value = 20
+if value > 10:
+    print("value > 10")
+elif value > 5:
+    print("value > 5")
 ```
 
-→ seulement `c > 10`
+→ seulement `value > 10`
 
 </div>
 <div>
@@ -140,11 +140,11 @@ elif c > 5:
 Deux `if` : **pas** de dépendance — chaque test est évalué.
 
 ```python
-c = 20
-if c > 10:
-    print("c > 10")
-if c > 5:
-    print("c > 5")
+value = 20
+if value > 10:
+    print("value > 10")
+if value > 5:
+    print("value > 5")
 ```
 
 → les **deux** `print`
@@ -157,17 +157,17 @@ if c > 5:
 ## Imbrication
 
 ```python
-d = 12
-if d > 5:
-    print("d > 5")
-    if d > 10:
-        print("d > 10")
+value = 12
+if value > 5:
+    print("value > 5")
+    if value > 10:
+        print("value > 10")
 ```
 
 On lit les niveaux grâce à l'indentation.
 
-- `d > 10` → les deux `print`
-- `5 < d < 10` → seulement `d > 5`
+- `value > 10` → les deux `print`
+- `5 < value < 10` → seulement `value > 5`
 
 ---
 
@@ -236,9 +236,9 @@ def repeat_text(text, times=2):
     result = text * times
     return result
 
-r1 = repeat_text("go")                 # times = 2 par défaut
-r2 = repeat_text("go", 4)              # times est écrasé
-r3 = repeat_text(times=3, text="ok")   # arguments nommés (ordre libre)
+repeated_default = repeat_text("go")                 # times = 2 par défaut
+repeated_four_times = repeat_text("go", 4)           # times est écrasé
+repeated_named = repeat_text(times=3, text="ok")     # arguments nommés (ordre libre)
 ```
 
 ---
