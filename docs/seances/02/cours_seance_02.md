@@ -201,22 +201,54 @@ else:
 - commence toujours par un `if`
 - zéro, un ou plusieurs `elif`
 - `else` optionnel
+- Dès qu'une branche est vraie, les suivantes **ne sont pas** évaluées
 
 ---
 
-## L'ordre compte
+## Deux `if` indépendants
+
+Deux `if` sans `elif` : **les deux** blocs peuvent s'exécuter.
+
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  align-items: start;
+}
+.columns pre {
+  font-size: 0.72em;
+}
+</style>
+
+<div class="columns">
+<div>
 
 ```python
 c = 20
 if c > 10:
-    print("c is strictly greater than 10")
-elif c > 5:
-    print("c is strictly greater than 5")
+    print("c > 10")
+if c > 5:
+    print("c > 5")
 ```
 
-Si la première condition est vraie, les suivantes **ne sont pas** évaluées.
+→ les **deux** `print`
 
-Deux `if` indépendants (sans `elif`) : **les deux** blocs peuvent s'exécuter.
+</div>
+<div>
+
+```python
+c = 7
+if c > 10:
+    print("c > 10")
+if c > 5:
+    print("c > 5")
+```
+
+→ seulement `c > 5`
+
+</div>
+</div>
 
 ---
 
