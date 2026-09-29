@@ -83,7 +83,11 @@ print(age)        # prend quelque chose ; « ne renvoie rien » (None) → on ne
 
 - `int(...)` : convertit et **renvoie** un entier → à droite d'un `=`
 - `print(...)` : affiche ; en pratique renvoie `None` → on **ne stocke** pas le retour
-- Sans les parenthèses, on ne **l'appelle** pas
+
+```python
+print      # sans parenthèses : on n'appelle pas la fonction
+print(age) # avec parenthèses : on l'appelle
+```
 
 ---
 
