@@ -1,7 +1,7 @@
 ---
 marp: true
 theme: tech-info
-title: "Séance 2 — Casting, fonctions, conditions"
+title: "Séance 2 — Casting, conditions, fonctions"
 paginate: true
 header: "Tech Info 1 — Séance 2 [Sylvain Huraux - HE2B - ISIB](mailto:shuraux@he2b.be)"
 footer: "[← Retour à l'accueil](../../index.html)"
@@ -9,7 +9,7 @@ footer: "[← Retour à l'accueil](../../index.html)"
 
 # Séance 2
 
-*Casting*, fonctions, constantes et structures conditionnelles
+*Casting*, structures conditionnelles, fonctions et constantes
 
 [→ Quiz](quiz_seance_02.html)
 [→ Exercices](exercices_seance_02.html)
@@ -19,10 +19,10 @@ footer: "[← Retour à l'accueil](../../index.html)"
 ## Objectifs de la séance
 
 - Convertir un objet d'un type vers un autre (*casting*)
+- Structures `if`, `elif`, `else`
 - Écrire ses propres fonctions (`def`, paramètres, `return`)
 - Distinguer variables locales et globales ; instruction `pass`
 - Convention des constantes
-- Structures `if`, `elif`, `else`
 
 ---
 
@@ -67,6 +67,103 @@ bool(" ")   # True
 
 - Tout nombre **sauf 0** → `True` (y compris les négatifs)
 - Chaîne **vide** → `False` ; dès qu'il y a un caractère (même un espace) → `True`
+
+---
+
+## Structures conditionnelles
+
+```python
+a = 5
+if a == 5:
+    print("a is equal to 5")
+```
+
+- `if` + condition + `:`
+- Le bloc indenté ne s'exécute que si la condition vaut `True`
+- Une ligne **non indentée** n'appartient pas au `if`
+
+---
+
+## `elif` et `else`
+
+```python
+b = 10
+if b == 10:
+    print("b is 10")
+elif b == 15:
+    print("b is 15")
+else:
+    print("b is neither 10 nor 15")
+```
+
+- commence toujours par un `if`
+- zéro, un ou plusieurs `elif`
+- `else` optionnel
+- Dès qu'une branche est vraie, les suivantes **ne sont pas** évaluées
+
+---
+
+## Deux `if` indépendants
+
+Deux `if` sans `elif` : **les deux** blocs peuvent s'exécuter.
+
+<style scoped>
+.columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  align-items: start;
+}
+.columns pre {
+  font-size: 0.72em;
+}
+</style>
+
+<div class="columns">
+<div>
+
+```python
+c = 20
+if c > 10:
+    print("c > 10")
+if c > 5:
+    print("c > 5")
+```
+
+→ les **deux** `print`
+
+</div>
+<div>
+
+```python
+c = 7
+if c > 10:
+    print("c > 10")
+if c > 5:
+    print("c > 5")
+```
+
+→ seulement `c > 5`
+
+</div>
+</div>
+
+---
+
+## Imbrication
+
+```python
+d = 12
+if d > 5:
+    print("d > 5")
+    if d > 10:
+        print("d > 10")
+```
+
+On lit les niveaux grâce à l'indentation.
+
+- `d > 10` → les deux `print`
+- `5 < d < 10` → seulement `d > 5`
 
 ---
 
@@ -172,103 +269,6 @@ Convention : nom **en majuscules** (`DAYS_OF_WEEK`, `ALPHABET_LOWERCASE`) pour i
 
 ---
 
-## Structures conditionnelles
-
-```python
-a = 5
-if a == 5:
-    print("a is equal to 5")
-```
-
-- `if` + condition + `:`
-- Le bloc indenté ne s'exécute que si la condition vaut `True`
-- Une ligne **non indentée** n'appartient pas au `if`
-
----
-
-## `elif` et `else`
-
-```python
-b = 10
-if b == 10:
-    print("b is 10")
-elif b == 15:
-    print("b is 15")
-else:
-    print("b is neither 10 nor 15")
-```
-
-- commence toujours par un `if`
-- zéro, un ou plusieurs `elif`
-- `else` optionnel
-- Dès qu'une branche est vraie, les suivantes **ne sont pas** évaluées
-
----
-
-## Deux `if` indépendants
-
-Deux `if` sans `elif` : **les deux** blocs peuvent s'exécuter.
-
-<style scoped>
-.columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.2rem;
-  align-items: start;
-}
-.columns pre {
-  font-size: 0.72em;
-}
-</style>
-
-<div class="columns">
-<div>
-
-```python
-c = 20
-if c > 10:
-    print("c > 10")
-if c > 5:
-    print("c > 5")
-```
-
-→ les **deux** `print`
-
-</div>
-<div>
-
-```python
-c = 7
-if c > 10:
-    print("c > 10")
-if c > 5:
-    print("c > 5")
-```
-
-→ seulement `c > 5`
-
-</div>
-</div>
-
----
-
-## Imbrication
-
-```python
-d = 12
-if d > 5:
-    print("d > 5")
-    if d > 10:
-        print("d > 10")
-```
-
-On lit les niveaux grâce à l'indentation.
-
-- `d > 10` → les deux `print`
-- `5 < d < 10` → seulement `d > 5`
-
----
-
 ## Plusieurs `return`
 
 Dès qu'un `return` est atteint, la fonction **s'arrête** (le reste du corps n'est pas exécuté).
@@ -292,8 +292,8 @@ Un seul chemin : **un `return` par branche**. On peut aussi `return` sans valeur
 ## Conclusion de la séance
 
 - *Casting* : `str()`, `int()`, `float()`, `bool()`, `type()`
+- `if` / `elif` / `else` : un seul chemin ; l'ordre des conditions est décisif
 - `def` / indentation / paramètres ≠ arguments / `return`
 - Variables locales ; `pass` ; constantes = convention MAJUSCULES
-- `if` / `elif` / `else` : un seul chemin ; l'ordre des conditions est décisif
 
 [→ Quiz](quiz_seance_02.html) [→ Exercices](exercices_seance_02.html)
