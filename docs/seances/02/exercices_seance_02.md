@@ -64,6 +64,8 @@ decimal_text = "30.5"
 
 Écrivez une fonction qui prend une chaîne `password` et affiche `valid password` si sa longueur est supérieure ou égale à 8, sinon `password too short`.
 
+**NB :** utiliser la fonction `len()` (sera réabordée séance 3).
+
 ### 10. Triangle valide
 
 Écrivez une fonction qui prend trois longueurs `a`, `b`, `c` et affiche `valid triangle` ou `invalid triangle`.  
