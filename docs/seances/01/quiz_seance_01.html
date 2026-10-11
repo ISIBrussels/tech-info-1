@@ -397,6 +397,22 @@
         localStorage.setItem(checkedKey, checked ? "1" : "0");
       }
 
+      function shuffleInPlace(items) {
+        for (let i = items.length - 1; i > 0; i -= 1) {
+          const j = Math.floor(Math.random() * (i + 1));
+          const tmp = items[i];
+          items[i] = items[j];
+          items[j] = tmp;
+        }
+        return items;
+      }
+
+      function shuffleAllOptions() {
+        questions.forEach((question) => {
+          shuffleInPlace(question.options);
+        });
+      }
+
       function answeredCount() {
         return questions.filter((question) => answers[question.id]).length;
       }
@@ -527,6 +543,7 @@
         statusEl.className = "status";
         summaryEl.innerHTML = "";
         summaryEl.className = "result";
+        shuffleAllOptions();
         renderQuiz();
       }
 
@@ -534,6 +551,7 @@
       resetBtn.addEventListener("click", resetQuiz);
 
       loadState();
+      shuffleAllOptions();
       renderQuiz();
     </script>
 
