@@ -92,7 +92,7 @@ Elles évitent de recoder à la main des fonctionnalités déjà fournies.
 ## Fonctions sur les nombres
 
 - `abs(x)` : valeur absolue
-- `divmod(x, y)` : tuple `(quotient, reste)` — `//` et `%` combinés
+- `divmod(x, y)` : tuple `(quotient, reste)` (`//` et `%` combinés)
 - `pow(x, y)` : `x` puissance `y` (équivalent `**`)
 - `round(x)` : arrondi ; `ndigits` optionnel (défaut `0`)
 
@@ -118,7 +118,7 @@ Objet qu'on peut **parcourir** avec un `for`. Les collections (donc les séquenc
 
 - `max` / `min` : plus grande / plus petite valeur
 - `reversed` : parcours en ordre inverse
-- `sorted` : version **triée** — toujours une `list`, même si l'entrée est un tuple ou un set
+- `sorted` : version **triée** (toujours une `list`, même si l'entrée est un tuple ou un set)
 - `sum` : somme des éléments
 - `zip(it1, it2, …)` : à chaque itération, tuple des éléments de même indice
 
@@ -126,9 +126,9 @@ Objet qu'on peut **parcourir** avec un `for`. Les collections (donc les séquenc
 
 ## Conversions numériques (bases)
 
-- `bin(x)` : binaire — `4` → `"0b100"`
-- `hex(x)` : hexadécimal — `12` → `"0xC"`
-- `oct(x)` : octal — `9` → `"0o10"`
+- `bin(x)` : binaire (`4` → `"0b100"`)
+- `hex(x)` : hexadécimal (`12` → `"0xC"`)
+- `oct(x)` : octal (`9` → `"0o10"`)
 
 ---
 

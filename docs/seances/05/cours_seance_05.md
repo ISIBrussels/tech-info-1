@@ -117,8 +117,8 @@ Ces méthodes **modifient** l'objet ; elles ne renvoient pas une nouvelle liste 
 ## `list` et `tuple`
 
 - `copy()` : copie de la liste (**list seulement**)
-- `count(obj)` : nombre d'occurrences — **aussi sur `tuple`**
-- `index(obj)` : indice de la première occurrence — **aussi sur `tuple`**
+- `count(obj)` : nombre d'occurrences (**aussi sur `tuple`**)
+- `index(obj)` : indice de la première occurrence (**aussi sur `tuple`**)
 
 Un tuple n'a pas `append`, `sort`, `reverse`… : il est immuable.
 

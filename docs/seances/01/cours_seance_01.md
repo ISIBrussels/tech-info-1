@@ -53,8 +53,8 @@ Le terme Python désigne autant un **langage** qu'un **logiciel**.
 
 ## Conséquences pratiques
 
-- **Avantage** : la portabilité — le programme tourne sur toute machine où Python est installé
-- **Inconvénient** : la performance — une même tâche est en général plus rapide en compilé (typiquement C++)
+- **Avantage** : la portabilité (le programme tourne sur toute machine où Python est installé)
+- **Inconvénient** : la performance (une même tâche est en général plus rapide en compilé, typiquement C++)
 
 Python est aussi **orienté objet** : un objet est une entité avec des caractéristiques et des fonctionnalités. En Python, **tout est objet**.
 
@@ -78,7 +78,7 @@ Un script peut s'écrire dans n'importe quel éditeur texte (même le bloc-notes
 
 Exemples : Notepad++ (Windows), Xcode (macOS), Kate / Gedit / Geany (Linux).
 
-Plus léger et plus polyvalent qu'un IDE complet — utile pour lire ou modifier un fichier rapidement.
+Plus léger et plus polyvalent qu'un IDE complet, utile pour lire ou modifier un fichier rapidement.
 
 ---
 
@@ -166,7 +166,7 @@ L'intérêt réel : **stocker** ces résultats pour les réutiliser.
 
 ## Les variables
 
-Une variable **contient** une valeur — plus précisément, en Python, elle **référence** un objet.
+Une variable **contient** une valeur, plus précisément, en Python, elle **référence** un objet.
 
 Rappel : **tout est objet**.
 
@@ -204,7 +204,7 @@ z = x + y
 z
 ```
 
-`z` « vaut » `15` — plus exactement : `z` référence un objet de type `int` égal à 15.
+`z` « vaut » `15` ; plus exactement : `z` référence un objet de type `int` égal à 15.
 
 ---
 
@@ -366,7 +366,7 @@ print(4           # Will generate an error
 SyntaxError: '(' was never closed
 ```
 
-**Lire le message d'erreur** : type (`SyntaxError`, `NameError`…), fichier, ligne — souvent suffisant pour trouver le problème.
+**Lire le message d'erreur** : type (`SyntaxError`, `NameError`…), fichier, ligne ; souvent suffisant pour trouver le problème.
 
 ---
 

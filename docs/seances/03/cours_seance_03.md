@@ -111,7 +111,7 @@ mixed_values.extend(additional_values)    # concaténer une autre liste
 
 ## Méthode vs fonction
 
-`variable.function()` : **méthode d'instance** — elle opère **sur** l'objet.
+`variable.function()` : **méthode d'instance** ; elle opère **sur** l'objet.
 
 `append()`, `insert()`, `extend()` travaillent sur `mixed_values`.
 
@@ -207,7 +207,7 @@ integer_value = int(4.0)
 ## Conclusion de la séance
 
 - `while` : tant que la condition est `True` ; penser à faire évoluer la condition
-- Séquences : `str`, `list`, `tuple` — indices à partir de 0, *slicing*
+- Séquences : `str`, `list`, `tuple` (indices à partir de 0, *slicing*)
 - `list` : mutable ; méthodes `append` / `insert` / `extend` / `remove` / `pop` / `copy`
 - Copie ≠ alias (`id()`)
 - `tuple` : immuable ; `range` : suite d'entiers

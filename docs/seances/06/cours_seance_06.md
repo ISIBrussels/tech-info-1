@@ -107,7 +107,7 @@ d = {
 
 Les **valeurs** : n'importe quel type.
 
-Les **clefs** : objets *hashables* — en pratique **immuables**. Pas de liste comme clef.
+Les **clefs** : objets *hashables* (en pratique **immuables**). Pas de liste comme clef.
 
 Très souvent des `str`.
 

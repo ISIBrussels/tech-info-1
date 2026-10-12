@@ -137,7 +137,7 @@ elif value > 5:
 </div>
 <div>
 
-Deux `if` : **pas** de dépendance — chaque test est évalué.
+Deux `if` : **pas** de dépendance ; chaque test est évalué.
 
 ```python
 value = 20
@@ -268,7 +268,7 @@ Utile pour « réserver » le nom d'une fonction dont le corps sera écrit plus 
 
 ## Les constantes
 
-En C++ : `const int myConstant` — réaffecter lève une erreur.
+En C++ : `const int myConstant` ; réaffecter lève une erreur.
 
 **En Python, il n'y a pas de vraie constante** : aucun mot-clé n'empêche la réaffectation.
 
