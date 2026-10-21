@@ -437,9 +437,10 @@
             }
 
             const optionsHtml = question.options
-              .map((option) => {
+              .map((option, optionIndex) => {
                 const isCorrect = option.value === question.correct;
                 const isChosen = option.value === selected;
+                const displayLetter = String.fromCharCode(65 + optionIndex);
                 const classes = [];
                 if (checked) classes.push("checked-mode");
                 if (checked && isCorrect) classes.push("correct");
@@ -458,7 +459,7 @@
                       ${selected === option.value ? "checked" : ""}
                       ${checked ? "disabled" : ""}
                     />
-                    ${option.value}. ${option.label}${tag}
+                    ${displayLetter}. ${option.label}${tag}
                   </label>
                 `;
               })
