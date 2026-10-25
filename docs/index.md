@@ -7,7 +7,7 @@ Vous y trouverez l'ensemble des ressources pédagogiques du cours et du laborato
 - les **slides de cours** et des **quiz**
 - les **énoncés d'exercices** de laboratoire
 
-- **Format** : 6 séances de 4 heures
+- **Format** : 6 séances de cours de 2 heures, et 6 séances de laboratoire de 4 heures
 - **Évaluation** : examen écrit de 3 heures, sur PC de laboratoire, à cahier fermé
 
 ## Tableau des séances
