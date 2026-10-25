@@ -239,8 +239,8 @@
     <div id="summary" class="result" aria-live="polite"></div>
 
     <script>
-      const storageKey = "quiz_seance_06_answers_v4";
-      const checkedKey = "quiz_seance_06_checked_v4";
+      const storageKey = "quiz_seance_06_answers_v5";
+      const checkedKey = "quiz_seance_06_checked_v5";
 
       const questions = [
         {
@@ -329,15 +329,15 @@
         },
         {
           id: "q8",
-          text: "Que se passe-t-il à l'exécution si un type annoté est faux ?",
+          text: "Que fait <code>popitem()</code> sur un <code>dict</code> ?",
           options: [
-            { value: "A", label: "Python lève automatiquement une erreur" },
-            { value: "B", label: "rien" },
-            { value: "C", label: "le programme se convertit tout seul vers le bon type" },
-            { value: "D", label: "seule la fonction <code>main</code> est refusée" },
+            { value: "A", label: "retire une clef au hasard parmi toutes" },
+            { value: "B", label: "retire la dernière paire ajoutée" },
+            { value: "C", label: "vide entièrement le dictionnaire" },
+            { value: "D", label: "renvoie une copie du dictionnaire" },
           ],
           correct: "B",
-          feedback: "Les annotations (<code>name: str</code>, <code>-&gt; str</code>) aident à la lisibilité et aux vérifications statiques, pas à l'exécution.",
+          feedback: "<code>pop(key)</code> retire une paire donnée. <code>clear()</code> vide. <code>copy()</code> copie.",
         },
         {
           id: "q9",

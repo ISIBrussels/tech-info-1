@@ -1,7 +1,7 @@
 ---
 marp: true
 theme: tech-info
-title: "Séance 6 — set, dict, type hinting, main"
+title: "Séance 6 — set, dict, main"
 paginate: true
 header: "Tech Info 1 — Séance 6 [Sylvain Huraux - HE2B - ISIB](mailto:shuraux@he2b.be)"
 footer: "[← Retour à l'accueil](../../index.html)"
@@ -9,7 +9,7 @@ footer: "[← Retour à l'accueil](../../index.html)"
 
 # Séance 6
 
-Types `set` et `dict`, *type hinting*, fonction `main()`
+Types `set` et `dict`, fonction `main()`
 
 [→ Quiz](quiz_seance_06.html)
 [→ Exercices](exercices_seance_06.html)
@@ -20,7 +20,6 @@ Types `set` et `dict`, *type hinting*, fonction `main()`
 
 - Collections non ordonnées : `set` et `frozenset`
 - Dictionnaires : paires clef → valeur
-- Annoter les types (*type hinting*)
 - Structurer un script avec `main()` et `if __name__ == "__main__"`
 
 ---
@@ -153,20 +152,6 @@ Si la clef n'existe pas, `d[key]` **lève une erreur**.
 
 ---
 
-## *Type hinting*
-
-Annoter les types des paramètres et du retour. Python reste dynamiquement typé : **pas d'erreur à l'exécution** si le type est faux. Sert à la lisibilité et aux vérifications statiques.
-
-```python
-def greet(name: str, age: int) -> str:
-    return f"Hello {name}, you are {age} years old!"
-```
-
-- `name: str` / `age: int` : types attendus
-- `-> str` : type renvoyé
-
----
-
 ## Deux parties d'un fichier Python
 
 1. **Définitions** de fonctions
@@ -199,7 +184,6 @@ Le rôle exact de cette condition sera vu plus tard. **À l'examen** : toujours 
 
 - `set` : unique, non indexable ; `frozenset` = version immuable
 - `dict` : clefs hashables → valeurs ; `get`, `items`, `update`, `pop`…
-- Annotations `: type` et `-> type` : documentation, pas de contrainte runtime
 - Script structuré : définitions, puis `main()`, puis `if __name__ == "__main__": main()`
 
 [→ Quiz](quiz_seance_06.html) [→ Exercices](exercices_seance_06.html)

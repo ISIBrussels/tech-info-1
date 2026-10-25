@@ -14,4 +14,4 @@ Dépôt du cours "Techniques Informatiques 1" et du "Laboratoire de Techniques I
 - **Séance 3 — `while`, listes, tuples, `range`** : [Cours](docs/seances/03/cours_seance_03.md) · [Quiz](docs/seances/03/quiz_seance_03.html) · [Exercices](docs/seances/03/exercices_seance_03.md)
 - **Séance 4 — Boucle `for` et fonctions built-in** : [Cours](docs/seances/04/cours_seance_04.md) · [Quiz](docs/seances/04/quiz_seance_04.html) · [Exercices](docs/seances/04/exercices_seance_04.md)
 - **Séance 5 — Méthodes de `str`, `list` et `tuple`** : [Cours](docs/seances/05/cours_seance_05.md) · [Quiz](docs/seances/05/quiz_seance_05.html) · [Exercices](docs/seances/05/exercices_seance_05.md)
-- **Séance 6 — `set`, `dict`, type hinting, `main()`** : [Cours](docs/seances/06/cours_seance_06.md) · [Quiz](docs/seances/06/quiz_seance_06.html) · [Exercices](docs/seances/06/exercices_seance_06.md)
+- **Séance 6 — `set`, `dict`, `main()`** : [Cours](docs/seances/06/cours_seance_06.md) · [Quiz](docs/seances/06/quiz_seance_06.html) · [Exercices](docs/seances/06/exercices_seance_06.md)
