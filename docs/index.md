@@ -4,7 +4,7 @@ Bienvenue. Ce site est destiné aux étudiants des activités d'apprentissage **
 
 Vous y trouverez l'ensemble des ressources pédagogiques du cours et du laboratoire :
 
-- les **slides de cours**, les **notes** (page Markdown continue, pratique pour Ctrl+F) et des **quiz**
+- le **cours** sous deux formes : les **slides** (Marp) et un **syllabus** (page Markdown continue, même contenu, pratique pour Ctrl+F), ainsi que des **quiz**
 - les **énoncés d'exercices** de laboratoire
 
 <!-- sépare les deux listes (sinon Markdown les fusionne) -->
@@ -14,13 +14,70 @@ Vous y trouverez l'ensemble des ressources pédagogiques du cours et du laborato
 
 ## Tableau des séances
 
-| Séance | Thème | Cours | Notes | Quiz | Exercices |
-| :---: | --- | :---: | :---: | :---: | :---: |
-| 1 | Introduction à Python, opérateurs, types de base | [Cours](seances/01/cours_seance_01.md) | [Notes](seances/01/notes_seance_01.md) | [Quiz](seances/01/quiz_seance_01.html) | [Exercices](seances/01/exercices_seance_01.md) |
-| 2 | *Casting*, structures conditionnelles, fonctions | [Cours](seances/02/cours_seance_02.md) | [Notes](seances/02/notes_seance_02.md) | [Quiz](seances/02/quiz_seance_02.html) | [Exercices](seances/02/exercices_seance_02.md) |
-| 3 | Boucle `while`, types `list`, `tuple`, `range` | [Cours](seances/03/cours_seance_03.md) | [Notes](seances/03/notes_seance_03.md) | [Quiz](seances/03/quiz_seance_03.html) | [Exercices](seances/03/exercices_seance_03.md) |
-| 4 | Boucle `for` et fonctions *built-in* | [Cours](seances/04/cours_seance_04.md) | [Notes](seances/04/notes_seance_04.md) | [Quiz](seances/04/quiz_seance_04.html) | [Exercices](seances/04/exercices_seance_04.md) |
-| 5 | Méthodes de `str`, `list` et `tuple` | [Cours](seances/05/cours_seance_05.md) | [Notes](seances/05/notes_seance_05.md) | [Quiz](seances/05/quiz_seance_05.html) | [Exercices](seances/05/exercices_seance_05.md) |
-| 6 | Types `set` et `dict`, fonction `main()` | [Cours](seances/06/cours_seance_06.md) | [Notes](seances/06/notes_seance_06.md) | [Quiz](seances/06/quiz_seance_06.html) | [Exercices](seances/06/exercices_seance_06.md) |
+<table>
+  <thead>
+    <tr>
+      <th rowspan="2">Séance</th>
+      <th rowspan="2">Thème</th>
+      <th colspan="2">Cours</th>
+      <th rowspan="2">Quiz</th>
+      <th rowspan="2">Exercices</th>
+    </tr>
+    <tr>
+      <th>Slides</th>
+      <th>Syllabus</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Introduction à Python, opérateurs, types de base</td>
+      <td><a href="seances/01/cours_seance_01.md">Slides</a></td>
+      <td><a href="seances/01/syllabus_seance_01.md">Syllabus</a></td>
+      <td><a href="seances/01/quiz_seance_01.html">Quiz</a></td>
+      <td><a href="seances/01/exercices_seance_01.md">Exercices</a></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td><em>Casting</em>, structures conditionnelles, fonctions</td>
+      <td><a href="seances/02/cours_seance_02.md">Slides</a></td>
+      <td><a href="seances/02/syllabus_seance_02.md">Syllabus</a></td>
+      <td><a href="seances/02/quiz_seance_02.html">Quiz</a></td>
+      <td><a href="seances/02/exercices_seance_02.md">Exercices</a></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Boucle <code>while</code>, types <code>list</code>, <code>tuple</code>, <code>range</code></td>
+      <td><a href="seances/03/cours_seance_03.md">Slides</a></td>
+      <td><a href="seances/03/syllabus_seance_03.md">Syllabus</a></td>
+      <td><a href="seances/03/quiz_seance_03.html">Quiz</a></td>
+      <td><a href="seances/03/exercices_seance_03.md">Exercices</a></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Boucle <code>for</code> et fonctions <em>built-in</em></td>
+      <td><a href="seances/04/cours_seance_04.md">Slides</a></td>
+      <td><a href="seances/04/syllabus_seance_04.md">Syllabus</a></td>
+      <td><a href="seances/04/quiz_seance_04.html">Quiz</a></td>
+      <td><a href="seances/04/exercices_seance_04.md">Exercices</a></td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Méthodes de <code>str</code>, <code>list</code> et <code>tuple</code></td>
+      <td><a href="seances/05/cours_seance_05.md">Slides</a></td>
+      <td><a href="seances/05/syllabus_seance_05.md">Syllabus</a></td>
+      <td><a href="seances/05/quiz_seance_05.html">Quiz</a></td>
+      <td><a href="seances/05/exercices_seance_05.md">Exercices</a></td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>Types <code>set</code> et <code>dict</code>, fonction <code>main()</code></td>
+      <td><a href="seances/06/cours_seance_06.md">Slides</a></td>
+      <td><a href="seances/06/syllabus_seance_06.md">Syllabus</a></td>
+      <td><a href="seances/06/quiz_seance_06.html">Quiz</a></td>
+      <td><a href="seances/06/exercices_seance_06.md">Exercices</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <footer class="site-footer"><a href="mailto:shuraux@he2b.be">Sylvain Huraux - HE2B - ISIB</a></footer>

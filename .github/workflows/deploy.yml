@@ -43,9 +43,9 @@ jobs:
             fi
           done
 
-      - name: Build exercise pages (Markdown to static HTML)
+      - name: Build exercise and syllabus pages (Markdown to static HTML)
         run: |
-          for file in docs/seances/*/exercices_seance_*.md; do
+          for file in docs/seances/*/exercices_seance_*.md docs/seances/*/syllabus_seance_*.md; do
             if [ -f "$file" ]; then
               out="dist/${file#docs/}"
               out="${out%.md}.html"
@@ -55,7 +55,11 @@ jobs:
               session_num="${file##*_seance_}"
               session_num="${session_num%.md}"
               session_num=$((10#$session_num))
-              page_title="Séance ${session_num} — Exercices"
+              if [[ "$file" == *syllabus_seance_* ]]; then
+                page_title="Séance ${session_num} — Syllabus"
+              else
+                page_title="Séance ${session_num} — Exercices"
+              fi
               cat > "$out" <<EOF
           <!doctype html>
           <html lang="fr">
@@ -193,6 +197,7 @@ jobs:
         run: |
           sed -E \
             -e 's#(seances/[0-9]{2}/cours_seance_[0-9]{2})\.md#\1.html#g' \
+            -e 's#(seances/[0-9]{2}/syllabus_seance_[0-9]{2})\.md#\1.html#g' \
             -e 's#(seances/[0-9]{2}/exercices_seance_[0-9]{2})\.md#\1.html#g' \
             docs/index.md > /tmp/pages-index.md
 
@@ -274,12 +279,21 @@ jobs:
                   font-weight: 600;
                   font-size: 0.9rem;
                   letter-spacing: 0.03em;
-                  padding: 0.75rem 1rem;
+                  padding: 0.55rem 0.75rem;
                   border: none;
+                  vertical-align: middle;
+                  text-align: center;
+                }
+
+                thead tr:nth-child(2) th {
+                  font-size: 0.82rem;
+                  font-weight: 500;
+                  letter-spacing: 0.02em;
+                  background: #0065ad;
                 }
 
                 tbody td {
-                  padding: 0.75rem 1rem;
+                  padding: 0.75rem 0.75rem;
                   border-bottom: 1px solid var(--color-border);
                   vertical-align: middle;
                 }
@@ -301,11 +315,12 @@ jobs:
 
                 tbody td:nth-child(2) {
                   font-size: 0.95rem;
+                  text-align: left;
                 }
 
                 tbody td:nth-child(n+3) {
                   text-align: center;
-                  width: 7rem;
+                  width: 6.25rem;
                 }
 
                 table a {
