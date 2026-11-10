@@ -27,7 +27,7 @@ Vous y trouverez l'ensemble des ressources du cours et du laboratoire :
   <tbody>
     <tr>
       <td>1</td>
-      <td>Introduction à Python, opérateurs, types de base</td>
+      <td>Intro à Python, opérateurs, types de base</td>
       <td><a href="seances/01/cours_seance_01.md">Slides</a></td>
       <td><a href="seances/01/syllabus_seance_01.md">Syllabus</a></td>
       <td><a href="seances/01/quiz_seance_01.html">Quiz</a></td>
