@@ -1,11 +1,11 @@
 # Techniques Informatiques 1 — Cours & Laboratoire
 
-Bienvenue. Ce site est destiné aux étudiants des activités d'apprentissage **Techniques Informatiques 1** et **Laboratoire de Techniques Informatiques 1** du **2e bachelier** à l'**ISIB** (HE2B).
+Bienvenue. Ce site est destiné aux étudiants des activités d'apprentissage **Techniques Informatiques 1** et **Laboratoire de Techniques Informatiques 1** du 2e bachelier à l'ISIB (HE2B).
 
-Vous y trouverez l'ensemble des ressources pédagogiques du cours et du laboratoire :
+Vous y trouverez l'ensemble des ressources du cours et du laboratoire :
 
-- le **cours** sous deux formes : les **slides** (Marp) et un **syllabus** (page Markdown continue, même contenu, pratique pour Ctrl+F), ainsi que des **quiz**
-- les **énoncés d'exercices** de laboratoire
+- le cours sous deux formes : slides et syllabus (même contenu), et des quiz
+- les énoncés d'exercices de laboratoire
 
 <!-- sépare les deux listes (sinon Markdown les fusionne) -->
 
