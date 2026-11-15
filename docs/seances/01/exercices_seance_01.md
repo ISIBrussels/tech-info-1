@@ -1,8 +1,10 @@
 # Séance 1 — Exercices
 
 <nav class="page-nav">
-  <a href="../../index.html">← Retour à l'accueil</a>
-  <a href="cours_seance_01.html">Slides du cours</a>
+  <a href="../../index.html">Accueil</a>
+  <a href="cours_seance_01.html">Slides</a>
+  <a href="syllabus_seance_01.html">Syllabus</a>
+  <a href="quiz_seance_01.html">Quiz</a>
 </nav>
 
 ## A. Calculs numériques
@@ -93,8 +95,10 @@ Déclarez deux variables `first_name` et `last_name`. Affichez les initiales sou
 Déclarez une variable `sentence` et affectez-lui une chaine de caractère contenant une phrase d'exactement 10 caractères. Affichez les cinq premiers caractères, puis les cinq derniers, ainsi qu’une partie centrale de trois caractères.
 
 <nav class="page-nav">
-  <a href="../../index.html">← Retour à l'accueil</a>
-  <a href="cours_seance_01.html">Slides du cours</a>
+  <a href="../../index.html">Accueil</a>
+  <a href="cours_seance_01.html">Slides</a>
+  <a href="syllabus_seance_01.html">Syllabus</a>
+  <a href="quiz_seance_01.html">Quiz</a>
 </nav>
 
 <footer class="site-footer"><a href="mailto:shuraux@he2b.be">Sylvain Huraux - HE2B - ISIB</a></footer>

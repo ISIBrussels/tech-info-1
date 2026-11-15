@@ -1,8 +1,10 @@
 # Séance 5 — Exercices
 
 <nav class="page-nav">
-  <a href="../../index.html">← Retour à l'accueil</a>
-  <a href="cours_seance_05.html">Slides du cours</a>
+  <a href="../../index.html">Accueil</a>
+  <a href="cours_seance_05.html">Slides</a>
+  <a href="syllabus_seance_05.html">Syllabus</a>
+  <a href="quiz_seance_05.html">Quiz</a>
 </nav>
 
 ## A. Chaînes de caractères
@@ -193,8 +195,10 @@
 Écrivez une fonction qui prend une liste d’inventaire du type `["tomato - 10", "carrot - 2"]`, une action parmi `"add"`, `"remove"`, `"count"` et `"clear"`, et éventuellement un nom de produit selon l’action. Pour `"clear"`, la liste d’inventaire devient vide (méthode du type `clear`). Pour les autres actions, même logique que précédemment (vous fixez le format des lignes).
 
 <nav class="page-nav">
-  <a href="../../index.html">← Retour à l'accueil</a>
-  <a href="cours_seance_05.html">Slides du cours</a>
+  <a href="../../index.html">Accueil</a>
+  <a href="cours_seance_05.html">Slides</a>
+  <a href="syllabus_seance_05.html">Syllabus</a>
+  <a href="quiz_seance_05.html">Quiz</a>
 </nav>
 
 <footer class="site-footer"><a href="mailto:shuraux@he2b.be">Sylvain Huraux - HE2B - ISIB</a></footer>

@@ -1,8 +1,10 @@
 # Séance 4 — Exercices
 
 <nav class="page-nav">
-  <a href="../../index.html">← Retour à l'accueil</a>
-  <a href="cours_seance_04.html">Slides du cours</a>
+  <a href="../../index.html">Accueil</a>
+  <a href="cours_seance_04.html">Slides</a>
+  <a href="syllabus_seance_04.html">Syllabus</a>
+  <a href="quiz_seance_04.html">Quiz</a>
 </nav>
 
 ## A. Boucles `for`
@@ -136,8 +138,10 @@ Exemple : `["Bonjour", "le monde"]` donne `["1. Bonjour", "2. le monde"]`.
 Exemple : noms `["Ada", "Alan"]` et notes `[18.34, 12.0]` donnent des chaînes du type `"1. Ada : 18.3"` et `"2. Alan : 12.0"` (vous choisissez la mise en forme exacte des chaînes, mais la numérotation, le nom et la note arrondie à une décimale doivent apparaître clairement).
 
 <nav class="page-nav">
-  <a href="../../index.html">← Retour à l'accueil</a>
-  <a href="cours_seance_04.html">Slides du cours</a>
+  <a href="../../index.html">Accueil</a>
+  <a href="cours_seance_04.html">Slides</a>
+  <a href="syllabus_seance_04.html">Syllabus</a>
+  <a href="quiz_seance_04.html">Quiz</a>
 </nav>
 
 <footer class="site-footer"><a href="mailto:shuraux@he2b.be">Sylvain Huraux - HE2B - ISIB</a></footer>
