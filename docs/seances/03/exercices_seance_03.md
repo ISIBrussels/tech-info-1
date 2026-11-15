@@ -1,8 +1,10 @@
 # Séance 3 — Exercices
 
 <nav class="page-nav">
-  <a href="../../index.html">← Retour à l'accueil</a>
-  <a href="cours_seance_03.html">Slides du cours</a>
+  <a href="../../index.html">Accueil</a>
+  <a href="cours_seance_03.html">Slides</a>
+  <a href="syllabus_seance_03.html">Syllabus</a>
+  <a href="quiz_seance_03.html">Quiz</a>
 </nav>
 
 ## A. Boucles `while`
@@ -92,8 +94,10 @@ S'il y a égalité sur le nombre d'occurrences, renvoyez l'élément qui atteint
 Écrivez une fonction qui prend une liste `values` de longueur impaire au moins 3 et renvoie la liste des 3 éléments centrés autour du milieu.
 
 <nav class="page-nav">
-  <a href="../../index.html">← Retour à l'accueil</a>
-  <a href="cours_seance_03.html">Slides du cours</a>
+  <a href="../../index.html">Accueil</a>
+  <a href="cours_seance_03.html">Slides</a>
+  <a href="syllabus_seance_03.html">Syllabus</a>
+  <a href="quiz_seance_03.html">Quiz</a>
 </nav>
 
 <footer class="site-footer"><a href="mailto:shuraux@he2b.be">Sylvain Huraux - HE2B - ISIB</a></footer>
