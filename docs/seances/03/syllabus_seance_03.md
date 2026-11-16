@@ -1,7 +1,7 @@
 # Séance 3 — Boucle `while`, types `list`, `tuple`, `range`
 
 <nav class="page-nav">
-  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="../../index.html">Accueil</a>
   <a href="cours_seance_03.html">Slides du cours</a>
 </nav>
 
@@ -174,7 +174,7 @@ integer_value = int(4.0)
 - `tuple` : immuable ; `range` : suite d'entiers
 
 <nav class="page-nav">
-  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="../../index.html">Accueil</a>
   <a href="cours_seance_03.html">Slides du cours</a>
 </nav>
 

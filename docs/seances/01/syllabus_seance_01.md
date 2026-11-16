@@ -1,7 +1,7 @@
 # Séance 1 — Introduction à Python, opérateurs, types de base
 
 <nav class="page-nav">
-  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="../../index.html">Accueil</a>
   <a href="cours_seance_01.html">Slides du cours</a>
 </nav>
 
@@ -310,7 +310,7 @@ SyntaxError: '(' was never closed
 - Lire les messages d'erreur
 
 <nav class="page-nav">
-  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="../../index.html">Accueil</a>
   <a href="cours_seance_01.html">Slides du cours</a>
 </nav>
 

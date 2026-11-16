@@ -1,7 +1,7 @@
 # Séance 4 — Boucle `for` et fonctions *built-in*
 
 <nav class="page-nav">
-  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="../../index.html">Accueil</a>
   <a href="cours_seance_04.html">Slides du cours</a>
 </nav>
 
@@ -136,7 +136,7 @@ selected_numbers = numbers[slice(2, 8, 2)]
 - Constructeurs = *casting* ; `slice` ≡ `seq[start:stop:step]`
 
 <nav class="page-nav">
-  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="../../index.html">Accueil</a>
   <a href="cours_seance_04.html">Slides du cours</a>
 </nav>
 
