@@ -4,15 +4,15 @@ theme: isib
 title: "Séance 2 — Casting, conditions, fonctions"
 paginate: true
 header: "Tech Info 1 — Séance 2 [Sylvain Huraux - HE2B - ISIB](mailto:shuraux@he2b.be)"
-footer: "[← Retour à l'accueil](../../index.html)"
+footer: "[Accueil](../../index.html)"
 ---
 
 # Séance 2
 
 *Casting*, structures conditionnelles, fonctions et constantes
 
-[→ Quiz](quiz_seance_02.html)
-[→ Exercices](exercices_seance_02.html)
+[Quiz](quiz_seance_02.html)
+[Exercices](exercices_seance_02.html)
 
 ---
 
@@ -303,4 +303,4 @@ Un seul chemin : **un `return` par branche**. On peut aussi `return` sans valeur
 - **Fonctions** : `def`, indentation, paramètres ≠ arguments, `return`
 - Variables locales, `pass` ; constantes = convention MAJUSCULES
 
-[→ Quiz](quiz_seance_02.html) [→ Exercices](exercices_seance_02.html)
+[Quiz](quiz_seance_02.html) [Exercices](exercices_seance_02.html)

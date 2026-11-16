@@ -1,7 +1,7 @@
 # Séance 2 — *Casting*, structures conditionnelles, fonctions
 
 <nav class="page-nav">
-  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="../../index.html">Accueil</a>
   <a href="cours_seance_02.html">Slides du cours</a>
 </nav>
 
@@ -240,7 +240,7 @@ Un seul chemin : **un `return` par branche**. On peut aussi `return` sans valeur
 - Variables locales, `pass` ; constantes = convention MAJUSCULES
 
 <nav class="page-nav">
-  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="../../index.html">Accueil</a>
   <a href="cours_seance_02.html">Slides du cours</a>
 </nav>
 

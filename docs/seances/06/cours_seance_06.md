@@ -4,15 +4,15 @@ theme: isib
 title: "Séance 6 — set, dict, main"
 paginate: true
 header: "Tech Info 1 — Séance 6 [Sylvain Huraux - HE2B - ISIB](mailto:shuraux@he2b.be)"
-footer: "[← Retour à l'accueil](../../index.html)"
+footer: "[Accueil](../../index.html)"
 ---
 
 # Séance 6
 
 Types `set` et `dict`, fonction `main()`
 
-[→ Quiz](quiz_seance_06.html)
-[→ Exercices](exercices_seance_06.html)
+[Quiz](quiz_seance_06.html)
+[Exercices](exercices_seance_06.html)
 
 ---
 
@@ -186,4 +186,4 @@ Le rôle exact de cette condition sera vu plus tard. **À l'examen** : toujours 
 - `dict` : clefs hashables → valeurs ; `get`, `items`, `update`, `pop`…
 - Script structuré : définitions, puis `main()`, puis `if __name__ == "__main__": main()`
 
-[→ Quiz](quiz_seance_06.html) [→ Exercices](exercices_seance_06.html)
+[Quiz](quiz_seance_06.html) [Exercices](exercices_seance_06.html)

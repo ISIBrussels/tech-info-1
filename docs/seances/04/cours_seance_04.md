@@ -4,15 +4,15 @@ theme: isib
 title: "Séance 4 — Boucle for et fonctions built-in"
 paginate: true
 header: "Tech Info 1 — Séance 4 [Sylvain Huraux - HE2B - ISIB](mailto:shuraux@he2b.be)"
-footer: "[← Retour à l'accueil](../../index.html)"
+footer: "[Accueil](../../index.html)"
 ---
 
 # Séance 4
 
 Boucle `for` et fonctions *built-in*
 
-[→ Quiz](quiz_seance_04.html)
-[→ Exercices](exercices_seance_04.html)
+[Quiz](quiz_seance_04.html)
+[Exercices](exercices_seance_04.html)
 
 ---
 
@@ -179,4 +179,4 @@ selected_numbers = numbers[slice(2, 8, 2)]
 - *Built-in* : nombres (`abs`, `round`…), itérables (`len`, `sum`, `zip`…), bases, Unicode
 - Constructeurs = *casting* ; `slice` ≡ `seq[start:stop:step]`
 
-[→ Quiz](quiz_seance_04.html) [→ Exercices](exercices_seance_04.html)
+[Quiz](quiz_seance_04.html) [Exercices](exercices_seance_04.html)

@@ -4,15 +4,15 @@ theme: isib
 title: "Séance 1 — Introduction à Python"
 paginate: true
 header: "Tech Info 1 — Séance 1 [Sylvain Huraux - HE2B - ISIB](mailto:shuraux@he2b.be)"
-footer: "[← Retour à l'accueil](../../index.html)"
+footer: "[Accueil](../../index.html)"
 ---
 
 ## Séance 1
 
 Introduction à Python
 
-[→ Quiz](quiz_seance_01.html)
-[→ Exercices](exercices_seance_01.html)
+[Quiz](quiz_seance_01.html)
+[Exercices](exercices_seance_01.html)
 
 ---
 
@@ -380,4 +380,4 @@ SyntaxError: '(' was never closed
 - `str` : séquence, indices, concaténation, *f-strings*
 - Lire les messages d'erreur
 
-[→ Quiz](quiz_seance_01.html) [→ Exercices](exercices_seance_01.html)
+[Quiz](quiz_seance_01.html) [Exercices](exercices_seance_01.html)

@@ -4,15 +4,15 @@ theme: isib
 title: "Séance 5 — Méthodes de str, list et tuple"
 paginate: true
 header: "Tech Info 1 — Séance 5 [Sylvain Huraux - HE2B - ISIB](mailto:shuraux@he2b.be)"
-footer: "[← Retour à l'accueil](../../index.html)"
+footer: "[Accueil](../../index.html)"
 ---
 
 # Séance 5
 
 Méthodes d'instance de `str`, `list` et `tuple`
 
-[→ Quiz](quiz_seance_05.html)
-[→ Exercices](exercices_seance_05.html)
+[Quiz](quiz_seance_05.html)
+[Exercices](exercices_seance_05.html)
 
 ---
 
@@ -132,4 +132,4 @@ Un tuple n'a pas `append`, `sort`, `reverse`… : il est immuable.
 - `list` mutable : `append`, `extend`, `pop`, `sort`, `reverse`
 - `tuple` : essentiellement `count` et `index`
 
-[→ Quiz](quiz_seance_05.html) [→ Exercices](exercices_seance_05.html)
+[Quiz](quiz_seance_05.html) [Exercices](exercices_seance_05.html)

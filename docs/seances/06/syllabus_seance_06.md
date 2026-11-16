@@ -1,7 +1,7 @@
 # Séance 6 — Types `set` et `dict`, fonction `main()`
 
 <nav class="page-nav">
-  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="../../index.html">Accueil</a>
   <a href="cours_seance_06.html">Slides du cours</a>
 </nav>
 
@@ -148,7 +148,7 @@ Le rôle exact de cette condition sera vu plus tard. **À l'examen** : toujours 
 - Script structuré : définitions, puis `main()`, puis `if __name__ == "__main__": main()`
 
 <nav class="page-nav">
-  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="../../index.html">Accueil</a>
   <a href="cours_seance_06.html">Slides du cours</a>
 </nav>
 

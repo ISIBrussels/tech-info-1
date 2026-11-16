@@ -1,7 +1,7 @@
 # Séance 5 — Méthodes de `str`, `list` et `tuple`
 
 <nav class="page-nav">
-  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="../../index.html">Accueil</a>
   <a href="cours_seance_05.html">Slides du cours</a>
 </nav>
 
@@ -102,7 +102,7 @@ Un tuple n'a pas `append`, `sort`, `reverse`… : il est immuable.
 - `tuple` : essentiellement `count` et `index`
 
 <nav class="page-nav">
-  <a href="../../index.html">← Retour à l'accueil</a>
+  <a href="../../index.html">Accueil</a>
   <a href="cours_seance_05.html">Slides du cours</a>
 </nav>
 
